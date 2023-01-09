@@ -1,6 +1,8 @@
 import Head from 'next/head';
 
 export default function HomePage() {
+  console.log('test: no console');
+
   return (
     <>
       <Head>
