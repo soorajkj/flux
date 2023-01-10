@@ -2,6 +2,11 @@
   "name": "jotter",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "please-use-yarn",
+    "node": ">=14.0.0",
+    "yarn": ">=1.22.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
