@@ -21,9 +21,7 @@
     "paths": {
       "_styles/*": ["./src/styles/*"],
       "_layouts": ["./src/layouts"],
-      "_layouts/*": ["./src/layouts/*"],
-      "_components": ["./src/components"],
-      "_components/*": ["./src/components/*"]
+      "_layouts/*": ["./src/layouts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
