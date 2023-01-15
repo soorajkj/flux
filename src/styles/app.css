@@ -1,5 +1,22 @@
+:root.midnight {
+  --color-primary: hsl(0, 0%, 6%);
+  --color-primary-light: hsl(0, 0%, 9%);
+  --color-primary-dark: hsl(0, 0%, 9%);
+  --color-primary-contrast: hsl(0, 0%, 5%);
+  --color-secondary: hsl(0, 0%, 64%);
+  --color-secondary-light: hsl(0, 0%, 45%);
+  --color-secondary-dark: hsl(0, 0%, 96%);
+  --color-tertiary: hsl(0, 0%, 15%);
+  --color-tertiary-light: hsl(0, 0%, 9%);
+  --color-tertiary-dark: hsl(0, 0%, 18%);
+  --color-error: hsl(24, 10%, 10%);
+  --color-tooltip: hsl(0, 0%, 96%);
+  --color-popover: hsl(240, 3%, 11%);
+}
+
 ::-webkit-scrollbar-track {
   background-color: transparent;
+  border-left-color: var(--color-tertiary-light);
   border-style: solid;
   border-top: 0;
   border-right: 0;
@@ -9,10 +26,15 @@
 
 ::-webkit-scrollbar-thumb {
   background-clip: content-box;
+  background-color: var(--color-tertiary);
   border-radius: 9999px;
   border-style: solid;
   border-color: transparent;
   border-width: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-tertiary-dark);
 }
 
 ::-webkit-scrollbar {
@@ -20,10 +42,7 @@
   width: 1rem;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  position: relative;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
 }

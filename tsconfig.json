@@ -20,7 +20,9 @@
     // without `/*` for `folder/index.ts`
     "paths": {
       "_public": ["./public"],
-      "_styles/*": ["./src/styles/*"]
+      "_styles/*": ["./src/styles/*"],
+      "_components": ["./src/components"],
+      "_components/*": ["./src/components/*"]
     },
     "plugins": [
       {
