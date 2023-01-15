@@ -19,11 +19,15 @@
     // with `/*` for accessing the nested folder.
     // without `/*` for `folder/index.ts`
     "paths": {
-      "_styles/*": ["./src/styles/*"],
-      "_layouts": ["./src/layouts"],
-      "_layouts/*": ["./src/layouts/*"]
-    }
+      "_public": ["./public"],
+      "_styles/*": ["./src/styles/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
