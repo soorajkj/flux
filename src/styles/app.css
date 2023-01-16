@@ -1,4 +1,4 @@
-:root.midnight {
+:root[data-theme='midnight'] {
   --color-primary: hsl(0, 0%, 6%);
   --color-primary-light: hsl(0, 0%, 9%);
   --color-primary-dark: hsl(0, 0%, 9%);
@@ -45,4 +45,8 @@
 body {
   background-color: var(--color-primary);
   color: var(--color-secondary);
+}
+
+span.ua-pane {
+  background-color: var(--color-tertiary);
 }
