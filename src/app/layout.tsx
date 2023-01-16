@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="midnight scroll-smooth">
       <head />
-      <body className="relative font-sans text-size-sm font-weight-normal leading-snug">
+      <body className="font-sans text-size-sm font-weight-normal leading-snug">
         <div className="h-screen w-screen overflow-hidden">
           <div className="flex h-full w-full flex-row">
             <aside className="h-full w-auto">
