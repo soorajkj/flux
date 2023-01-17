@@ -1,16 +1,19 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-const styles = cva('ua-pane pointer-events-none', {
-  variants: {
-    direction: {
-      vertical: 'w-px h-full',
-      horizontal: 'h-px w-full',
+const styles = cva(
+  'ua-pane pointer-events-none inline-block bg-color-tertiary',
+  {
+    variants: {
+      direction: {
+        vertical: 'w-0.5 h-full',
+        horizontal: 'h-0.5 w-full',
+      },
     },
-  },
-  defaultVariants: {
-    direction: 'horizontal',
-  },
-});
+    defaultVariants: {
+      direction: 'horizontal',
+    },
+  }
+);
 
 interface Props extends VariantProps<typeof styles> {}
 

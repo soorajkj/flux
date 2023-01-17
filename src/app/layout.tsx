@@ -8,9 +8,9 @@ import '_styles/app.css';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth" data-theme="midnight">
+    <html lang="en" data-theme="invert" data-accent="purple">
       <head />
-      <body className="font-sans text-size-sm font-weight-normal leading-snug">
+      <body>
         <div className="h-screen w-screen overflow-hidden">
           <div className="flex h-full w-full flex-row">
             <aside className="h-full w-auto">
@@ -18,11 +18,15 @@ export default function Layout({ children }: { children: ReactNode }) {
             </aside>
             <Pane direction="vertical" />
             <div className="flex flex-1 flex-col">
-              <Header />
+              <div className="h-auto w-full">
+                <Header />
+              </div>
               <Pane />
               <main className="flex-grow overflow-y-auto">{children}</main>
               <Pane />
-              <Footer />
+              <div className="h-auto w-full">
+                <Footer />
+              </div>
             </div>
           </div>
         </div>
