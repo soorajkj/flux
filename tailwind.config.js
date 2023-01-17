@@ -6,7 +6,6 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
     fontSize: {
       'size-xs': '0.75rem',
       'size-sm': '0.875rem',
@@ -53,6 +52,11 @@ module.exports = {
       'color-error': 'var(--color-error)',
       'color-tooltip': 'var(--color-tooltip)',
       'color-popover': 'var(--color-popover)',
+    },
+    extend: {
+      transitionProperty: {
+        width: 'width',
+      },
     },
   },
   plugins: [require('prettier-plugin-tailwindcss')],

@@ -55,13 +55,13 @@ html {
 
 body {
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: normal;
-  line-height: 1.3;
+  line-height: 1.5;
   color: var(--color-secondary);
   background-color: var(--color-primary);
 }
 
-.ua-sidenav {
-  transition-property: width;
+#__layout {
+  height: 100lvh; /* experimental: touch devices 100vh issue */
 }

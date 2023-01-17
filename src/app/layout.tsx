@@ -11,9 +11,9 @@ export default function Layout({ children }: { children: ReactNode }) {
     <html lang="en" data-theme="invert" data-accent="purple">
       <head />
       <body>
-        <div className="h-screen w-screen overflow-hidden">
+        <div id="__layout" className="h-screen w-screen overflow-hidden">
           <div className="flex h-full w-full flex-row">
-            <aside className="h-full w-auto">
+            <aside className="relative h-full w-auto">
               <Navbar />
             </aside>
             <Pane direction="vertical" />

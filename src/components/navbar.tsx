@@ -1,44 +1,46 @@
+/* eslint-disable no-unused-vars */
 'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
 import { cva, VariantProps } from 'class-variance-authority';
+import { routes } from '_constants';
+import Pane from '_components/pane';
 
-const navbarStyles = cva(
-  'ua-sidenav flex flex-col duration-300 ease-in-out overflow-y-auto w-full h-full',
+const styles = cva(
+  'absolute left-0 top-0 flex flex-col w-full h-full overflow-y-auto transition-all bg-color-primary border-r border-r-color-tertiary lg:static',
   {
     variants: {
       collapse: {
-        true: 'w-16',
-        false: 'w-72',
+        true: 'w-60 lg:w-16',
+        false: 'w-60 lg:w-60',
+      },
+      show: {
+        true: 'translate-x-0 lg:translate-x-0',
+        false: '-translate-x-full lg:translate-x-0',
       },
     },
   }
 );
 
-interface NavbarProps extends VariantProps<typeof navbarStyles> {}
+interface NavbarProps extends VariantProps<typeof styles> {}
 
 export default function Navbar({}: NavbarProps) {
-  // eslint-disable-next-line no-unused-vars
-  const [collapse, setCollapse] = useState(false);
+  const [collapse, setCollapse] = useState<boolean>(false);
+  const [show, setShow] = useState<boolean>(false);
 
   return (
-    <nav className={navbarStyles({ collapse })}>
-      <div className="block h-16"></div>
+    <nav className={styles({ collapse, show })}>
+      <div className="block h-12"></div>
+      <Pane />
       <ul className="flex flex-1 flex-col overflow-y-auto px-0">
-        {[
-          { href: '/', label: 'Menu one', icon: 'i' },
-          { href: '/', label: 'Menu two', icon: 'i' },
-          { href: '/', label: 'Menu three', icon: 'i' },
-          { href: '/', label: 'Menu four', icon: 'i' },
-          { href: '/', label: 'Menu five', icon: 'i' },
-        ].map(({ href, label }, i) => (
-          <li key={i} className="inline-flex">
+        {routes.map(({ href, label }, index) => (
+          <li key={index} className="inline-flex">
             <Link
               href={href}
-              className="inline-flex h-14 w-full cursor-pointer select-none items-center px-4 py-2 hover:bg-color-primary-light hover:text-color-secondary-dark"
+              className="inline-flex h-12 w-full cursor-pointer select-none items-center px-4 py-2 hover:bg-color-primary-light hover:text-color-secondary-dark"
             >
-              {!collapse && <span className="transition">{label}</span>}
+              {label}
             </Link>
           </li>
         ))}
