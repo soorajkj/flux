@@ -1,4 +1,4 @@
-:root[data-theme='invert'] {
+:root {
   --color-primary: hsl(0, 0%, 6%);
   --color-primary-light: hsl(0, 0%, 9%);
   --color-primary-dark: hsl(0, 0%, 9%);
@@ -60,4 +60,12 @@ body {
   line-height: 1.5;
   color: var(--color-secondary);
   background-color: var(--color-primary);
+}
+
+.__dev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
 }
