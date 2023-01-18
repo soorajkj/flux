@@ -11,18 +11,18 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className="h-screen w-screen overflow-hidden">
           <div className="flex h-full w-full flex-row">
             <aside className="relative h-full w-auto">
-              <nav className="h-full w-64"></nav>
+              <nav className="h-full w-16"></nav>
             </aside>
             <Pane direction="vertical" />
             <div className="flex flex-1 flex-col">
               <div className="h-auto w-full">
-                <header className="h-14 w-full"></header>
+                <header className="h-16 w-full"></header>
               </div>
               <Pane direction="horizontal" />
               <main className="flex-grow overflow-y-auto">{children}</main>
               <Pane direction="horizontal" />
               <div className="h-auto w-full">
-                <footer className="h-7 w-full"></footer>
+                <footer className="h-8 w-full"></footer>
               </div>
             </div>
           </div>
