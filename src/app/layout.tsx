@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import Pane from '_components/atoms/pane';
+import Pane from '_components/pane';
 import '_styles/tailwind.css';
 import '_styles/app.css';
 
