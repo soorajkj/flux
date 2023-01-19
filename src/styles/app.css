@@ -12,9 +12,6 @@
   --color-error: hsl(24, 10%, 10%);
   --color-tooltip: hsl(0, 0%, 96%);
   --color-popover: hsl(240, 3%, 11%);
-}
-
-:root[data-accent='purple'] {
   --color-accent: hsl(258deg 90% 66%);
   --color-accent-light: hsl(255deg 92% 76%);
   --color-accent-dark: hsl(262deg 83% 58%);
