@@ -18,7 +18,9 @@ export default function Layout({ children }: { children: ReactNode }) {
               <header className="h-16 w-full"></header>
             </div>
             <Pane direction="horizontal" />
-            <main className="flex-grow overflow-y-auto">{children}</main>
+            <main className="flex-grow overflow-y-auto">
+              <div>{children}</div>
+            </main>
             <Pane direction="horizontal" />
             <div className="h-auto w-full">
               <footer className="h-8 w-full"></footer>

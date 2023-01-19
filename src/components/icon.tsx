@@ -4,7 +4,8 @@ const iconTypes = {
   folder: Folder,
 } as const;
 
-interface Props {
+interface Props
+  extends React.DetailedHTMLProps<React.SVGAttributes<SVGElement>, SVGElement> {
   icon: keyof typeof iconTypes;
 }
 
