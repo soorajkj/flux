@@ -1,21 +1,21 @@
 :root {
-  --color-primary: hsl(0, 0%, 6%);
-  --color-primary-light: hsl(0, 0%, 9%);
-  --color-primary-dark: hsl(0, 0%, 9%);
-  --color-primary-contrast: hsl(0, 0%, 5%);
-  --color-secondary: hsl(0, 0%, 64%);
-  --color-secondary-light: hsl(0, 0%, 45%);
-  --color-secondary-dark: hsl(0, 0%, 96%);
-  --color-tertiary: hsl(0, 0%, 15%);
-  --color-tertiary-light: hsl(0, 0%, 9%);
-  --color-tertiary-dark: hsl(0, 0%, 18%);
-  --color-error: hsl(24, 10%, 10%);
-  --color-tooltip: hsl(0, 0%, 96%);
-  --color-popover: hsl(240, 3%, 11%);
-  --color-accent: hsl(258deg 90% 66%);
-  --color-accent-light: hsl(255deg 92% 76%);
-  --color-accent-dark: hsl(262deg 83% 58%);
-  --color-accent-contrast: hsl(0deg 0% 100%);
+  --color-primary: rgb(15, 15, 15);
+  --color-primary-light: rgb(23, 23, 23);
+  --color-primary-dark: rgb(23, 23, 23);
+  --color-primary-contrast: rgb(13, 13, 13);
+  --color-secondary: rgb(163, 163, 163);
+  --color-secondary-light: rgb(115, 115, 115);
+  --color-secondary-dark: rgb(245, 245, 245);
+  --color-tertiary: rgb(38, 38, 38);
+  --color-tertiary-light: rgb(23, 23, 23);
+  --color-tertiary-dark: rgb(46, 46, 46);
+  --color-error: rgb(28, 25, 23);
+  --color-tooltip: rgb(245, 245, 245);
+  --color-popover: rgb(27, 27, 29);
+  --color-accent: rgb(137, 90, 246);
+  --color-accent-light: rgb(166, 137, 250);
+  --color-accent-dark: rgb(124, 59, 237);
+  --color-accent-contrast: rgb(255, 255, 255);
 }
 
 ::-webkit-scrollbar-track {

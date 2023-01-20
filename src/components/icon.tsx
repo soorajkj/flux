@@ -1,16 +1,17 @@
 import Folder from 'public/folder.svg';
 
-const iconTypes = {
+const IconTypes = {
   folder: Folder,
+  folders: Folder,
 } as const;
 
-interface IconProps
+interface Props
   extends React.DetailedHTMLProps<React.SVGAttributes<SVGElement>, SVGElement> {
-  icon: keyof typeof iconTypes;
+  icon: keyof typeof IconTypes;
 }
 
-export default function Icon({ icon, ...rest }: IconProps) {
-  const IconEle = iconTypes[icon];
+export default function Icon({ icon, ...rest }: Props) {
+  const IconEle = IconTypes[icon];
 
   return <IconEle {...rest} />;
 }
