@@ -1,6 +1,6 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-const styles = cva(['pointer-events-none bg-color-tertiary-light'], {
+const PaneStyles = cva(['pointer-events-none bg-color-tertiary-light'], {
   variants: {
     direction: {
       vertical: 'w-0.5 h-full',
@@ -12,8 +12,8 @@ const styles = cva(['pointer-events-none bg-color-tertiary-light'], {
   },
 });
 
-interface Props extends VariantProps<typeof styles> {}
+interface PaneProps extends VariantProps<typeof PaneStyles> {}
 
-export default function Pane({ direction }: Props) {
-  return <div className={styles({ direction })} />;
+export default function Pane({ direction }: PaneProps) {
+  return <div className={PaneStyles({ direction })} />;
 }

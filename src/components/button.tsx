@@ -1,51 +1,30 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-const styles = cva(
-  [
-    'relative inline-flex items-center justify-center border border-color-transparent',
-  ],
-  {
-    variants: {
-      variant: {
-        primary: '',
-        secondary: '',
-      },
-      block: {
-        true: 'w-full',
-      },
-      disabled: {
-        true: 'pointer-events-none',
-      },
-    },
-    defaultVariants: {
-      variant: 'primary',
-    },
-  }
-);
+const ButtonStyles = cva([
+  'relative inline-flex items-center justify-center border border-color-transparent',
+]);
 
-interface Props
+interface ButtonProps
   extends React.DetailedHTMLProps<
       React.ButtonHTMLAttributes<HTMLButtonElement>,
       HTMLButtonElement
     >,
     React.AriaAttributes,
-    VariantProps<typeof styles> {}
+    VariantProps<typeof ButtonStyles> {}
 
 export default function Button({
   children,
   type = 'button',
-  variant,
   className,
   style,
-  block,
   disabled,
   onClick,
   ...rest
-}: Props) {
+}: ButtonProps) {
   return (
     <button
       type={type}
-      className={styles({ variant, block, disabled, className })}
+      className={ButtonStyles({ className })}
       style={style}
       disabled={disabled}
       onClick={onClick}

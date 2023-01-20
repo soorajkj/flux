@@ -5,9 +5,9 @@ import '_styles/app.css';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html>
+    <html className="scroll-smooth">
       <head />
-      <body>
+      <body className="bg-color-primary font-sans text-size-sm font-weight-normal leading-normal text-color-secondary">
         <div className="flex h-screen w-screen flex-row overflow-hidden">
           <aside className="relative h-full w-auto">
             <nav className="h-full w-16"></nav>
