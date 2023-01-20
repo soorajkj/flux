@@ -2,10 +2,6 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  // next 13 support
-  experimental: {
-    appDir: true,
-  },
   // svgr comp
   webpack(config) {
     config.module.rules.push({
