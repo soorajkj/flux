@@ -1,13 +1,12 @@
-import Button from '_components/button';
-import Checkbox from '_components/checkbox';
-import Radio from '_components/radio';
+import Button from '_components/atoms/button';
 
 export default function App() {
   return (
-    <div>
-      <Button>Button</Button>
-      <Checkbox />
-      <Radio />
+    <div className="m-2 flex items-center space-x-2">
+      <Button loading>Workspace</Button>
+      <Button>Workspace</Button>
+      <Button>Workspace</Button>
+      <Button>Workspace</Button>
     </div>
   );
 }

@@ -54,13 +54,13 @@ module.exports = {
       'color-popover': 'var(--color-popover)',
     },
     extend: {
+      fontFamily: {
+        inter: 'var(--font-inter)',
+      },
       transitionProperty: {
         width: 'width',
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('prettier-plugin-tailwindcss'),
-  ],
+  plugins: [require('prettier-plugin-tailwindcss')],
 };
