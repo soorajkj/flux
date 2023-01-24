@@ -1,4 +1,4 @@
-import Button from '_components/atoms/button';
+import Button from '_components/button';
 
 export default function App() {
   return (
