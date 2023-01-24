@@ -5,9 +5,6 @@ import '_styles/app.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
-// husky check
-console.log('');
-
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${inter.variable} font-inter`}>
