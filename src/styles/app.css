@@ -4,6 +4,19 @@
   --color-accent-dark: hsl(262, 83%, 58%);
   --color-accent-contrast: hsl(0, 0%, 100%);
 
+  --color-green: hsl(147, 67%, 47%);
+  --color-green-light: hsl(187, 26%, 25%);
+  --color-green-dark: hsl(147, 67%, 42%);
+  --color-blue: hsl(186, 100%, 45%);
+  --color-blue-light: hsl(202, 43%, 27%);
+  --color-blue-dark: hsl(187, 100%, 41%);
+  --color-orange: hsl(29, 100%, 63%);
+  --color-orange-light: hsl(340, 8%, 29%);
+  --color-orange-dark: hsl(29, 77%, 57%);
+  --color-red: hsl(360, 78%, 62%);
+  --color-red-light: hsl(306, 16%, 26%);
+  --color-red-dark: hsl(360, 61%, 56%);
+
   --color-primary: hsl(0, 0%, 6%);
   --color-primary-light: hsl(0, 0%, 9%);
   --color-primary-dark: hsl(0, 0%, 9%);
@@ -14,7 +27,6 @@
   --color-tertiary: hsl(0, 0%, 15%);
   --color-tertiary-light: hsl(0, 0%, 9%);
   --color-tertiary-dark: hsl(0, 0%, 18%);
-  --color-box-shadow: hsla(255, 92%, 76%, 0.167);
   /*
   --color-primary: hsl(0, 0%, 100%);
   --color-primary-light: hsl(0, 0%, 98%);
@@ -26,7 +38,6 @@
   --color-tertiary: hsl(220, 14%, 96%);
   --color-tertiary-light: hsl(0, 0%, 96%);
   --color-tertiary-dark: hsl(0, 0%, 83%);
-  --color-box-shadow: hsl(267, 100%, 96%);
   */
 }
 
@@ -44,9 +55,4 @@ body {
 .checkbox::after {
   border-right-width: 1.5px;
   border-bottom-width: 1.5px;
-}
-
-.checkbox:focus,
-.radio:focus {
-  box-shadow: 0px 0px 0px 4px var(--color-box-shadow);
 }
