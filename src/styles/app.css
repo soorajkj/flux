@@ -1,0 +1,52 @@
+:root {
+  --color-accent: hsl(258, 90%, 66%);
+  --color-accent-light: hsl(255, 92%, 76%);
+  --color-accent-dark: hsl(262, 83%, 58%);
+  --color-accent-contrast: hsl(0, 0%, 100%);
+
+  --color-primary: hsl(0, 0%, 6%);
+  --color-primary-light: hsl(0, 0%, 9%);
+  --color-primary-dark: hsl(0, 0%, 9%);
+  --color-primary-contrast: hsl(0, 0%, 5%);
+  --color-secondary: hsl(0, 0%, 64%);
+  --color-secondary-light: hsl(0, 0%, 45%);
+  --color-secondary-dark: hsl(0, 0%, 96%);
+  --color-tertiary: hsl(0, 0%, 15%);
+  --color-tertiary-light: hsl(0, 0%, 9%);
+  --color-tertiary-dark: hsl(0, 0%, 18%);
+  --color-box-shadow: hsla(255, 92%, 76%, 0.167);
+  /*
+  --color-primary: hsl(0, 0%, 100%);
+  --color-primary-light: hsl(0, 0%, 98%);
+  --color-primary-dark: hsl(0, 0%, 96%);
+  --color-primary-contrast: hsl(0, 0%, 100%);
+  --color-secondary: hsl(0, 0%, 45%);
+  --color-secondary-light: hsl(0, 0%, 64%);
+  --color-secondary-dark: hsl(0, 0%, 9%);
+  --color-tertiary: hsl(220, 14%, 96%);
+  --color-tertiary-light: hsl(0, 0%, 96%);
+  --color-tertiary-dark: hsl(0, 0%, 83%);
+  --color-box-shadow: hsl(267, 100%, 96%);
+  */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+.checkbox::after {
+  border-right-width: 1.5px;
+  border-bottom-width: 1.5px;
+}
+
+.checkbox:focus,
+.radio:focus {
+  box-shadow: 0px 0px 0px 4px var(--color-box-shadow);
+}
