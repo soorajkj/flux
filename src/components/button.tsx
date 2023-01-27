@@ -1,10 +1,15 @@
 import { forwardRef } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
-const ButtonStyles = cva([''], {
-  variants: {},
-  defaultVariants: {},
-});
+const ButtonStyles = cva(
+  [
+    'relative inline-flex justify-center items-center rounded border border-color-transparent truncate cursor-pointer select-none py-2 px-6 outline-none',
+  ],
+  {
+    variants: {},
+    defaultVariants: {},
+  }
+);
 
 interface ButtonProps
   extends React.DetailedHTMLProps<
