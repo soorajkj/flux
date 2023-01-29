@@ -3,7 +3,6 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
     colors: {
       'color-transparent': 'transparent',
       'color-current-color': 'currentColor',
@@ -23,5 +22,6 @@ module.exports = {
       'color-accent-contrast': 'var(--color-accent-contrast)',
     },
   },
+  extend: {},
   plugins: [require('prettier-plugin-tailwindcss')],
 };

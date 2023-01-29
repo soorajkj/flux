@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 const ButtonStyles = cva(
-  'relative inline-flex cursor-pointer select-none items-center justify-center truncate rounded border border-color-transparent py-2 px-6'
+  'relative inline-flex cursor-pointer select-none items-center justify-center truncate rounded border border-color-transparent'
 );
 
 interface ButtonProps
@@ -13,10 +13,7 @@ interface ButtonProps
       HTMLButtonElement
     >,
     React.AriaAttributes,
-    VariantProps<typeof ButtonStyles> {
-  loading?: boolean;
-  as?: keyof JSX.IntrinsicElements;
-}
+    VariantProps<typeof ButtonStyles> {}
 
 export default forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   { children, type = 'button', className, ...props },

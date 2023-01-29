@@ -15,9 +15,7 @@
   --color-tertiary: hsl(220, 14%, 96%);
   --color-tertiary-light: hsl(0, 0%, 96%);
   --color-tertiary-dark: hsl(0, 0%, 83%);
-}
 
-:root[data-theme='dark'] {
   --color-primary: hsl(0, 0%, 6%);
   --color-primary-light: hsl(0, 0%, 9%);
   --color-primary-dark: hsl(0, 0%, 9%);
