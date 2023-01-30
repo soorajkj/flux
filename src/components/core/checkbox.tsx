@@ -3,9 +3,10 @@
 import { forwardRef } from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { cva, VariantProps } from 'class-variance-authority';
+import Icon from '_components/core/icon';
 
 const CheckboxStyles = cva(
-  'relative inline-flex h-4 w-4 cursor-pointer select-none items-center justify-center overflow-hidden rounded-sm border disabled:cursor-auto disabled:opacity-50'
+  'peer relative m-1 h-4 w-4 shrink-0 rounded-sm border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900 dark:data-[state=checked]:bg-purple-600 dark:data-[state=checked]:border-purple-600'
 );
 
 interface CheckboxProps
@@ -22,7 +23,9 @@ export default forwardRef<
       className={CheckboxStyles({ className })}
       {...props}
     >
-      <CheckboxPrimitive.Indicator className="absolute left-1/2 top-1/2 block h-2 w-1 -translate-x-1/2 -translate-y-2/3 rotate-45 border-b border-r" />
+      <CheckboxPrimitive.Indicator className="flex items-center justify-center">
+        <Icon icon="check" width={24} height={24} className="h-4 w-4" />
+      </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   );
 });
