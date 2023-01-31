@@ -1,9 +1,9 @@
-import '_styles/tailwind.css';
-import '_styles/app.css';
 import Separator from '_components/core/separator';
 import Sidemenu from '_components/sidemenu';
 import Header from '_components/header';
 import Footer from '_components/footer';
+import '_styles/tailwind.css';
+import '_styles/app.css';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
