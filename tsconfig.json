@@ -22,7 +22,11 @@
       "_public": ["./public"],
       "_styles/*": ["./src/styles/*"],
       "_components": ["./src/components"],
-      "_components/*": ["./src/components/*"]
+      "_components/*": ["./src/components/*"],
+      "_constants": ["./src/constants"],
+      "_constants/*": ["./src/constants/*"],
+      "_types": ["./src/types"],
+      "_types/*": ["./src/types/*"]
     },
     "plugins": [{ "name": "next" }]
   },
