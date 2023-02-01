@@ -19,14 +19,10 @@
     // with `/*` for accessing the nested folder.
     // without `/*` for `folder/index.ts`
     "paths": {
-      "_public": ["./public"],
-      "_styles/*": ["./src/styles/*"],
-      "_components": ["./src/components"],
-      "_components/*": ["./src/components/*"],
-      "_constants": ["./src/constants"],
-      "_constants/*": ["./src/constants/*"],
-      "_types": ["./src/types"],
-      "_types/*": ["./src/types/*"]
+      "@/public": ["./public"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/components": ["./src/components"],
+      "@/components/*": ["./src/components/*"]
     },
     "plugins": [{ "name": "next" }]
   },

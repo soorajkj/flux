@@ -1,8 +1,8 @@
 'use client';
 
+import * as React from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cva, VariantProps } from 'class-variance-authority';
-import { forwardRef } from 'react';
 
 const SeparatorStyles = cva('pointer-events-none bg-color-tertiary', {
   variants: {
@@ -11,19 +11,19 @@ const SeparatorStyles = cva('pointer-events-none bg-color-tertiary', {
       horizontal: 'h-px w-full',
     },
   },
+  defaultVariants: {
+    orientation: 'horizontal',
+  },
 });
 
 interface SeparatorProps
   extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>,
     VariantProps<typeof SeparatorStyles> {}
 
-export default forwardRef<
+const Separator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   SeparatorProps
->(function Separator(
-  { className, orientation = 'horizontal', decorative = true, ...props },
-  ref
-) {
+>(({ className, orientation, decorative = true, ...props }, ref) => {
   return (
     <SeparatorPrimitive.Root
       ref={ref}
@@ -34,3 +34,7 @@ export default forwardRef<
     />
   );
 });
+
+Separator.displayName = SeparatorPrimitive.Root.displayName;
+
+export default Separator;
