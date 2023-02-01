@@ -1,28 +1,27 @@
 import * as React from 'react';
-import Folder from '@/public/folder.svg';
-import User from '@/public/user.svg';
-import Settings from '@/public/settings.svg';
-import Check from '@/public/check.svg';
+import Folder from 'public/folder.svg';
+import User from 'public/user.svg';
+import Settings from 'public/settings.svg';
+import Check from 'public/check.svg';
 
-const IconTypes = {
+export const Icons = {
   folder: Folder,
   user: User,
   settings: Settings,
   check: Check,
 } as const;
 
-interface IconProps
+export interface IconProps
   extends React.DetailedHTMLProps<React.SVGAttributes<SVGElement>, SVGElement> {
-  icon: keyof typeof IconTypes;
+  icon: keyof typeof Icons;
 }
 
-const Icon = React.forwardRef<SVGElement, IconProps>(
-  ({ icon, ...props }: IconProps, ref) => {
-    const SVGElement = IconTypes[icon];
+const Icon = React.forwardRef<SVGElement, IconProps>((props, ref) => {
+  const { icon, ...rest } = props;
 
-    return <SVGElement ref={ref} {...props} />;
-  }
-);
+  const SVGElement = Icons[icon];
+  return <SVGElement ref={ref} {...rest} />;
+});
 
 Icon.displayName = 'Icon';
 
