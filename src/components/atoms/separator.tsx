@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cva, VariantProps } from 'class-variance-authority';
 
-export const SeparatorStyles = cva('pointer-events-none bg-color-tertiary', {
+const SeparatorStyles = cva('pointer-events-none bg-color-tertiary', {
   variants: {
     orientation: {
       vertical: 'h-full w-px',
@@ -13,7 +13,7 @@ export const SeparatorStyles = cva('pointer-events-none bg-color-tertiary', {
   },
 });
 
-export interface SeparatorProps
+interface SeparatorProps
   extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>,
     VariantProps<typeof SeparatorStyles> {}
 

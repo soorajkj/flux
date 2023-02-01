@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { cva, VariantProps } from 'class-variance-authority';
-import Icon from './icon';
+import Icon from '@/components/atoms/icon';
 
 const CheckboxStyles = cva(
   'peer inline-block h-4 w-4 shrink-0 rounded-sm border border-color-tertiary-dark focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-auto disabled:opacity-50'
