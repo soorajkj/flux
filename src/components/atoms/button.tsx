@@ -15,7 +15,7 @@ interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
-    const { type = 'button', className, ...rest } = props;
+    const { children, type = 'button', className, ...rest } = props;
 
     return (
       <button
@@ -23,7 +23,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         type={type}
         className={buttonVariants({ className })}
         {...rest}
-      />
+      >
+        {children}
+      </button>
     );
   }
 );
