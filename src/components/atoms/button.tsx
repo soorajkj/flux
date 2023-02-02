@@ -15,10 +15,15 @@ interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
-    const { className, ...rest } = props;
+    const { type = 'button', className, ...rest } = props;
 
     return (
-      <button ref={ref} className={buttonVariants({ className })} {...rest} />
+      <button
+        ref={ref}
+        type={type}
+        className={buttonVariants({ className })}
+        {...rest}
+      />
     );
   }
 );
