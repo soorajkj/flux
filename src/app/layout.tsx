@@ -7,7 +7,7 @@ import Sidebar from '@/components/organisms/sidebar';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html suppressHydrationWarning>
+    <html>
       <head />
       <body>
         <div className="flex h-screen w-screen overflow-hidden">
