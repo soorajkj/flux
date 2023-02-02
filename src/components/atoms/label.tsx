@@ -5,7 +5,7 @@ import * as LabelPrimitive from '@radix-ui/react-label';
 import { cva, VariantProps } from 'class-variance-authority';
 
 const LabelStyles = cva(
-  'text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+  'text-sm leading-none peer-disabled:cursor-default peer-disabled:opacity-70'
 );
 
 interface LabelProps
