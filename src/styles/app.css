@@ -22,14 +22,14 @@
   border-r-0 
   border-solid 
   border-color-tertiary-light 
-  bg-transparent;
+  bg-color-transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   @apply rounded-full 
   border-4 
   border-solid 
-  border-transparent 
+  border-color-transparent 
   bg-color-tertiary 
   bg-clip-content 
   hover:bg-color-tertiary-dark 
