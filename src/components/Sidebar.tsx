@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { cva } from 'class-variance-authority';
-import Icon from '@/components/atoms/icon';
-import Toggle from '@/components/atoms/toggle';
+import Icon from '@/components/Icon';
+import Toggle from '@/components/Toggle';
 
 const SidebarStyles = cva('group relative h-full transition-all', {
   variants: {
