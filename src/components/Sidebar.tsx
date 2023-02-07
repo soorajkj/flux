@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { cva } from 'class-variance-authority';
 import Icon from '@/components/Icon';
 import Toggle from '@/components/Toggle';
@@ -31,6 +32,32 @@ export default function Sidebar() {
           className={!isOpen ? 'rotate-0' : 'rotate-180'}
         />
       </Toggle>
+      <div className="h-14 w-full"></div>
+      <ul className="flex flex-col space-y-2">
+        {[
+          { id: 1, path: '/', label: '', icon: 'settings' },
+          { id: 2, path: '/', label: '', icon: 'settings' },
+          { id: 3, path: '/', label: '', icon: 'settings' },
+          { id: 4, path: '/', label: '', icon: 'settings' },
+        ].map(
+          ({
+            id,
+            path,
+            icon,
+          }: {
+            id: number;
+            path: string;
+            label: string;
+            icon: any;
+          }) => (
+            <li key={id}>
+              <Link href={path}>
+                <Icon icon={icon} />
+              </Link>
+            </li>
+          )
+        )}
+      </ul>
     </nav>
   );
 }
