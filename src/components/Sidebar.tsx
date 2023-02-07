@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { cva } from 'class-variance-authority';
-import Icon from '@/components/atoms/icon';
-import Toggle from '@/components/atoms/toggle';
+import Icon from '@/components/core/Icon';
+import Toggle from '@/components/core/Toggle';
+import ActiveRoute from '@/components/ActiveRoute';
 
 const SidebarStyles = cva('group relative h-full transition-all', {
   variants: {
@@ -31,6 +32,24 @@ export default function Sidebar() {
           className={!isOpen ? 'rotate-0' : 'rotate-180'}
         />
       </Toggle>
+      <div className="h-14 w-full"></div>
+      <ul className="flex flex-col space-y-2">
+        {[
+          { id: 1, href: '/', label: '', icon: '' },
+          { id: 2, href: '/', label: '', icon: '' },
+          { id: 3, href: '/', label: '', icon: '' },
+          { id: 4, href: '/', label: '', icon: '' },
+        ].map(({ id, href, label }) => (
+          <li key={id} className="mx-auto inline-flex">
+            <ActiveRoute
+              href={href}
+              className="inline-flex h-10 w-10 items-center justify-center rounded bg-color-primary-dark"
+            >
+              {label}
+            </ActiveRoute>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }
