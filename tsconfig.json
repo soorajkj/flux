@@ -22,7 +22,9 @@
       "@/public": ["./public"],
       "@/styles/*": ["./src/styles/*"],
       "@/components": ["./src/components"],
-      "@/components/*": ["./src/components/*"]
+      "@/components/*": ["./src/components/*"],
+      "@/types": ["./src/types"],
+      "@/types/*": ["./src/types/*"]
     },
     "plugins": [{ "name": "next" }]
   },
