@@ -3,7 +3,7 @@ import '@/styles/app.css';
 import Separator from '@/components/Separator';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Sidebar from '@/components/Sidebar';
+import Navbar from '@/components/Navbar';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <div className="flex h-screen w-screen overflow-hidden">
           <aside className="h-full w-auto">
-            <Sidebar />
+            <Navbar />
           </aside>
           <Separator orientation="vertical" />
           <div className="flex h-full w-full flex-col">
