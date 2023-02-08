@@ -1,6 +1,6 @@
 import '@/styles/tailwind.css';
 import '@/styles/app.css';
-import Separator from '@/components/core/Separator';
+import Separator from '@/components/Separator';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Sidebar from '@/components/Sidebar';

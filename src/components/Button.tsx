@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { VariantProps, cva } from 'class-variance-authority';
 
-const buttonVariants = cva(
+const ButtonStyles = cva(
   'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none data-[state=open]:bg-slate-100'
 );
 
@@ -11,7 +11,7 @@ interface ButtonProps
       HTMLButtonElement
     >,
     React.AriaAttributes,
-    VariantProps<typeof buttonVariants> {}
+    VariantProps<typeof ButtonStyles> {}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
@@ -21,7 +21,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         type={type}
-        className={buttonVariants({ className })}
+        className={ButtonStyles({ className })}
         {...rest}
       >
         {children}

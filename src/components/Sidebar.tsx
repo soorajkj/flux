@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { cva } from 'class-variance-authority';
-import Icon from '@/components/core/Icon';
-import Toggle from '@/components/core/Toggle';
-import ActiveRoute from '@/components/ActiveRoute';
+import Icon from '@/components/Icon';
+import Toggle from '@/components/Toggle';
 
 const SidebarStyles = cva('group relative h-full transition-all', {
   variants: {
@@ -35,20 +35,28 @@ export default function Sidebar() {
       <div className="h-14 w-full"></div>
       <ul className="flex flex-col space-y-2">
         {[
-          { id: 1, href: '/', label: '', icon: '' },
-          { id: 2, href: '/', label: '', icon: '' },
-          { id: 3, href: '/', label: '', icon: '' },
-          { id: 4, href: '/', label: '', icon: '' },
-        ].map(({ id, href, label }) => (
-          <li key={id} className="mx-auto inline-flex">
-            <ActiveRoute
-              href={href}
-              className="inline-flex h-10 w-10 items-center justify-center rounded bg-color-primary-dark"
-            >
-              {label}
-            </ActiveRoute>
-          </li>
-        ))}
+          { id: 1, path: '/', label: '', icon: 'settings' },
+          { id: 2, path: '/', label: '', icon: 'settings' },
+          { id: 3, path: '/', label: '', icon: 'settings' },
+          { id: 4, path: '/', label: '', icon: 'settings' },
+        ].map(
+          ({
+            id,
+            path,
+            icon,
+          }: {
+            id: number;
+            path: string;
+            label: string;
+            icon: any;
+          }) => (
+            <li key={id}>
+              <Link href={path}>
+                <Icon icon={icon} />
+              </Link>
+            </li>
+          )
+        )}
       </ul>
     </nav>
   );
