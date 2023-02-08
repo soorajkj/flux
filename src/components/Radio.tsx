@@ -14,7 +14,7 @@ const RadioGroup = React.forwardRef<
 });
 
 const RadioGroupItemStyles = cva(
-  'text:fill-slate-50 peer h-4 w-4 rounded-full border border-color-tertiary text-color-secondary focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-default disabled:opacity-50 data-[state=checked]:border-color-accent'
+  'text:fill-slate-50 peer h-4 w-4 rounded-full border-2 border-color-tertiary text-color-secondary transition-colors focus:outline-none focus:ring-offset-0 disabled:cursor-default disabled:opacity-50 data-[state=checked]:border-color-accent'
 );
 
 const RadioGroupItem = React.forwardRef<

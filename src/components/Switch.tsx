@@ -5,7 +5,7 @@ import * as SwitchPrimitives from '@radix-ui/react-switch';
 import { cva, VariantProps } from 'class-variance-authority';
 
 const SwitchStyles = cva(
-  'peer inline-flex h-4 w-6 shrink-0 cursor-pointer items-center rounded-full bg-color-transparent border-2 border-color-tertiary transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-default disabled:opacity-50 data-[state=unchecked]:bg-color-primary data-[state=checked]:border-color-accent'
+  'peer inline-flex h-4 w-6 shrink-0 cursor-pointer items-center rounded-full bg-color-transparent border-2 border-color-tertiary transition-colors focus:outline-none disabled:cursor-default disabled:opacity-50 data-[state=unchecked]:bg-color-primary data-[state=checked]:border-color-accent'
 );
 
 interface SwitchProps
