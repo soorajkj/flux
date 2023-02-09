@@ -2,6 +2,9 @@
 
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ['avatars.githubusercontent.com'],
+  },
   // app dir
   experimental: { appDir: true },
   // svgr comp
