@@ -1,11 +1,12 @@
 'use client';
 
-import { useSupabase } from '@/components/SupabaseProvider';
+import { useSupabase } from '@/components/supabase-provider';
 
 // Supabase auth needs to be triggered client-side
-export default function Login() {
+export default function Auth() {
   const { supabase, session } = useSupabase();
 
+  // auth with github
   const handleGitHubLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
