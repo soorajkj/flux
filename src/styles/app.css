@@ -16,28 +16,28 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply border-l 
-  border-t-0 
-  border-b-0 
-  border-r-0 
-  border-solid 
-  border-color-tertiary-light 
+  @apply border-l
+  border-t-0
+  border-b-0
+  border-r-0
+  border-solid
+  border-color-tertiary-light
   bg-color-transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-full 
-  border-4 
-  border-solid 
-  border-color-transparent 
-  bg-color-tertiary 
-  bg-clip-content 
-  hover:bg-color-tertiary-dark 
+  @apply rounded-full
+  border-4
+  border-solid
+  border-color-transparent
+  bg-color-tertiary
+  bg-clip-content
+  hover:bg-color-tertiary-dark
   hover:bg-clip-content;
 }
 
 ::-webkit-scrollbar {
-  @apply h-0 
+  @apply h-0
   w-4;
 }
 
@@ -46,9 +46,19 @@ html {
 }
 
 body {
-  @apply bg-color-primary 
-  text-sm 
-  font-normal 
-  leading-snug 
-  text-color-secondary;
+  @apply relative
+  bg-color-primary
+  text-sm
+  font-normal
+  leading-snug
+  text-color-secondary
+  after:pointer-events-none
+  after:fixed
+  after:top-0
+  after:right-0 after:bottom-0
+  after:left-0
+  after:bg-[url('/retronoise.webp')]
+  after:bg-center
+  after:bg-repeat
+  after:opacity-25;
 }
