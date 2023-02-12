@@ -23,6 +23,9 @@ module.exports = {
       'color-tertiary-dark': 'var(--color-tertiary-dark)',
     },
   },
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   plugins: [
     require('prettier-plugin-tailwindcss', require('tailwindcss-animate')),
   ],
