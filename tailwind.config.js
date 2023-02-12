@@ -1,45 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {},
     fontFamily: {
-      sans: [
-        'Inter var',
-        'ui-sans-serif',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
-      serif: [
-        'ui-serif',
-        'Georgia',
-        'Cambria',
-        '"Times New Roman"',
-        'Times',
-        'serif',
-      ],
-      mono: [
-        'ui-monospace',
-        'SFMono-Regular',
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace',
-      ],
+      sans: ['var(--font-inter)', ...fontFamily.sans],
+      serif: [...fontFamily.serif],
+      mono: [...fontFamily.mono],
     },
     colors: {
       'color-transparent': 'transparent',

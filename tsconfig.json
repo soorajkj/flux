@@ -32,6 +32,8 @@
       "@/components/*": ["./src/components/*"],
       "@/pages": ["./src/pages"],
       "@/pages/*": ["./src/pages/*"],
+      "@/configs": ["./src/configs"],
+      "@/configs/*": ["./src/configs/*"],
       "@/styles/*": ["./src/styles/*"]
     },
     "plugins": [{ "name": "next" }]

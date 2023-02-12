@@ -48,8 +48,9 @@ html {
 body {
   @apply relative
   bg-color-primary
+  font-sans
   text-sm
   font-normal
   leading-snug
-  text-color-secondary;
+  text-color-secondary-light;
 }

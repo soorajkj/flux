@@ -5,8 +5,12 @@ const nextConfig = {
   images: {
     domains: ['avatars.githubusercontent.com'],
   },
-  // app dir
-  experimental: { appDir: true },
+  experimental: {
+    appDir: true,
+    fontLoaders: [
+      { loader: '@next/font/google', options: { subsets: ['latin'] } },
+    ],
+  },
   // svgr comp
   webpack(config) {
     config.module.rules.push({
