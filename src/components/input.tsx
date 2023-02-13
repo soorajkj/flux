@@ -2,7 +2,7 @@ import * as React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 const InputStyles = cva(
-  'relative inline-block border-b border-color-tertiary bg-color-transparent py-2 px-3 rounded'
+  'relative inline-block border border-color-tertiary bg-color-primary-light py-2 px-3 rounded text-color-secondary-dark placeholder:text-color-tertiary'
 );
 
 interface InputProps
