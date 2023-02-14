@@ -4,6 +4,10 @@ import User from 'public/user.svg';
 import Settings from 'public/settings.svg';
 import Check from 'public/check.svg';
 import Menu from 'public/menu.svg';
+import Google from 'public/google.svg';
+import Github from 'public/github.svg';
+import Loader from 'public/loader.svg';
+import Spin from 'public/spin.svg';
 
 const Icons = {
   folder: Folder,
@@ -11,6 +15,10 @@ const Icons = {
   settings: Settings,
   check: Check,
   menu: Menu,
+  google: Google,
+  github: Github,
+  loader: Loader,
+  spin: Spin,
 } as const;
 
 interface IconProps
