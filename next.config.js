@@ -2,14 +2,8 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: ['avatars.githubusercontent.com'],
-  },
   experimental: {
     appDir: true,
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } },
-    ],
   },
   // svgr comp
   webpack(config) {

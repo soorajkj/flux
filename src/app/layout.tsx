@@ -1,7 +1,10 @@
 import * as React from 'react';
-import { LayoutProps } from '@/types/layout';
 import '@/styles/tailwind.css';
 import '@/styles/app.css';
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
 
 export default async function Layout(props: LayoutProps) {
   const { children } = props;
