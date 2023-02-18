@@ -22,8 +22,8 @@
       "@/public": ["./public"],
       "@/app": ["./src/app"],
       "@/app/*": ["./src/app/*"],
-      "@/libs": ["./src/libs"],
-      "@/libs/*": ["./src/libs/*"],
+      "@/lib": ["./src/lib"],
+      "@/lib/*": ["./src/lib/*"],
       "@/utils": ["./src/utils"],
       "@/utils/*": ["./src/utils/*"],
       "@/types": ["./src/types"],
@@ -32,8 +32,6 @@
       "@/components/*": ["./src/components/*"],
       "@/pages": ["./src/pages"],
       "@/pages/*": ["./src/pages/*"],
-      "@/configs": ["./src/configs"],
-      "@/configs/*": ["./src/configs/*"],
       "@/styles/*": ["./src/styles/*"]
     },
     "plugins": [{ "name": "next" }]
