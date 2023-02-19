@@ -9,7 +9,7 @@ const SeparatorStyles = cva(
   {
     variants: {
       orientation: {
-        vertical: 'border-x  h-full',
+        vertical: 'border-r  h-full',
         horizontal: 'border-t w-full',
       },
     },
