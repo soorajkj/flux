@@ -54,3 +54,10 @@ body {
   leading-snug
   text-color-secondary-light;
 }
+
+.container {
+  @apply mx-auto
+  w-full
+  max-w-6xl
+  px-4;
+}
