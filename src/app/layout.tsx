@@ -1,6 +1,13 @@
 import { LayoutProps } from '@/types/layout';
+import { Inter } from '@next/font/google';
 import '@/styles/tailwind.css';
 import '@/styles/app.css';
+
+const inter = Inter({
+  variable: '--family-inter',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default async function Layout(props: LayoutProps) {
   const { children } = props;
@@ -8,7 +15,7 @@ export default async function Layout(props: LayoutProps) {
   return (
     <html lang="en">
       <head />
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
