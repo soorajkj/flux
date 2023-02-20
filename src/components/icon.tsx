@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Daybook from 'public/daybook.svg';
 import Folder from 'public/folder.svg';
 import User from 'public/user.svg';
 import Settings from 'public/settings.svg';
@@ -11,6 +12,7 @@ import Spin from 'public/spin.svg';
 
 const Icons = {
   folder: Folder,
+  daybook: Daybook,
   user: User,
   settings: Settings,
   check: Check,
