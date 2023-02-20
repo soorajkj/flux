@@ -11,7 +11,7 @@ export default function Layout(props: LayoutProps) {
       <div className="flex h-full w-full flex-col">
         <Header />
         <Separator orientation="horizontal" />
-        <main className="h-full w-full overflow-y-auto">
+        <main className="h-full w-full flex-1 overflow-y-auto">
           <div className="container">{children}</div>
         </main>
         <Separator orientation="horizontal" />
