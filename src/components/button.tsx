@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { VariantProps, cva } from 'class-variance-authority';
-import Icon from './icon';
+import Icon from '@/components/icon';
 
 const ButtonStyles = cva(
   'relative inline-flex items-center justify-center rounded text-center text-sm font-medium leading-none whitespace-nowrap transition select-none overflow-hidden outline-none focus:ring-2 focus:ring-offset-1',
