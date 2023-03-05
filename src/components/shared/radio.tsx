@@ -1,10 +1,10 @@
 'use client';
 
-import * as React from 'react';
+import { forwardRef } from 'react';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import { cva } from 'class-variance-authority';
 
-const RadioGroup = React.forwardRef<
+const RadioGroup = forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
 >((props, ref) => {
@@ -17,7 +17,7 @@ const RadioGroupItemStyles = cva(
   'text:fill-slate-50 peer h-4 w-4 rounded-full border-2 border-color-tertiary text-color-secondary transition-colors focus:outline-none focus:ring-offset-0 disabled:cursor-default disabled:opacity-50 data-[state=checked]:border-color-accent'
 );
 
-const RadioGroupItem = React.forwardRef<
+const RadioGroupItem = forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
 >((props, ref) => {

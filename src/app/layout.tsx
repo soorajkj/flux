@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { inter } from '@/lib/fonts';
-import { LayoutProps } from '@/types/layout';
 import '@/styles/tailwind.css';
 import '@/styles/app.css';
 
@@ -10,18 +9,16 @@ export const metadata: Metadata = {
   generator: 'Next.js',
   applicationName: 'Next.js',
   referrer: 'origin-when-cross-origin',
-  keywords: ['Next', 'React', 'Typescript'],
+  keywords: [],
   creator: '',
   publisher: '',
-  colorScheme: 'dark',
 };
 
-export default async function AppLayout(props: LayoutProps) {
+export default async function AppLayout(props: { children: React.ReactNode }) {
   const { children } = props;
 
   return (
     <html lang="en">
-      <head />
       <body className={inter.className}>{children}</body>
     </html>
   );

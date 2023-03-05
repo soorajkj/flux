@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 const InputStyles = cva(
@@ -13,7 +13,7 @@ interface InputProps
     React.AriaAttributes,
     VariantProps<typeof InputStyles> {}
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const { type = 'text', className, ...rest } = props;
 
   return (

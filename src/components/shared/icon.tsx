@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import Daybook from 'public/daybook.svg';
 import Folder from 'public/folder.svg';
 import User from 'public/user.svg';
@@ -28,7 +28,7 @@ interface IconProps
   icon: keyof typeof Icons;
 }
 
-const Icon = React.forwardRef<SVGElement, IconProps>((props, ref) => {
+const Icon = forwardRef<SVGElement, IconProps>((props, ref) => {
   const { icon, ...rest } = props;
 
   const SVGElement = Icons[icon];

@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import { forwardRef } from 'react';
 import * as SwitchPrimitives from '@radix-ui/react-switch';
 import { cva, VariantProps } from 'class-variance-authority';
 
@@ -12,7 +12,7 @@ interface SwitchProps
   extends React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>,
     VariantProps<typeof SwitchStyles> {}
 
-const Switch = React.forwardRef<
+const Switch = forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   SwitchProps
 >((props, ref) => {

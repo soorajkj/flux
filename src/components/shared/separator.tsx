@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import { forwardRef } from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cva, VariantProps } from 'class-variance-authority';
 
@@ -20,16 +20,11 @@ interface SeparatorProps
   extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>,
     VariantProps<typeof SeparatorStyles> {}
 
-const Separator = React.forwardRef<
+const Separator = forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   SeparatorProps
 >((props, ref) => {
-  const {
-    className,
-    orientation = 'horizontal',
-    decorative = true,
-    ...rest
-  } = props;
+  const { className, orientation, decorative = true, ...rest } = props;
 
   return (
     <SeparatorPrimitive.Root
