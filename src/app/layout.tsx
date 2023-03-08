@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { inter } from '@/lib/fonts';
 import '@/styles/tailwind.css';
+import 'reactflow/dist/style.css';
 import '@/styles/app.css';
 
 export const metadata: Metadata = {
