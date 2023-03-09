@@ -5,12 +5,12 @@ import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cva, VariantProps } from 'class-variance-authority';
 
 const SeparatorStyles = cva(
-  'inline-block pointer-events-none border-color-tertiary border-solid',
+  'inline-block pointer-events-none bg-color-tertiary-light',
   {
     variants: {
       orientation: {
-        vertical: 'border-r h-full',
-        horizontal: 'border-t w-full',
+        vertical: 'w-px h-full',
+        horizontal: 'h-px w-full',
       },
     },
   }
@@ -24,7 +24,12 @@ const Separator = forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   SeparatorProps
 >((props, ref) => {
-  const { className, orientation, decorative = true, ...rest } = props;
+  const {
+    className,
+    orientation = 'horizontal',
+    decorative = true,
+    ...rest
+  } = props;
 
   return (
     <SeparatorPrimitive.Root

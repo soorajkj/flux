@@ -9,6 +9,10 @@ import Google from 'public/google.svg';
 import Github from 'public/github.svg';
 import Loader from 'public/loader.svg';
 import Spin from 'public/spin.svg';
+import Plus from 'public/plus.svg';
+import Minus from 'public/minus.svg';
+import Maximize from 'public/maximize.svg';
+import Lock from 'public/lock.svg';
 
 const Icons = {
   folder: Folder,
@@ -21,6 +25,10 @@ const Icons = {
   github: Github,
   loader: Loader,
   spin: Spin,
+  plus: Plus,
+  minus: Minus,
+  maximize: Maximize,
+  lock: Lock,
 } as const;
 
 interface IconProps
