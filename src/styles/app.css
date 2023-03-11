@@ -1,19 +1,6 @@
-:root {
-  --color-accent: rgb(137, 90, 246);
-  --color-accent-light: rgb(166, 137, 250);
-  --color-accent-dark: rgb(124, 59, 237);
-  --color-accent-contrast: rgb(255, 255, 255);
-  --color-primary: rgb(15, 15, 15);
-  --color-primary-light: rgb(23, 23, 23);
-  --color-primary-dark: rgb(23, 23, 23);
-  --color-primary-contrast: rgb(13, 13, 13);
-  --color-secondary: rgb(163, 163, 163);
-  --color-secondary-light: rgb(115, 115, 115);
-  --color-secondary-dark: rgb(245, 245, 245);
-  --color-tertiary: rgb(38, 38, 38);
-  --color-tertiary-light: rgb(23, 23, 23);
-  --color-tertiary-dark: rgb(46, 46, 46);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 ::-webkit-scrollbar-track {
   @apply border-l
@@ -53,34 +40,4 @@ body {
   font-normal
   leading-snug
   text-color-secondary-light;
-}
-
-.container {
-  @apply mx-auto
-  w-full
-  max-w-6xl
-  px-4;
-}
-
-.db-hierarchy .react-flow__controls-button,
-.db-hierarchy button {
-  background-color: var(--color-primary);
-  border-bottom: none;
-  border: 1px solid var(--color-tertiary-light);
-  width: 24px;
-  height: 24px;
-}
-
-.db-hierarchy .react-flow__controls-button:hover,
-.db-hierarchy button:hover {
-  background-color: var(--color-primary-dark);
-}
-
-.db-hierarchy .react-flow__controls-button svg path,
-.db-hierarchy button svg path {
-  fill: var(--color-secondary);
-}
-
-.react-flow__attribution {
-  display: none;
 }

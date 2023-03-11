@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { inter } from '@/lib/fonts';
-import '@/styles/tailwind.css';
 import 'reactflow/dist/style.css';
+import ThemeProvider from '@/components/ThemeProvider';
+import Fonts from '@/components/Fonts';
 import '@/styles/app.css';
 
 export const metadata: Metadata = {
@@ -20,7 +20,10 @@ export default async function AppLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Fonts />
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

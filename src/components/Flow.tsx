@@ -14,19 +14,19 @@ import ReactFlow, {
 const initialNodes: Node[] = [];
 const initialEdges: Edge[] = [];
 
-export default function Hierarchy() {
+export default function Flow() {
   const [nodes, setNodes] = useState<Node[]>(initialNodes);
   const [edges, setEdges] = useState<Edge[]>(initialEdges);
 
   const onNodesChange = useCallback(
     (changes: NodeChange[]) =>
-      setNodes((nds) => applyNodeChanges(changes, nds)),
+      setNodes((nodes) => applyNodeChanges(changes, nodes)),
     [setNodes]
   );
 
   const onEdgesChange = useCallback(
     (changes: EdgeChange[]) =>
-      setEdges((eds) => applyEdgeChanges(changes, eds)),
+      setEdges((edges) => applyEdgeChanges(changes, edges)),
     [setEdges]
   );
 
