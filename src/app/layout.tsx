@@ -1,26 +1,13 @@
-import type { Metadata } from 'next';
-import 'reactflow/dist/style.css';
+import { LayoutProps } from '@/types/layout';
 import ThemeProvider from '@/components/ThemeProvider';
 import Fonts from '@/components/Fonts';
+import 'reactflow/dist/style.css';
 import '@/styles/app.css';
 
-export const metadata: Metadata = {
-  title: '',
-  description: '',
-  generator: 'Next.js',
-  applicationName: 'Next.js',
-  referrer: 'origin-when-cross-origin',
-  keywords: [],
-  creator: '',
-  publisher: '',
-};
-
-export default async function AppLayout(props: { children: React.ReactNode }) {
-  const { children } = props;
-
+export default async function AppLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ fontFamily: 'var(--family-inter)' }}>
         <Fonts />
         <ThemeProvider>{children}</ThemeProvider>
       </body>

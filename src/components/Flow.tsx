@@ -1,70 +1,43 @@
+/* eslint-disable no-unused-vars */
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import ReactFlow, {
-  applyEdgeChanges,
-  applyNodeChanges,
+  addEdge,
   Connection,
   Edge,
-  EdgeChange,
   Node,
-  NodeChange,
+  useEdgesState,
+  useNodesState,
 } from 'reactflow';
-
-const initialNodes: Node[] = [];
-const initialEdges: Edge[] = [];
+import { initialEdges, initialNodes } from 'src/mocks/flow';
+import FlowNode from '@/components/FlowNode';
 
 export default function Flow() {
-  const [nodes, setNodes] = useState<Node[]>(initialNodes);
-  const [edges, setEdges] = useState<Edge[]>(initialEdges);
+  const [nodes, setNodes, onNodesChange] = useNodesState<Node[]>(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge[]>(initialEdges);
+  const nodeTypes = useMemo(() => ({ custom: FlowNode }), []);
 
-  const onNodesChange = useCallback(
-    (changes: NodeChange[]) =>
-      setNodes((nodes) => applyNodeChanges(changes, nodes)),
-    [setNodes]
-  );
-
-  const onEdgesChange = useCallback(
-    (changes: EdgeChange[]) =>
-      setEdges((edges) => applyEdgeChanges(changes, edges)),
+  const onConnect = useCallback(
+    (params: Connection) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
   );
 
-  const _handleAddNode = useCallback(() => {
-    setNodes([
-      ...nodes,
-      {
-        id: Math.random().toString(),
-        position: { x: 100, y: 100 },
-        data: { label: '' },
-      },
-    ]);
-  }, [nodes]);
+  const handleNodeClick = () => {};
 
-  const handleAddEdge = useCallback(
-    ({ source, target }: Connection) => {
-      setEdges([
-        ...edges,
-        {
-          id: Math.random().toString(),
-          source,
-          target,
-          type: 'simplebezier',
-        },
-      ]);
-    },
-    [edges]
-  );
+  const handleEdgeClick = () => {};
 
   return (
-    <div className="relative flex h-full w-full flex-col">
+    <div className="relative flex h-full w-full">
       <ReactFlow
         nodes={nodes}
-        onNodesChange={onNodesChange}
         edges={edges}
+        onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        onConnect={handleAddEdge}
-        fitView
+        onEdgeClick={handleEdgeClick}
+        onNodeClick={handleNodeClick}
+        onConnect={onConnect}
+        nodeTypes={nodeTypes}
         className="h-full w-full flex-1"
       ></ReactFlow>
     </div>

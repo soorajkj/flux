@@ -1,8 +1,12 @@
 import { forwardRef } from 'react';
-import Lock from '@/public/lock.svg';
+import Plus from 'public/plus.svg';
+import Minus from 'public/minus.svg';
+import Maximize from 'public/maximize.svg';
 
 const Icons = {
-  lock: Lock,
+  plus: Plus,
+  minus: Minus,
+  maximize: Maximize,
 } as const;
 
 interface IconProps

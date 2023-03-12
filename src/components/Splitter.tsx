@@ -4,25 +4,22 @@ import { forwardRef } from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cva, VariantProps } from 'class-variance-authority';
 
-const SeparatorStyles = cva(
-  'inline-block pointer-events-none bg-color-tertiary-light',
-  {
-    variants: {
-      orientation: {
-        vertical: 'w-px h-full',
-        horizontal: 'h-px w-full',
-      },
+const SplitterStyles = cva('inline-block pointer-events-none bg-zinc-800', {
+  variants: {
+    orientation: {
+      vertical: 'w-px h-full',
+      horizontal: 'h-px w-full',
     },
-  }
-);
+  },
+});
 
-interface SeparatorProps
+interface SplitterProps
   extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>,
-    VariantProps<typeof SeparatorStyles> {}
+    VariantProps<typeof SplitterStyles> {}
 
-const Separator = forwardRef<
+const Splitter = forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
-  SeparatorProps
+  SplitterProps
 >((props, ref) => {
   const {
     className,
@@ -36,12 +33,12 @@ const Separator = forwardRef<
       ref={ref}
       decorative={decorative}
       orientation={orientation}
-      className={SeparatorStyles({ orientation, className })}
+      className={SplitterStyles({ orientation, className })}
       {...rest}
     />
   );
 });
 
-Separator.displayName = SeparatorPrimitive.Root.displayName;
+Splitter.displayName = 'Splitter';
 
-export default Separator;
+export default Splitter;

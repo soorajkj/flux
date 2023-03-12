@@ -2,42 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar-track {
-  @apply border-l
-  border-t-0
-  border-b-0
-  border-r-0
-  border-solid
-  border-color-tertiary-light
-  bg-color-transparent;
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply select-none
+    overflow-hidden
+    bg-white
+    font-sans
+    text-sm
+    font-normal
+    leading-snug
+  text-zinc-700
+    antialiased
+  dark:bg-zinc-900
+  dark:text-zinc-200;
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  @apply rounded-full
-  border-4
-  border-solid
-  border-color-transparent
-  bg-color-tertiary
-  bg-clip-content
-  hover:bg-color-tertiary-dark
-  hover:bg-clip-content;
-}
-
-::-webkit-scrollbar {
-  @apply h-0
-  w-4;
-}
-
-html {
-  @apply scroll-smooth;
-}
-
-body {
-  @apply relative
-  bg-color-primary
-  font-sans
-  text-sm
-  font-normal
-  leading-snug
-  text-color-secondary-light;
+.react-flow__attribution {
+  @apply hidden;
 }
