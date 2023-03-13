@@ -2,6 +2,145 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --clr-static-surface-nested: rgb(17, 19, 24);
+  --clr-static-surface-default: rgb(21, 24, 30);
+  --clr-static-surface-raised: rgb(26, 29, 35);
+  --clr-static-surface-elevated: rgb(34, 38, 47);
+  --clr-static-surface-scrim: rgba(0, 0, 0, 0.722);
+  --clr-static-surface-inverse-nested: rgb(238, 239, 241);
+  --clr-static-surface-inverse-default: rgb(255, 255, 255);
+  --clr-static-surface-inverse-raised: rgb(227, 229, 232);
+  --clr-static-surface-inverse-elevated: rgb(211, 213, 217);
+  --clr-static-surface-inverse-scrim: rgba(21, 24, 30, 0.722);
+  --clr-static-surface-sentiment-informative: rgba(61, 93, 199, 0.322);
+  --clr-static-surface-sentiment-neutral: rgba(69, 76, 95, 0.322);
+  --clr-static-surface-sentiment-positive: rgba(47, 117, 50, 0.322);
+  --clr-static-surface-sentiment-caution: rgba(166, 89, 8, 0.322);
+  --clr-static-surface-sentiment-negative: rgba(196, 48, 48, 0.322);
+  --clr-static-surface-sentiment-inverse-informative: rgb(178, 198, 255);
+  --clr-static-surface-sentiment-inverse-neutral: rgb(221, 223, 228);
+  --clr-static-surface-sentiment-inverse-positive: rgb(147, 217, 149);
+  --clr-static-surface-sentiment-inverse-caution: rgb(230, 186, 133);
+  --clr-static-surface-sentiment-inverse-negative: rgb(227, 153, 153);
+  --clr-static-content-strong: rgb(255, 255, 255);
+  --clr-static-content-default: rgba(227, 229, 232, 0.922);
+  --clr-static-content-moderate: rgba(227, 229, 232, 0.722);
+  --clr-static-content-weak: rgba(227, 229, 232, 0.522);
+  --clr-static-content-inverse-strong: rgb(21, 24, 30);
+  --clr-static-content-inverse-default: rgba(21, 24, 30, 0.961);
+  --clr-static-content-inverse-moderate: rgba(21, 24, 30, 0.839);
+  --clr-static-content-inverse-weak: rgba(21, 24, 30, 0.639);
+  --clr-static-content-sentiment-informative: rgb(128, 159, 255);
+  --clr-static-content-sentiment-neutral: rgb(175, 181, 192);
+  --clr-static-content-sentiment-positive: rgb(123, 204, 126);
+  --clr-static-content-sentiment-caution: rgb(219, 160, 96);
+  --clr-static-content-sentiment-negative: rgb(224, 135, 135);
+  --clr-static-content-sentiment-inverse-informative: rgb(40, 65, 133);
+  --clr-static-content-sentiment-inverse-neutral: rgb(33, 38, 49);
+  --clr-static-content-sentiment-inverse-positive: rgb(31, 77, 34);
+  --clr-static-content-sentiment-inverse-caution: rgb(108, 59, 11);
+  --clr-static-content-sentiment-inverse-negative: rgb(102, 25, 25);
+  --clr-static-divider-weak: rgb(43, 48, 59);
+  --clr-static-divider-default: rgb(63, 69, 80);
+  --clr-static-divider-strong: rgb(83, 89, 101);
+  --clr-static-divider-inverse-weak: rgb(211, 213, 217);
+  --clr-static-divider-inverse-default: rgb(189, 192, 199);
+  --clr-static-divider-inverse-strong: rgb(167, 171, 180);
+  --clr-static-divider-sentiment-informative: rgba(69, 109, 229, 0.322);
+  --clr-static-divider-sentiment-neutral: rgba(125, 137, 161, 0.322);
+  --clr-static-divider-sentiment-positive: rgba(61, 153, 66, 0.322);
+  --clr-static-divider-sentiment-caution: rgba(196, 117, 31, 0.322);
+  --clr-static-divider-sentiment-negative: rgba(209, 71, 71, 0.322);
+  --clr-iactive-fill-primary-enabled: rgb(60, 93, 199);
+  --clr-iactive-fill-primary-hover: rgb(69, 109, 229);
+  --clr-iactive-fill-primary-pressed: rgb(94, 129, 235);
+  --clr-iactive-fill-primary-disabled: rgba(60, 93, 199, 0.239);
+  --clr-iactive-fill-primary-on-enabled: rgb(249, 249, 250);
+  --clr-iactive-fill-primary-on-disabled: rgba(249, 249, 250, 0.322);
+  --clr-iactive-fill-primary-text: rgb(128, 159, 255);
+  --clr-iactive-fill-secondary-enabled: rgba(125, 137, 161, 0.161);
+  --clr-iactive-fill-secondary-hover: rgba(125, 137, 161, 0.239);
+  --clr-iactive-fill-secondary-pressed: rgba(125, 137, 161, 0.322);
+  --clr-iactive-fill-secondary-disabled: rgba(125, 137, 161, 0.039);
+  --clr-iactive-fill-secondary-on-enabled: rgb(249, 249, 250);
+  --clr-iactive-fill-secondary-on-disabled: rgba(249, 249, 250, 0.322);
+  --clr-iactive-fill-secondary-text: rgb(175, 181, 192);
+  --clr-iactive-fill-inverse-enabled: rgb(43, 48, 59);
+  --clr-iactive-fill-inverse-hover: rgb(34, 38, 47);
+  --clr-iactive-fill-inverse-pressed: rgb(26, 29, 35);
+  --clr-iactive-fill-inverse-disabled: rgba(43, 48, 59, 0.239);
+  --clr-iactive-fill-inverse-on-enabled: rgb(249, 249, 250);
+  --clr-iactive-fill-inverse-on-disabled: rgba(43, 48, 59, 0.439);
+  --clr-iactive-fill-inverse-text: rgb(63, 69, 80);
+  --clr-iactive-fill-negative-enabled: rgb(196, 48, 48);
+  --clr-iactive-fill-negative-hover: rgb(209, 73, 73);
+  --clr-iactive-fill-negative-pressed: rgb(217, 91, 91);
+  --clr-iactive-fill-negative-disabled: rgba(196, 49, 49, 0.239);
+  --clr-iactive-fill-negative-on-enabled: rgb(249, 249, 250);
+  --clr-iactive-fill-negative-on-disabled: rgba(249, 249, 250, 0.322);
+  --clr-iactive-fill-negative-text: rgb(224, 135, 135);
+  --clr-iactive-fill-utility-selected: rgb(53, 59, 70);
+  --clr-iactive-fill-utility-on-selected: rgb(249, 249, 250);
+  --clr-iactive-fill-utility-input: rgba(125, 137, 161, 0.02);
+  --clr-iactive-fill-caution-enabled: rgb(163, 88, 8);
+  --clr-iactive-outline-primary-enabled: rgba(69, 109, 229, 0.322);
+  --clr-iactive-outline-primary-hover: rgba(69, 109, 229, 0.4);
+  --clr-iactive-outline-primary-pressed: rgba(69, 109, 229, 0.478);
+  --clr-iactive-outline-primary-disabled: rgba(69, 109, 229, 0.161);
+  --clr-iactive-outline-primary-selected-enabled: rgba(69, 109, 229, 0.478);
+  --clr-iactive-outline-primary-selected-hover: rgba(69, 109, 229, 0.561);
+  --clr-iactive-outline-primary-selected-pressed: rgba(69, 109, 229, 0.639);
+  --clr-iactive-outline-secondary-enabled: rgba(125, 137, 161, 0.322);
+  --clr-iactive-outline-secondary-hover: rgba(125, 137, 161, 0.4);
+  --clr-iactive-outline-secondary-pressed: rgba(125, 137, 161, 0.478);
+  --clr-iactive-outline-secondary-disabled: rgba(125, 137, 161, 0.161);
+  --clr-iactive-outline-secondary-selected-enabled: rgba(125, 137, 161, 0.478);
+  --clr-iactive-outline-secondary-selected-hover: rgba(125, 137, 161, 0.561);
+  --clr-iactive-outline-secondary-selected-pressed: rgba(125, 137, 161, 0.639);
+  --clr-iactive-outline-inverse-enabled: rgba(26, 29, 35, 0.278);
+  --clr-iactive-outline-inverse-hover: rgba(26, 29, 35, 0.4);
+  --clr-iactive-outline-inverse-pressed: rgba(26, 29, 35, 0.561);
+  --clr-iactive-outline-inverse-disabled: rgba(26, 29, 35, 0.161);
+  --clr-iactive-outline-inverse-selected-enabled: rgba(26, 29, 35, 0.6);
+  --clr-iactive-outline-inverse-selected-hover: rgba(26, 29, 35, 0.722);
+  --clr-iactive-outline-inverse-selected-pressed: rgba(26, 29, 35, 0.761);
+  --clr-iactive-outline-negative-enabled: rgba(209, 73, 73, 0.322);
+  --clr-iactive-outline-negative-hover: rgba(209, 73, 73, 0.4);
+  --clr-iactive-outline-negative-pressed: rgba(209, 73, 73, 0.478);
+  --clr-iactive-outline-negative-disabled: rgba(209, 73, 73, 0.161);
+  --clr-iactive-outline-negative-selected-enabled: rgba(209, 73, 73, 0.478);
+  --clr-iactive-outline-negative-selected-hover: rgba(209, 73, 73, 0.561);
+  --clr-iactive-outline-negative-selected-pressed: rgba(209, 73, 73, 0.639);
+  --clr-iactive-overlay-primary-enabled: rgba(60, 93, 199, 0);
+  --clr-iactive-overlay-primary-hover: rgba(60, 93, 199, 0.078);
+  --clr-iactive-overlay-primary-pressed: rgba(60, 93, 199, 0.161);
+  --clr-iactive-overlay-primary-disabled: rgba(60, 93, 199, 0);
+  --clr-iactive-overlay-primary-selected-enabled: rgba(60, 93, 199, 0.122);
+  --clr-iactive-overlay-primary-selected-hover: rgba(60, 93, 199, 0.239);
+  --clr-iactive-overlay-primary-selected-pressed: rgba(60, 93, 199, 0.322);
+  --clr-iactive-overlay-Secondary-enabled: rgba(125, 137, 161, 0);
+  --clr-iactive-overlay-Secondary-hover: rgba(125, 137, 161, 0.078);
+  --clr-iactive-overlay-Secondary-pressed: rgba(125, 137, 161, 0.161);
+  --clr-iactive-overlay-Secondary-disabled: rgba(125, 137, 161, 0);
+  --clr-iactive-overlay-secondary-selected-enabled: rgba(125, 137, 161, 0.122);
+  --clr-iactive-overlay-secondary-selected-hover: rgba(125, 137, 161, 0.239);
+  --clr-iactive-overlay-secondary-selected-pressed: rgba(125, 137, 161, 0.322);
+  --clr-iactive-overlay-negative-enabled: rgba(196, 49, 49, 0);
+  --clr-iactive-overlay-negative-hover: rgba(196, 49, 49, 0.078);
+  --clr-iactive-overlay-negative-pressed: rgba(196, 49, 49, 0.161);
+  --clr-iactive-overlay-negative-disabled: rgba(196, 49, 49, 0);
+  --clr-iactive-overlay-negative-selected-enabled: rgba(196, 49, 49, 0.122);
+  --clr-iactive-overlay-negative-selected-hover: rgba(196, 49, 49, 0.239);
+  --clr-iactive-overlay-negative-selected-pressed: rgba(196, 49, 49, 0.322);
+  --clr-iactive-overlay-inverse-enabled: rgba(26, 29, 35, 0);
+  --clr-iactive-overlay-inverse-hover: rgba(26, 29, 35, 0.039);
+  --clr-iactive-overlay-inverse-pressed: rgba(26, 29, 35, 0.078);
+  --clr-iactive-overlay-inverse-selected-enabled: rgba(26, 29, 35, 0.059);
+  --clr-iactive-overlay-inverse-selected-hover: rgba(26, 29, 35, 0.09);
+  --clr-iactive-overlay-inverse-selected-pressed: rgba(26, 29, 35, 0.122);
+}
+
 @layer base {
   html {
     @apply scroll-smooth;
@@ -10,18 +149,12 @@
   body {
     @apply select-none
     overflow-hidden
-    bg-white
+    bg-color-static-surface-nested
     font-sans
     text-sm
     font-normal
     leading-snug
-  text-zinc-700
-    antialiased
-  dark:bg-zinc-900
-  dark:text-zinc-200;
+    text-color-static-content-default
+    antialiased;
   }
-}
-
-.react-flow__attribution {
-  @apply hidden;
 }
