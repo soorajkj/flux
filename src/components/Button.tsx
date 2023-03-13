@@ -28,30 +28,33 @@ interface ButtonProps
   loading?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const {
-    children,
-    type = 'button',
-    disabled,
-    block = false,
-    loading,
-    variant,
-    className,
-    ...rest
-  } = props;
-
-  return (
-    <button
-      ref={ref}
-      type={type}
-      disabled={disabled || loading}
-      className={ButtonStyles({ block, variant, className })}
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-});
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      type = 'button',
+      disabled,
+      block = false,
+      loading,
+      variant,
+      className,
+      ...rest
+    },
+    ref
+  ) => {
+    return (
+      <button
+        ref={ref}
+        type={type}
+        disabled={disabled || loading}
+        className={ButtonStyles({ block, variant, className })}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+);
 
 Button.displayName = 'Button';
 

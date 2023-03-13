@@ -20,24 +20,22 @@ interface SplitterProps
 const Splitter = forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   SplitterProps
->((props, ref) => {
-  const {
-    className,
-    orientation = 'horizontal',
-    decorative = true,
-    ...rest
-  } = props;
-
-  return (
-    <SeparatorPrimitive.Root
-      ref={ref}
-      decorative={decorative}
-      orientation={orientation}
-      className={SplitterStyles({ orientation, className })}
-      {...rest}
-    />
-  );
-});
+>(
+  (
+    { className, orientation = 'horizontal', decorative = true, ...rest },
+    ref
+  ) => {
+    return (
+      <SeparatorPrimitive.Root
+        ref={ref}
+        decorative={decorative}
+        orientation={orientation}
+        className={SplitterStyles({ orientation, className })}
+        {...rest}
+      />
+    );
+  }
+);
 
 Splitter.displayName = 'Splitter';
 

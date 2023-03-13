@@ -15,14 +15,12 @@ interface LabelProps
 const Label = forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   LabelProps
->((props, ref) => {
-  const { className } = props;
-
+>(({ className, ...rest }, ref) => {
   return (
     <LabelPrimitive.Root
       ref={ref}
       className={LabelStyles({ className })}
-      {...props}
+      {...rest}
     />
   );
 });

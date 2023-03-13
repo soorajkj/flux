@@ -15,16 +15,14 @@ interface SwitchProps
 const Switch = forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   SwitchProps
->((props, ref) => {
-  const { className, ...rest } = props;
-
+>(({ className, ...rest }, ref) => {
   return (
     <SwitchPrimitives.Root
       ref={ref}
       className={SwitchStyles({ className })}
       {...rest}
     >
-      <SwitchPrimitives.Thumb className="pointer-events-none inline-block h-2 w-2 rounded-full bg-color-secondary-light shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0 data-[state=checked]:translate-x-3 data-[state=checked]:bg-color-accent" />
+      <SwitchPrimitives.Thumb className="bg-color-secondary-light data-[state=checked]:bg-color-accent pointer-events-none inline-block h-2 w-2 rounded-full shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0 data-[state=checked]:translate-x-3" />
     </SwitchPrimitives.Root>
   );
 });

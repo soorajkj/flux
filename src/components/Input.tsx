@@ -13,18 +13,18 @@ interface InputProps
     React.AriaAttributes,
     VariantProps<typeof InputStyles> {}
 
-const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const { type = 'text', className, ...rest } = props;
-
-  return (
-    <input
-      ref={ref}
-      type={type}
-      className={InputStyles({ className })}
-      {...rest}
-    />
-  );
-});
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ type = 'text', className, ...rest }, ref) => {
+    return (
+      <input
+        ref={ref}
+        type={type}
+        className={InputStyles({ className })}
+        {...rest}
+      />
+    );
+  }
+);
 
 Input.displayName = 'Input';
 

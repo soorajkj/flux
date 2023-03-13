@@ -7,9 +7,7 @@ import { cva } from 'class-variance-authority';
 const RadioGroup = forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
->((props, ref) => {
-  const { className, ...rest } = props;
-
+>(({ className, ...rest }, ref) => {
   return <RadioGroupPrimitive.Root ref={ref} className={className} {...rest} />;
 });
 
@@ -20,9 +18,7 @@ const RadioGroupItemStyles = cva(
 const RadioGroupItem = forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
->((props, ref) => {
-  const { className, ...rest } = props;
-
+>(({ className, ...rest }, ref) => {
   return (
     <RadioGroupPrimitive.Item
       ref={ref}
@@ -30,7 +26,7 @@ const RadioGroupItem = forwardRef<
       {...rest}
     >
       <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
-        <span className="pointer-events-none inline-block h-2 w-2 rounded-full bg-color-accent" />
+        <span className="bg-color-accent pointer-events-none inline-block h-2 w-2 rounded-full" />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   );

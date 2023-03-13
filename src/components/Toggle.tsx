@@ -15,14 +15,12 @@ interface ToggleProps
 const Toggle = forwardRef<
   React.ElementRef<typeof TogglePrimitive.Root>,
   ToggleProps
->((props, ref) => {
-  const { className } = props;
-
+>(({ className, ...rest }, ref) => {
   return (
     <TogglePrimitive.Root
       ref={ref}
       className={ToggleStyles({ className })}
-      {...props}
+      {...rest}
     />
   );
 });

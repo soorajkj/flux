@@ -14,9 +14,7 @@ interface IconProps
   icon: keyof typeof Icons;
 }
 
-const Icon = forwardRef<SVGElement, IconProps>((props, ref) => {
-  const { icon, ...rest } = props;
-
+const Icon = forwardRef<SVGElement, IconProps>(({ icon, ...rest }, ref) => {
   const SVGElement = Icons[icon];
   return <SVGElement ref={ref} {...rest} />;
 });
