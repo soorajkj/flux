@@ -4,14 +4,17 @@ import { forwardRef } from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cva, VariantProps } from 'class-variance-authority';
 
-const SplitterStyles = cva('inline-block pointer-events-none bg-zinc-800', {
-  variants: {
-    orientation: {
-      vertical: 'w-px h-full',
-      horizontal: 'h-px w-full',
+const SplitterStyles = cva(
+  'inline-block pointer-events-none bg-color-static-divider-weak',
+  {
+    variants: {
+      orientation: {
+        vertical: 'w-px h-full',
+        horizontal: 'h-px w-full',
+      },
     },
-  },
-});
+  }
+);
 
 interface SplitterProps
   extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>,
