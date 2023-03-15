@@ -7,7 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import '@/styles/app.css';
 
-export default async function AppLayout({ children }: LayoutProps) {
+export default function AppLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body style={{ fontFamily: 'var(--family-inter)' }}>
