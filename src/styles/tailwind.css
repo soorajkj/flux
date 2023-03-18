@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply flex h-screen w-screen
+    select-none flex-col overflow-hidden
+    bg-zinc-900 font-sans text-sm font-normal
+    leading-snug text-zinc-300 antialiased;
+  }
+}
