@@ -3,7 +3,11 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'family-inter': 'var(--font-inter)',
+      },
+    },
   },
   future: {
     hoverOnlyWhenSupported: true,
