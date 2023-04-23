@@ -5,7 +5,7 @@ import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cva, VariantProps } from 'class-variance-authority';
 
 const SplitterStyles = cva(
-  'inline-block pointer-events-none bg-color-static-divider-weak',
+  'inline-block pointer-events-none bg-color-grey-200',
   {
     variants: {
       orientation: {
