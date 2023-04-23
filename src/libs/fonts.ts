@@ -1,9 +1,9 @@
 import { Inter } from 'next/font/google';
 
-const inter = Inter({
+const interFont = Inter({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-export const interClass = inter.variable;
+export const inter = interFont.variable;

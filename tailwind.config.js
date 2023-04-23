@@ -3,11 +3,7 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {
-      fontFamily: {
-        'family-inter': 'var(--font-inter)',
-      },
-    },
+    extend: {},
     colors: {
       'color-inherit': 'inherit',
       'color-current': 'current',
