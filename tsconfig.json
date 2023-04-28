@@ -33,8 +33,7 @@
       "@/components": ["./src/components"],
       "@/components/*": ["./src/components/*"],
       "@/pages": ["./src/pages"],
-      "@/pages/*": ["./src/pages/*"],
-      "@/styles/*": ["./src/styles/*"]
+      "@/pages/*": ["./src/pages/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
