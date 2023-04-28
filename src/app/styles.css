@@ -14,9 +14,11 @@
     select-none
     flex-col
     overflow-hidden
+    bg-slate-50
     text-sm
     font-normal
     leading-snug
-    antialiased;
+    antialiased
+    dark:bg-slate-900;
   }
 }
