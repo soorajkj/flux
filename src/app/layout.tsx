@@ -1,9 +1,12 @@
-import { LayoutProps } from '@/types/layout';
+import { Inter } from 'next/font/google';
+import { LayoutProps } from '@/types';
 import '@/styles/tailwind.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export default function AppLayout({ children }: LayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body>{children}</body>
     </html>
   );
