@@ -1,5 +1,6 @@
-import { VariantProps, cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
+import { VariantProps, cva } from 'class-variance-authority';
+import { classnames } from '@/utils/classnames';
 
 const buttonVariants = cva([
   'relative',
@@ -29,7 +30,11 @@ interface ButtonProps
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, ...props }, ref) => {
     return (
-      <button ref={ref} className={buttonVariants({ className })} {...props} />
+      <button
+        ref={ref}
+        className={classnames(buttonVariants({ className }))}
+        {...props}
+      />
     );
   }
 );
