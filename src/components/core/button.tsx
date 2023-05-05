@@ -28,12 +28,12 @@ interface ButtonProps
     VariantProps<typeof buttonVariants> {}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, ...props }, ref) => {
+  ({ className, ...rest }, ref) => {
     return (
       <button
         ref={ref}
         className={classnames(buttonVariants({ className }))}
-        {...props}
+        {...rest}
       />
     );
   }
