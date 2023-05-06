@@ -1,13 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'next-themes';
+import { useMounted } from '@/hooks/use-mounted';
 import { LayoutProps } from '@/types';
 
 export default function Providers({ children }: LayoutProps) {
-  const [hasMounted, setHasMounted] = useState<boolean>(true);
-
-  useEffect(() => setHasMounted(false), []);
+  const hasMounted = useMounted();
 
   if (hasMounted) return null;
 
