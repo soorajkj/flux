@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
+import { Slot } from '@radix-ui/react-slot';
 import { VariantProps, cva } from 'class-variance-authority';
-import { classnames } from '@/utils/classnames';
+import { tailwind } from '@/libs/utils';
 
 const buttonVariants = cva([
   'relative',
@@ -21,18 +22,25 @@ const buttonVariants = cva([
   'focus-visible:ring-offset-2',
   'disabled:opacity-50',
   'disabled:pointer-events-none',
+  'bg-white',
+  'text-red-600',
 ]);
 
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+    VariantProps<typeof buttonVariants> {
+  immediate?: boolean;
+}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, ...rest }, ref) => {
+  ({ immediate, className, ...rest }, ref) => {
+    // merges its props onto its immediate child
+    const Component = immediate ? Slot : 'button';
+
     return (
-      <button
+      <Component
         ref={ref}
-        className={classnames(buttonVariants({ className }))}
+        className={tailwind(buttonVariants({ className }))}
         {...rest}
       />
     );
