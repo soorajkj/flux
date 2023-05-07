@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { VariantProps, cva } from 'class-variance-authority';
@@ -29,14 +31,14 @@ const buttonVariants = cva([
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  immediate?: boolean;
+  asChildren?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ immediate, className, ...rest }, ref) => {
+  ({ asChildren, className, ...rest }, ref) => {
     // render the element as it's immediate child
     // and merges its props onto its immediate child
-    const Component = !immediate ? 'button' : Slot;
+    const Component = !asChildren ? 'button' : Slot;
 
     return (
       <Component

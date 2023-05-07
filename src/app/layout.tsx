@@ -7,7 +7,9 @@ const inter = Inter({ subsets: ['latin'] });
 export default function AppLayout({ children }: LayoutProps) {
   return (
     <html lang="en" className={inter.className}>
-      <body>{children}</body>
+      <body>
+        <div className="flex h-full w-full flex-col">{children}</div>
+      </body>
     </html>
   );
 }

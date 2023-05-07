@@ -8,11 +8,9 @@
   }
 
   body {
-    @apply flex
-    h-screen
+    @apply h-screen
     w-screen
     select-none
-    flex-col
     overflow-hidden
     text-sm
     font-normal

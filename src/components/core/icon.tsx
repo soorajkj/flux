@@ -1,24 +1,42 @@
-import { forwardRef } from 'react';
+'use client';
+
+import { DetailedHTMLProps, forwardRef, SVGAttributes } from 'react';
+import * as VisuallyHiddenPrimitive from '@radix-ui/react-visually-hidden';
+import Heart from 'public/heart.svg';
 
 const Icons = {
-  demo: () => <svg>...</svg>,
+  heart: Heart,
 } as const;
 
 interface IconProps
-  extends React.DetailedHTMLProps<React.SVGAttributes<SVGElement>, SVGElement> {
+  extends DetailedHTMLProps<SVGAttributes<SVGElement>, SVGElement> {
   icon: keyof typeof Icons;
+  /**
+   * The accessible label for the icon. This label will be visually hidden but announced to screen
+   * reader users, similar to `alt` text for `img` tags.
+   */
+  label: string;
 }
 
-const Icon = forwardRef<SVGElement, IconProps>(({ icon, ...rest }, ref) => {
-  const SVGElement = Icons[icon];
+// accessibility essentials
+const accessibility = {
+  'aria-hidden': true,
+  focusable: false,
+};
 
-  if (!SVGElement) {
-    return null;
+const Icon = forwardRef<SVGElement, IconProps>(
+  ({ icon, label, ...rest }, ref) => {
+    const SVGElement = Icons[icon];
+
+    return (
+      <>
+        <SVGElement ref={ref} {...accessibility} {...rest} />
+        <VisuallyHiddenPrimitive.Root>{label}</VisuallyHiddenPrimitive.Root>
+      </>
+    );
   }
-
-  return <SVGElement ref={ref} {...rest} />;
-});
+);
 
 Icon.displayName = 'Icon';
 
-export default Icon;
+export { Icon };
