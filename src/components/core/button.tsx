@@ -22,8 +22,8 @@ const buttonVariants = cva([
   'focus-visible:ring-offset-2',
   'disabled:opacity-50',
   'disabled:pointer-events-none',
-  'bg-white',
-  'text-red-600',
+  'dark:bg-zinc-800',
+  'dark:text-zinc-200',
 ]);
 
 interface ButtonProps
@@ -34,8 +34,9 @@ interface ButtonProps
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ immediate, className, ...rest }, ref) => {
-    // merges its props onto its immediate child
-    const Component = immediate ? Slot : 'button';
+    // render the element as it's immediate child
+    // and merges its props onto its immediate child
+    const Component = !immediate ? 'button' : Slot;
 
     return (
       <Component

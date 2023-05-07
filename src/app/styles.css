@@ -14,11 +14,11 @@
     select-none
     flex-col
     overflow-hidden
-    bg-slate-50
     text-sm
     font-normal
     leading-snug
     antialiased
-    dark:bg-slate-900;
+    dark:bg-zinc-900
+    dark:text-zinc-200;
   }
 }
