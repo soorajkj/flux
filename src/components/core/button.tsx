@@ -34,21 +34,19 @@ interface ButtonProps
   asChildren?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ asChildren, className, ...rest }, ref) => {
-    // render the element as it's immediate child
-    // and merges its props onto its immediate child
-    const Component = !asChildren ? 'button' : Slot;
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  const { asChildren, className, ...rest } = props;
 
-    return (
-      <Component
-        ref={ref}
-        className={tailwind(buttonVariants({ className }))}
-        {...rest}
-      />
-    );
-  }
-);
+  const Component = !asChildren ? 'button' : Slot;
+
+  return (
+    <Component
+      ref={ref}
+      className={tailwind(buttonVariants({ className }))}
+      {...rest}
+    />
+  );
+});
 
 Button.displayName = 'Button';
 

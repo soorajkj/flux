@@ -11,31 +11,21 @@ const Icons = {
 interface IconProps
   extends DetailedHTMLProps<SVGAttributes<SVGElement>, SVGElement> {
   icon: keyof typeof Icons;
-  /**
-   * The accessible label for the icon. This label will be visually hidden but announced to screen
-   * reader users, similar to `alt` text for `img` tags.
-   */
   label: string;
 }
 
-// accessibility essentials
-const accessibility = {
-  'aria-hidden': true,
-  focusable: false,
-};
+const Icon = forwardRef<SVGElement, IconProps>((props, ref) => {
+  const { icon, label, ...rest } = props;
 
-const Icon = forwardRef<SVGElement, IconProps>(
-  ({ icon, label, ...rest }, ref) => {
-    const SVGElement = Icons[icon];
+  const Component = Icons[icon];
 
-    return (
-      <>
-        <SVGElement ref={ref} {...accessibility} {...rest} />
-        <VisuallyHiddenPrimitive.Root>{label}</VisuallyHiddenPrimitive.Root>
-      </>
-    );
-  }
-);
+  return (
+    <>
+      <Component ref={ref} aria-hidden={true} focusable={false} {...rest} />
+      <VisuallyHiddenPrimitive.Root>{label}</VisuallyHiddenPrimitive.Root>
+    </>
+  );
+});
 
 Icon.displayName = 'Icon';
 
