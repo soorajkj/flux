@@ -1,14 +1,12 @@
-import { Inter } from 'next/font/google';
-import { LayoutProps } from '@/types';
+import { inter } from '@/libs/fonts';
+import { LayoutProps } from '@/types/layout';
 import '@/app/styles.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export default function AppLayout({ children }: LayoutProps) {
   return (
     <html lang="en" className={inter.className}>
-      <body>
-        <div className="flex h-full w-full flex-col">{children}</div>
+      <body className="__next-body">
+        <div id="__next-root">{children}</div>
       </body>
     </html>
   );

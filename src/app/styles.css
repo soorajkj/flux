@@ -19,4 +19,8 @@
     dark:bg-zinc-900
     dark:text-zinc-200;
   }
+
+  #__next-root {
+    @apply flex h-full w-full flex-col;
+  }
 }
