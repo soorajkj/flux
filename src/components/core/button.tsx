@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { VariantProps, cva } from 'class-variance-authority';
-import { tailwind } from '@/libs/utils';
+import { clsx } from '@/libs/utils';
 
 const buttonVariants = cva([
   'relative',
@@ -42,7 +42,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   return (
     <Component
       ref={ref}
-      className={tailwind(buttonVariants({ className }))}
+      className={clsx(buttonVariants({ className }))}
       {...rest}
     />
   );
