@@ -21,7 +21,6 @@
     // with `/*` for accessing the nested folder.
     // without `/*` for `folder/index.ts`
     "paths": {
-      "@/public": ["./public"],
       "@/app": ["./src/app"],
       "@/app/*": ["./src/app/*"],
       "@/libs": ["src/libs"],

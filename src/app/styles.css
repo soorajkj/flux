@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply h-screen
+    w-screen
+    select-none
+    overflow-hidden
+    text-sm
+    font-normal
+    leading-snug
+    antialiased
+    dark:bg-zinc-900
+    dark:text-zinc-200;
+  }
+}
