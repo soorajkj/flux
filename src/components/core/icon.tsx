@@ -3,9 +3,11 @@
 import { DetailedHTMLProps, forwardRef, SVGAttributes } from 'react';
 import * as VisuallyHiddenPrimitive from '@radix-ui/react-visually-hidden';
 import Heart from 'public/heart.svg';
+import Loading from 'public/loading.svg';
 
 const Icons = {
   heart: Heart,
+  loading: Loading,
 } as const;
 
 interface IconProps

@@ -11,11 +11,11 @@
     w-screen
     select-none
     overflow-hidden
+    bg-neutral-900
     text-sm
     font-normal
     leading-snug
-    antialiased
-    dark:bg-zinc-900
-    dark:text-zinc-200;
+    text-neutral-200
+    antialiased;
   }
 }
