@@ -1,8 +1,10 @@
-import { inter } from '@/libs/fonts';
-import { LayoutProps } from '@/types/layout';
-import '@/app/styles.css';
+import { inter } from "@/libs/fonts";
+import { LayoutProps } from "@/types/layout";
+import "@/styles/app.css";
 
-export default function AppLayout({ children }: LayoutProps) {
+export default function AppLayout(props: LayoutProps) {
+  const { children } = props;
+
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
