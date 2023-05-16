@@ -8,11 +8,14 @@
     w-screen
     select-none
     overflow-hidden
-    bg-neutral-900
+    bg-white
+    font-sans
     text-sm
     font-normal
     leading-snug
-    text-neutral-200
-    antialiased;
+    text-slate-900
+    antialiased
+    dark:bg-zinc-900
+    dark:text-slate-50;
   }
 }

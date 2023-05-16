@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { DetailedHTMLProps, forwardRef, SVGAttributes } from 'react';
-import * as VisuallyHiddenPrimitive from '@radix-ui/react-visually-hidden';
-import Heart from 'public/heart.svg';
-import Loading from 'public/loading.svg';
+import * as React from "react";
+import * as VisuallyHiddenPrimitive from "@radix-ui/react-visually-hidden";
+import Heart from "public/heart.svg";
+import Loading from "public/loading.svg";
 
 const Icons = {
   heart: Heart,
@@ -11,12 +11,12 @@ const Icons = {
 } as const;
 
 interface IconProps
-  extends DetailedHTMLProps<SVGAttributes<SVGElement>, SVGElement> {
+  extends React.DetailedHTMLProps<React.SVGAttributes<SVGElement>, SVGElement> {
   icon: keyof typeof Icons;
   label: string;
 }
 
-const Icon = forwardRef<SVGElement, IconProps>((props, ref) => {
+const Icon = React.forwardRef<SVGElement, IconProps>((props, ref) => {
   const { icon, label, ...rest } = props;
 
   const Component = Icons[icon];
@@ -29,6 +29,6 @@ const Icon = forwardRef<SVGElement, IconProps>((props, ref) => {
   );
 });
 
-Icon.displayName = 'Icon';
+Icon.displayName = "Icon";
 
 export { Icon };

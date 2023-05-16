@@ -23,8 +23,8 @@
     "paths": {
       "@/app": ["./src/app"],
       "@/app/*": ["./src/app/*"],
-      "@/libs": ["src/libs"],
-      "@/libs/*": ["src/libs/*"],
+      "@/lib": ["src/lib"],
+      "@/lib/*": ["src/lib/*"],
       "@/hooks": ["./src/hooks"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/types": ["./src/types"],
