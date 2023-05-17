@@ -7,9 +7,7 @@ export default function AppLayout(props: LayoutProps) {
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>
-        <div className="flex h-full w-full flex-col">{children}</div>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
