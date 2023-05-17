@@ -1,6 +1,5 @@
-import { inter } from "src/lib/fonts";
+import { inter } from "@/lib/fonts";
 import { LayoutProps } from "@/types/layout";
-import { NextAuthProvider } from "@/components/provider";
 import "@/styles/tailwind.css";
 
 export default function AppLayout(props: LayoutProps) {
@@ -9,9 +8,7 @@ export default function AppLayout(props: LayoutProps) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
-        <NextAuthProvider>
-          <div className="flex h-full w-full flex-col">{children}</div>
-        </NextAuthProvider>
+        <div className="flex h-full w-full flex-col">{children}</div>
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export function useMounted(): boolean {
   const [hasMounted, setHasMounted] = useState<boolean>(false);
