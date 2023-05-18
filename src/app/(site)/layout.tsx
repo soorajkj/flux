@@ -1,6 +1,6 @@
 import { LayoutProps } from "@/types/layout";
-import ThemeProvider from "@/components/site/theme-provider";
-import FontsProvider from "@/components/site/fonts-provider";
+import ThemeProvider from "@/components/shared/theme-provider";
+import FontsProvider from "@/components/shared/fonts-provider";
 import "@/styles/tailwind.css";
 
 export default function AppLayout(props: LayoutProps) {
