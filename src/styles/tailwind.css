@@ -3,17 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
-    @apply h-screen
-    w-screen
-    select-none
-    overflow-hidden
-    bg-white
-    font-sans
+    @apply bg-white
+    font-family-inter
     text-sm
     font-normal
     leading-snug
-    text-slate-900
+    text-zinc-900
     antialiased
     dark:bg-zinc-900
     dark:text-slate-50;
