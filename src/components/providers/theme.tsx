@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 "use client";
 
 import * as React from "react";
@@ -15,8 +16,19 @@ export default function ThemeProvider(props: ThemeProviderProps) {
     <NextThemesProvider {...rest}>
       <style jsx global>{`
         :root {
-          --font-inter: ${inter.style.fontFamily};
-          --font-oswald: ${oswald.style.fontFamily};
+          --font-family-inter: ${inter.style.fontFamily};
+          --font-family-oswald: ${oswald.style.fontFamily};
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        body {
+          font-family: var(--font-family-inter);
+          font-size: 0.875rem;
+          font-weight: 400;
+          line-height: 1.375;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
       `}</style>
       {children}
