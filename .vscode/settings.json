@@ -1,14 +1,15 @@
 {
+  // editor
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.colorDecorators": true,
-  // workspace typescript intellisense
+  "editor.wordWrap": "on",
+  // typescript
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  // tailwind directive warnings
+  // tailwind
   "css.validate": false,
-  // tailwindcss intellisense outside
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],

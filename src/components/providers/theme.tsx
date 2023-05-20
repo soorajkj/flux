@@ -5,9 +5,10 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
 import { inter, oswald } from "@/lib/fonts";
 
-export default function ThemeProvider(props: ThemeProviderProps) {
-  const { children, ...rest } = props;
-
+export default function ThemeProvider({
+  children,
+  ...rest
+}: ThemeProviderProps) {
   return (
     <React.Fragment>
       <style jsx global>{`
