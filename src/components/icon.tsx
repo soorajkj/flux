@@ -22,10 +22,10 @@ const Icon = React.forwardRef<SVGElement, IconProps>((props, ref) => {
   const Component = Icons[icon];
 
   return (
-    <>
+    <React.Fragment>
       <Component ref={ref} aria-hidden={true} focusable={false} {...rest} />
       <VisuallyHiddenPrimitive.Root>{label}</VisuallyHiddenPrimitive.Root>
-    </>
+    </React.Fragment>
   );
 });
 
