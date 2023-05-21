@@ -1,7 +1,7 @@
 import * as React from "react";
 import { LayoutProps } from "@/types/layout";
 import ThemeProvider from "@/components/providers/theme";
-import "@/app/(root)/index.css";
+import "@/app/index.css";
 
 export default function Layout(props: LayoutProps) {
   const { children } = props;
