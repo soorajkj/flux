@@ -1,3 +1,3 @@
-export default function DashboardLayout() {
-  return <div>DashboardLayout</div>;
+export default function Layout() {
+  return <div>Dashboard Layout</div>;
 }

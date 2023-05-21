@@ -10,6 +10,7 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   // tailwind
   "css.validate": false,
+  "scss.validate": false,
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
