@@ -1,7 +1,8 @@
 import * as React from "react";
-import { LayoutProps } from "@/types/layout";
 import ThemeProvider from "@/components/providers/theme";
 import "@/app/index.css";
+
+export type LayoutProps = { children: React.ReactNode };
 
 export default function Layout(props: LayoutProps) {
   const { children } = props;

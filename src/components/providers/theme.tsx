@@ -3,18 +3,20 @@
 import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
-import { inter, oswald } from "@/lib/fonts";
+import { Inter, Oswald } from "next/font/google";
 
-export default function ThemeProvider({
-  children,
-  ...rest
-}: ThemeProviderProps) {
+const inter = Inter({ subsets: ["latin"] });
+const oswald = Oswald({ subsets: ["cyrillic"] });
+
+export default function ThemeProvider(props: ThemeProviderProps) {
+  const { children, ...rest } = props;
+
   return (
     <React.Fragment>
       <style jsx global>{`
         :root {
-          --font-family-inter: ${inter};
-          --font-family-oswald: ${oswald};
+          --font-family-inter: ${inter.style.fontFamily};
+          --font-family-oswald: ${oswald.style.fontFamily};
         }
       `}</style>
       <NextThemesProvider {...rest}>{children}</NextThemesProvider>
