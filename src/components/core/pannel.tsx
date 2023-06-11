@@ -12,9 +12,11 @@ const pannelStyles = cva("overflow-hidden", {
   },
 });
 
-interface PannnelProps extends LayoutProps, VariantProps<typeof pannelStyles> {}
+interface PannelProps extends LayoutProps, VariantProps<typeof pannelStyles> {
+  className: string;
+}
 
-const Pannel = (props: PannnelProps) => {
+const Pannel = (props: PannelProps) => {
   const { orientation = "horizontal", children, className } = props;
 
   return (
