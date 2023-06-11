@@ -11,7 +11,7 @@ export default function AppLayout(props: AppLayoutProps) {
 
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className="h-full min-h-screen w-full text-sm font-normal leading-normal antialiased">
+      <body className="h-full min-h-screen w-full bg-color-primary font-family-inter text-sm font-normal leading-normal text-color-secondary antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SupabaseProvider>{children}</SupabaseProvider>
         </ThemeProvider>
