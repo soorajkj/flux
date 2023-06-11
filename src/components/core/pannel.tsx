@@ -13,7 +13,7 @@ const pannelStyles = cva("overflow-hidden", {
 });
 
 interface PannelProps extends LayoutProps, VariantProps<typeof pannelStyles> {
-  className: string;
+  className?: string;
 }
 
 const Pannel = (props: PannelProps) => {
