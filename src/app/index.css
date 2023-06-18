@@ -3,19 +3,24 @@
 @tailwind utilities;
 
 :root.dark {
-  --color-primary: 15 15 15;
-  --color-primary-light: 23 23 23;
-  --color-primary-dark: 24 24 24;
-  --color-primary-contrast: 15 15 15;
-  --color-secondary: 163 163 163;
-  --color-secondary-light: 115 115 115;
-  --color-secondary-dark: 245 245 245;
-  --color-divider: 28 28 30;
-  --color-divider-light: 24 24 24;
-  --color-divider-dark: 50 50 50;
-  --color-error: 28 25 23;
-  --color-tooltip: 245 245 245;
-  --color-popover: 15 15 15;
+  --clr-primary: 15 15 15;
+  --clr-primary-light: 23 23 23;
+  --clr-primary-dark: 24 24 24;
+  --clr-primary-contrast: 15 15 15;
+  --clr-secondary: 163 163 163;
+  --clr-secondary-light: 115 115 115;
+  --clr-secondary-dark: 245 245 245;
+  --clr-divider: 28 28 30;
+  --clr-divider-light: 24 24 24;
+  --clr-divider-dark: 50 50 50;
+  --clr-error: 28 25 23;
+  --clr-tooltip: 245 245 245;
+  --clr-popover: 15 15 15;
+  --clr-accent: 16 185 129;
+  --clr-accent-light: 52 211 153;
+  --clr-accent-dark: 5 150 105;
+  --clr-accent-contrast: 255 255 255;
+  --clr-destruct: 220 38 38;
 }
 
 html {
