@@ -16,7 +16,7 @@ const splitterStyles = cva("shrink-0 bg-color-divider-light", {
 
 interface SplitterProps
   extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>,
-    VariantProps<typeof spliietrStyles> {}
+    VariantProps<typeof splitterStyles> {}
 
 const Splitter = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
