@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import { classnames } from "@/utils/classnames";
+import { classnames } from "~utils/classnames";
 
 const buttonStyles = cva(
   "relative inline-flex items-center justify-center rounded-md font-family-inter text-sm font-normal transition-all cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background px-4 py-1.5"

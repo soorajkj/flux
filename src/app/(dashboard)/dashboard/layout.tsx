@@ -1,9 +1,9 @@
-import { LayoutProps } from "@/types/layout";
-import { Pannel } from "@/components/core/pannel";
-import { Splitter } from "@/components/core/splitter";
-import Header from "@/components/header";
-import Routesbar from "@/components/routesbar";
-import Footer from "@/components/footer";
+import { LayoutProps } from "~types/layout";
+import { Pannel } from "~components/core/pannel";
+import { Splitter } from "~components/core/splitter";
+import Header from "~components/header";
+import Routesbar from "~components/routesbar";
+import Footer from "~components/footer";
 
 interface DashboardLayoutProps extends LayoutProps {}
 

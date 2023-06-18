@@ -1,7 +1,9 @@
+"use client";
+
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { LayoutProps } from "@/types/layout";
-import { classnames } from "@/utils/classnames";
+import { LayoutProps } from "~types/layout";
+import { classnames } from "~utils/classnames";
 
 const pannelStyles = cva("overflow-hidden", {
   variants: {

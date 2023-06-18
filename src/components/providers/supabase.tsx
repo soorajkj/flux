@@ -3,8 +3,8 @@
 import * as React from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
-import { Database } from "@/types/database";
-import { LayoutProps } from "@/types/layout";
+import { Database } from "~types/database";
+import { LayoutProps } from "~types/layout";
 
 interface SupabaseProviderProps extends LayoutProps {}
 

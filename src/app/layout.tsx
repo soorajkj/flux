@@ -1,9 +1,9 @@
 import * as React from "react";
-import ThemeProvider from "@/components/providers/theme";
-import SupabaseProvider from "@/components/providers/supabase";
-import { LayoutProps } from "@/types/layout";
-import { inter } from "@/lib/fonts";
-import "@/app/index.css";
+import ThemeProvider from "~components/providers/theme";
+import SupabaseProvider from "~components/providers/supabase";
+import { LayoutProps } from "~types/layout";
+import { inter } from "~lib/fonts";
+import "~app/index.css";
 
 interface AppLayoutProps extends LayoutProps {}
 
