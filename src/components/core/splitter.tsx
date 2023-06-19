@@ -5,7 +5,7 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import { cva, type VariantProps } from "class-variance-authority";
 import { classnames } from "~utils/classnames";
 
-const splitterStyles = cva("shrink-0 bg-color-divider-light", {
+const splitterStyles = cva("shrink-0", {
   variants: {
     orientation: {
       vertical: "w-px h-full",

@@ -10,32 +10,45 @@ import {
 
 export default function Header() {
   return (
-    <header className="h-auto w-full bg-color-primary">
+    <header className="h-auto w-full">
       <div className="flex h-14 w-full items-center justify-between px-4">
         <Link href="dashboard" className="select-none">
           <span className="sr-only">Daybook.io</span>
         </Link>
-        <div className="hidden items-center gap-x-2 md:flex">
-          <TooltipProvider>
-            <Tooltip delayDuration={200}>
-              <TooltipTrigger asChild>
-                <Button variant="ghost">
-                  <Icon icon="search" width={16} height={16} />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>Search</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-          <TooltipProvider>
-            <Tooltip delayDuration={200}>
-              <TooltipTrigger asChild>
-                <Button variant="ghost">
-                  <Icon icon="download" width={16} height={16} />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>Download</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+        <div className="flex flex-1 items-center justify-end">
+          <div className="mr-4 hidden items-center gap-x-2 md:flex">
+            <TooltipProvider>
+              <Tooltip delayDuration={200}>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" className="px-2">
+                    <Icon icon="search" width={16} height={16} />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>Search</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+              <Tooltip delayDuration={200}>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" className="px-2">
+                    <Icon icon="maximize" width={16} height={16} />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>Zen Mode</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+              <Tooltip delayDuration={200}>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" className="px-2">
+                    <Icon icon="download" width={16} height={16} />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>Download</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
+          <Button className="">Login</Button>
         </div>
       </div>
     </header>
