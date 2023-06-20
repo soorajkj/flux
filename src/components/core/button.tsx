@@ -6,19 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { classnames } from "~utils/classnames";
 
 const buttonStyles = cva(
-  "relative inline-flex justify-center items-center select-none cursor-pointer disabled:cursor-auto px-6 py-2 rounded transition text-center leading-tight",
-  {
-    variants: {
-      variant: {
-        primary: "bg-purple-700 text-white hover:bg-purple-500",
-        secondary: "",
-        link: "",
-        destruct: "",
-        ghost: "",
-        outline: "",
-      },
-    },
-  }
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none px-4 py-2 border border-transparent"
 );
 
 interface ButtonProps
@@ -30,20 +18,13 @@ interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
-    const {
-      children,
-      loading,
-      asChild,
-      variant = "primary",
-      className,
-      ...rest
-    } = props;
+    const { children, loading, asChild, className, ...rest } = props;
     const Element = asChild ? Slot : "button";
 
     return (
       <Element
         ref={ref}
-        className={classnames(buttonStyles({ variant, className }))}
+        className={classnames(buttonStyles({ className }))}
         disabled={loading}
         tabIndex={loading ? -1 : 0}
         {...rest}

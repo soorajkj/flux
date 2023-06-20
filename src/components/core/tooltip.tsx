@@ -12,7 +12,7 @@ const Tooltip = TooltipPrimitive.Root;
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
 const tooltipContentStyles = cva(
-  "data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1 z-50 overflow-hidden rounded border px-2 py-1 shadow-md text-xs font-medium"
+  "data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1 z-50 overflow-hidden rounded px-2 py-1 shadow-md text-xs"
 );
 
 interface TooltipContentProps
@@ -23,7 +23,7 @@ const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
   TooltipContentProps
 >((props, ref) => {
-  const { sideOffset = 4, className, ...rest } = props;
+  const { children, sideOffset = 4, className, ...rest } = props;
 
   return (
     <TooltipPrimitive.Content
@@ -31,7 +31,9 @@ const TooltipContent = React.forwardRef<
       sideOffset={sideOffset}
       className={classnames(tooltipContentStyles({ className }))}
       {...rest}
-    />
+    >
+      {children}
+    </TooltipPrimitive.Content>
   );
 });
 

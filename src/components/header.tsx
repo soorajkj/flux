@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "~components/core/button";
 import { Icon } from "~components/core/icon";
+import { Avatar, AvatarFallback, AvatarImage } from "~components/core/avatar";
 import {
   Tooltip,
   TooltipContent,
@@ -20,7 +21,7 @@ export default function Header() {
             <TooltipProvider>
               <Tooltip delayDuration={200}>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" className="px-2">
+                  <Button className="px-2">
                     <Icon icon="search" width={16} height={16} />
                   </Button>
                 </TooltipTrigger>
@@ -30,7 +31,7 @@ export default function Header() {
             <TooltipProvider>
               <Tooltip delayDuration={200}>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" className="px-2">
+                  <Button className="px-2">
                     <Icon icon="maximize" width={16} height={16} />
                   </Button>
                 </TooltipTrigger>
@@ -40,7 +41,7 @@ export default function Header() {
             <TooltipProvider>
               <Tooltip delayDuration={200}>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" className="px-2">
+                  <Button className="px-2">
                     <Icon icon="download" width={16} height={16} />
                   </Button>
                 </TooltipTrigger>
@@ -48,7 +49,17 @@ export default function Header() {
               </Tooltip>
             </TooltipProvider>
           </div>
-          <Button className="">Login</Button>
+          <TooltipProvider>
+            <Tooltip delayDuration={200}>
+              <TooltipTrigger asChild>
+                <Avatar>
+                  <AvatarImage />
+                  <AvatarFallback>SJ</AvatarFallback>
+                </Avatar>
+              </TooltipTrigger>
+              <TooltipContent>Sooraj Janardhanan</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </div>
     </header>
