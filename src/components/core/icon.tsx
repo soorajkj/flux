@@ -3,18 +3,16 @@
 import * as React from "react";
 import * as VisuallyHiddenPrimitive from "@radix-ui/react-visually-hidden";
 
-import Heart from "public/heart.svg";
-import Loading from "public/loading.svg";
 import Search from "public/search.svg";
 import Download from "public/download.svg";
 import Maximize from "public/maximize.svg";
+import Check from "public/check.svg";
 
 const Icons = {
-  heart: Heart,
-  loading: Loading,
   search: Search,
   download: Download,
   maximize: Maximize,
+  check: Check,
 } as const;
 
 interface IconProps
