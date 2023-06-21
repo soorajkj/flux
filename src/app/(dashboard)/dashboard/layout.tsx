@@ -1,6 +1,6 @@
 import { LayoutProps } from "~types/layout";
 import { Pannel } from "~components/core/pannel";
-import { Splitter } from "~components/core/splitter";
+import { Separator } from "~components/core/separator";
 import Header from "~components/header";
 import Routesbar from "~components/routesbar";
 import Footer from "~components/footer";
@@ -15,15 +15,15 @@ export default function DashboardLayout(props: DashboardLayoutProps) {
       <Pannel orientation="horizontal">
         <Header />
       </Pannel>
-      <Splitter orientation="horizontal" />
+      <Separator orientation="horizontal" />
       <div className="flex flex-1 flex-row">
         <Pannel orientation="vertical" className="h-auto overflow-y-auto">
           <Routesbar />
         </Pannel>
-        <Splitter orientation="vertical" className="h-auto" />
+        <Separator orientation="vertical" className="h-auto" />
         <main className="flex-1">{children}</main>
       </div>
-      <Splitter orientation="horizontal" />
+      <Separator orientation="horizontal" />
       <Pannel orientation="horizontal">
         <Footer />
       </Pannel>
