@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-neutral-900: 16 24 40;
+  --color-neutral-800: 29 41 57;
+  --color-neutral-700: 52 64 84;
+  --color-neutral-600: 71 84 103;
+  --color-neutral-500: 102 112 133;
+  --color-neutral-400: 152 162 179;
+  --color-neutral-300: 208 213 221;
+  --color-neutral-200: 234 236 240;
+  --color-neutral-100: 242 244 247;
+  --color-neutral-050: 249 250 251;
+  --color-neutral-025: 252 252 253;
+
+  --color-primary-900: 66 48 125;
+  --color-primary-800: 83 56 158;
+  --color-primary-700: 105 65 198;
+  --color-primary-600: 127 86 217;
+  --color-primary-500: 158 119 237;
+  --color-primary-400: 182 146 246;
+  --color-primary-300: 214 187 251;
+  --color-primary-200: 233 215 254;
+  --color-primary-100: 244 235 255;
+  --color-primary-050: 249 245 255;
+  --color-primary-025: 252 250 255;
+}

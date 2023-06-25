@@ -3,13 +3,13 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { LayoutProps } from "~types/layout";
-import { classnames } from "~utils/classnames";
+import { classnames } from "~lib/utlis";
 
 const pannelStyles = cva("overflow-hidden", {
   variants: {
     orientation: {
-      horizontal: "w-full h-auto",
-      vertical: "w-auto h-full",
+      horizontal: "h-auto w-full",
+      vertical: "h-full w-auto",
     },
   },
 });

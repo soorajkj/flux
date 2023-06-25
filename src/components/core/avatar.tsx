@@ -3,10 +3,10 @@
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { cva, VariantProps } from "class-variance-authority";
-import { classnames } from "~utils/classnames";
+import { classnames } from "~lib/utlis";
 
 const avatarStyles = cva(
-  "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"
+  "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border border-color-neutral-600/10 font-semibold"
 );
 
 interface AvatarProps
@@ -54,7 +54,7 @@ const AvatarImage = React.forwardRef<
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
 const avatarFallbackStyles = cva(
-  "bg-muted flex h-full w-full items-center justify-center rounded-full"
+  "bg-color-neutral-100 text-color-neutral-600 text-sm font-semibold leading-none flex h-full w-full items-center justify-center rounded-full"
 );
 
 interface AvatarFallbackProps

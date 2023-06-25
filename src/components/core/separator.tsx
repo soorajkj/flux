@@ -3,12 +3,12 @@
 import * as React from "react";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import { cva, type VariantProps } from "class-variance-authority";
-import { classnames } from "~utils/classnames";
+import { classnames } from "~lib/utlis";
 
-const separatorStyles = cva("shrink-0", {
+const separatorStyles = cva("shrink-0 bg-color-neutral-200", {
   variants: {
     orientation: {
-      vertical: "w-px h-full",
+      vertical: "h-full w-px",
       horizontal: "h-px w-full",
     },
   },

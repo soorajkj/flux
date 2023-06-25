@@ -10,7 +10,7 @@ export default function Layout(props: LayoutProps) {
 
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className="h-full min-h-screen w-full font-family-inter text-sm font-normal leading-normal antialiased">
+      <body className="h-full min-h-screen w-full bg-color-neutral-025 font-family-inter text-base font-normal leading-normal text-color-neutral-600 antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SupabaseProvider>{children}</SupabaseProvider>
         </ThemeProvider>

@@ -4,7 +4,7 @@ import * as React from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { cva, VariantProps } from "class-variance-authority";
 import { Icon } from "~components/core/icon";
-import { classnames } from "~utils/classnames";
+import { classnames } from "~lib/utlis";
 
 const checkboxStyles = cva(
   "peer h-4 w-4 shrink-0 rounded-sm border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
@@ -27,7 +27,7 @@ const Checkbox = React.forwardRef<
       {...rest}
     >
       <CheckboxPrimitive.Indicator
-        className={classnames("flex items-center justify-center text-current")}
+        className={classnames("text-current flex items-center justify-center")}
       >
         <Icon icon="check" className="h-4 w-4" />
       </CheckboxPrimitive.Indicator>
