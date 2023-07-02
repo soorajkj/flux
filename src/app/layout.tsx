@@ -1,6 +1,5 @@
 import * as React from "react";
 import ThemeProvider from "~components/providers/theme-provider";
-// import { Pannel } from "~components/core/pannel";
 import { Separator } from "~components/core/separator";
 import Header from "~components/header";
 import Footer from "~components/footer";
