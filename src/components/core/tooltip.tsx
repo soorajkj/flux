@@ -12,7 +12,7 @@ const Tooltip = TooltipPrimitive.Root;
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
 const tooltipContentStyles = cva(
-  "data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1 z-50 overflow-hidden rounded bg-color-neutral-900 px-2 py-1 text-xs text-color-neutral-025"
+  "z-50 overflow-hidden rounded bg-neutral-50 px-2 py-1 text-xs font-medium text-neutral-900"
 );
 
 interface TooltipContentProps

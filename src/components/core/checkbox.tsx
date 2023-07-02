@@ -7,7 +7,7 @@ import { Icon } from "~components/core/icon";
 import { classnames } from "~lib/utlis";
 
 const checkboxStyles = cva(
-  "peer h-4 w-4 shrink-0 rounded-sm border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+  "peer h-4 w-4 shrink-0 rounded-sm border border-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 overflow-hidden"
 );
 
 interface CheckboxProps
@@ -27,7 +27,7 @@ const Checkbox = React.forwardRef<
       {...rest}
     >
       <CheckboxPrimitive.Indicator
-        className={classnames("text-current flex items-center justify-center")}
+        className={classnames("leading-none text-neutral-50")}
       >
         <Icon icon="check" className="h-4 w-4" />
       </CheckboxPrimitive.Indicator>

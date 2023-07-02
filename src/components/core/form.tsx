@@ -165,7 +165,7 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={classnames("text-destructive text-sm font-medium", className)}
+      className={classnames("text-xs text-red-700", className)}
       {...rest}
     >
       {body}
@@ -193,7 +193,7 @@ const UncontrolledFormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={classnames("text-destructive text-sm font-medium", className)}
+      className={classnames("text-xm text-red-700", className)}
       {...rest}
     >
       {body}

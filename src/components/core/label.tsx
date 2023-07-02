@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { classnames } from "~lib/utlis";
 
 const labelStyles = cva(
-  "inline-block text-sm font-medium leading-none text-color-neutral-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+  "inline-block font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 );
 
 interface LabelProps
