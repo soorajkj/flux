@@ -1,7 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import Logout from "~components/logout";
 
 export default async function Page() {
   const supabase = createServerComponentClient({ cookies });
@@ -17,7 +16,6 @@ export default async function Page() {
 
   return (
     <div>
-      {session && <Logout />}
       <p>{JSON.stringify(data, null, 2)}</p>
     </div>
   );

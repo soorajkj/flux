@@ -2,10 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { authSchema } from "~lib/validations";
 import { Button } from "~components/core/button";
+import { Input } from "~components/core/input";
 import {
   Form,
   FormControl,
@@ -14,23 +18,19 @@ import {
   FormLabel,
   FormMessage,
 } from "~components/core/form";
-import { loginSchema } from "~lib/validations";
-import { Input } from "~components/core/input";
-import { useRouter } from "next/navigation";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function SignupForm() {
   const router = useRouter();
   const supabase = createClientComponentClient();
-  const form = useForm<z.infer<typeof loginSchema>>({
-    resolver: zodResolver(loginSchema),
+  const form = useForm<z.infer<typeof authSchema>>({
+    resolver: zodResolver(authSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  const handleFormSubmit = async (data: z.infer<typeof loginSchema>) => {
+  const handleFormSubmit = async (data: z.infer<typeof authSchema>) => {
     const { email, password } = data;
 
     await supabase.auth.signUp({
@@ -93,8 +93,15 @@ export default function SignupForm() {
         <Button type="submit" variant="primary" block={true}>
           Sign up
         </Button>
-        <p className="text-center">
-          Already have an account? <Link href="/signin">Login</Link>
+        <p className="space-x-1 text-center">
+          <span>Already have an account?</span>
+          <Link
+            href="/signin"
+            aria-label="signin"
+            className="cursor-pointer select-none text-violet-600 underline-offset-2 transition hover:underline focus-visible:underline focus-visible:outline-none"
+          >
+            Sign in
+          </Link>
         </p>
       </form>
     </Form>

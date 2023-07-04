@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import type { z } from "zod";
-import { loginSchema } from "~lib/validations";
+import { authSchema } from "~lib/validations";
 import { Input } from "~components/core/input";
 import { Button } from "~components/core/button";
 import {
@@ -22,15 +22,15 @@ import {
 export default function SigninForm() {
   const router = useRouter();
   const supabase = createClientComponentClient();
-  const form = useForm<z.infer<typeof loginSchema>>({
-    resolver: zodResolver(loginSchema),
+  const form = useForm<z.infer<typeof authSchema>>({
+    resolver: zodResolver(authSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  const handleFormSubmit = async (data: z.infer<typeof loginSchema>) => {
+  const handleFormSubmit = async (data: z.infer<typeof authSchema>) => {
     const { email, password } = data;
 
     await supabase.auth.signInWithPassword({
@@ -90,8 +90,15 @@ export default function SigninForm() {
         <Button type="submit" variant="primary" block={true}>
           Sign in
         </Button>
-        <p className="text-center">
-          Don&apos;t have an account? <Link href="/signup">Sign up</Link>
+        <p className="space-x-1 text-center">
+          <span>Don&apos;t have an account?</span>
+          <Link
+            href="/signup"
+            aria-label="signup"
+            className="cursor-pointer select-none text-violet-600 underline-offset-2 transition hover:underline focus-visible:underline focus-visible:outline-none"
+          >
+            Sign up
+          </Link>
         </p>
       </form>
     </Form>

@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import SigninForm from "~components/signinForm";
 
-export default async function LoginPage() {
+export default async function Page() {
   const supabase = createServerComponentClient({ cookies });
   const {
     data: { session },
