@@ -7,12 +7,16 @@ import Search from "public/search.svg";
 import Download from "public/download.svg";
 import Maximize from "public/maximize.svg";
 import Check from "public/check.svg";
+import Show from "public/show.svg";
+import Hide from "public/hide.svg";
 
 const Icons = {
   search: Search,
   download: Download,
   maximize: Maximize,
   check: Check,
+  show: Show,
+  hide: Hide,
 } as const;
 
 interface IconProps
