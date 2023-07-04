@@ -10,7 +10,7 @@ export default async function Page() {
   } = await supabase.auth.getSession();
 
   if (!session) {
-    redirect("/login");
+    redirect("/signin");
   }
 
   const { data } = await supabase.from("todos").select();

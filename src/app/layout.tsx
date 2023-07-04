@@ -1,5 +1,5 @@
 import * as React from "react";
-import ThemeProvider from "~components/providers/theme-provider";
+import ThemeProvider from "~components/themeProvider";
 import { LayoutProps } from "~types/layout";
 import { inter } from "~lib/fonts";
 import "~app/index.css";

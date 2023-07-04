@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -18,19 +19,9 @@ import {
   FormMessage,
 } from "~components/core/form";
 
-export default function Loginform() {
+export default function SigninForm() {
   const router = useRouter();
   const supabase = createClientComponentClient();
-
-  const handleFormSubmit = async (data: z.infer<typeof loginSchema>) => {
-    const { email, password } = data;
-    await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-    router.refresh();
-  };
-
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -38,6 +29,17 @@ export default function Loginform() {
       password: "",
     },
   });
+
+  const handleFormSubmit = async (data: z.infer<typeof loginSchema>) => {
+    const { email, password } = data;
+
+    await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    router.refresh();
+  };
 
   return (
     <Form {...form}>
@@ -86,8 +88,11 @@ export default function Loginform() {
           )}
         />
         <Button type="submit" variant="primary" block={true}>
-          Sign up
+          Sign in
         </Button>
+        <p className="text-center">
+          Don&apos;t have an account? <Link href="/signup">Sign up</Link>
+        </p>
       </form>
     </Form>
   );
