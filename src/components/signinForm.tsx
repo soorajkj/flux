@@ -10,7 +10,6 @@ import type { z } from "zod";
 import { authSchema } from "~lib/validations";
 import { Input } from "~components/core/input";
 import { Button } from "~components/core/button";
-import { Icon } from "~components/core/icon";
 import {
   Form,
   FormControl,
@@ -23,7 +22,6 @@ import {
 export default function SigninForm() {
   const router = useRouter();
   const supabase = createClientComponentClient();
-  const [showPassword, setShowPassword] = React.useState(false);
   const form = useForm<z.infer<typeof authSchema>>({
     resolver: zodResolver(authSchema),
     defaultValues: {
@@ -46,7 +44,7 @@ export default function SigninForm() {
   return (
     <Form {...form}>
       <form
-        className="mx-auto grid max-w-xs gap-4 py-6"
+        className="space-y-4"
         onSubmit={(...args) =>
           void form.handleSubmit(handleFormSubmit)(...args)
         }
@@ -76,32 +74,18 @@ export default function SigninForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <div className="relative">
-                  <Input
-                    type={!showPassword ? "password" : "text"}
-                    placeholder="********"
-                    autoComplete="off"
-                    {...field}
-                  />
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    className="absolute right-1 top-1/2 -translate-y-1/2"
-                    onClick={() => setShowPassword((pre) => !pre)}
-                  >
-                    <Icon
-                      icon={!showPassword ? "hide" : "show"}
-                      label={!showPassword ? "show password" : "hide password"}
-                      className="h-4 w-4"
-                    />
-                  </Button>
-                </div>
+                <Input
+                  type="password"
+                  placeholder="********"
+                  autoComplete="off"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" variant="primary" block={true}>
+        <Button type="submit" block={true}>
           Sign in
         </Button>
         <p className="space-x-1 text-center">

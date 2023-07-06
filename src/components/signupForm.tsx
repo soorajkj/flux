@@ -47,7 +47,7 @@ export default function SignupForm() {
   return (
     <Form {...form}>
       <form
-        className="mx-auto grid max-w-xs gap-4 py-6"
+        className="space-y-4"
         onSubmit={(...args) =>
           void form.handleSubmit(handleFormSubmit)(...args)
         }
