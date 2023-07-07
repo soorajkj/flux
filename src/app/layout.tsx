@@ -1,5 +1,6 @@
 import * as React from "react";
 import ThemeProvider from "~components/themeProvider";
+import SupabaseProvider from "~components/supabaseProvider";
 import { LayoutProps } from "~types/layout";
 import { inter } from "~lib/fonts";
 import "~app/index.css";
@@ -11,7 +12,7 @@ export default function Layout(props: LayoutProps) {
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="h-full min-h-screen w-full bg-neutral-900 font-family-inter text-sm font-normal leading-normal text-neutral-500 antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <SupabaseProvider>{children}</SupabaseProvider>
         </ThemeProvider>
       </body>
     </html>

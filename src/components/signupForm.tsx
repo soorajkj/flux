@@ -77,14 +77,12 @@ export default function SignupForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <div className="relative">
-                  <Input
-                    type="password"
-                    placeholder="********"
-                    autoComplete="off"
-                    {...field}
-                  />
-                </div>
+                <Input
+                  type="password"
+                  placeholder="********"
+                  autoComplete="off"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
