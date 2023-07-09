@@ -8,8 +8,8 @@ import { useForm } from "react-hook-form";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import type { z } from "zod";
 import { authSchema } from "~lib/validations";
-import { Input } from "~components/core/input";
-import { Button } from "~components/core/button";
+import { Input } from "~components/core/Input";
+import { Button } from "~components/core/Button";
 import {
   Form,
   FormControl,
@@ -17,7 +17,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "~components/core/form";
+} from "~components/core/Form";
 
 export default function SigninForm() {
   const router = useRouter();
@@ -93,7 +93,7 @@ export default function SigninForm() {
           <Link
             href="/signup"
             aria-label="signup"
-            className="cursor-pointer select-none text-violet-600 underline-offset-2 transition hover:underline focus-visible:underline focus-visible:outline-none"
+            className="cursor-pointer select-none text-purple-600 underline-offset-2 transition hover:underline focus-visible:underline focus-visible:outline-none"
           >
             Sign up
           </Link>

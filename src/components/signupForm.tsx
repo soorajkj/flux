@@ -8,8 +8,8 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { authSchema } from "~lib/validations";
-import { Button } from "~components/core/button";
-import { Input } from "~components/core/input";
+import { Button } from "~components/core/Button";
+import { Input } from "~components/core/Input";
 import {
   Form,
   FormControl,
@@ -17,7 +17,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "~components/core/form";
+} from "~components/core/Form";
 
 export default function SignupForm() {
   const router = useRouter();
@@ -96,7 +96,7 @@ export default function SignupForm() {
           <Link
             href="/signin"
             aria-label="signin"
-            className="cursor-pointer select-none text-violet-600 underline-offset-2 transition hover:underline focus-visible:underline focus-visible:outline-none"
+            className="cursor-pointer select-none text-purple-600 underline-offset-2 transition hover:underline focus-visible:underline focus-visible:outline-none"
           >
             Sign in
           </Link>
