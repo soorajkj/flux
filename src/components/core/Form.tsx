@@ -9,7 +9,7 @@ import {
   type FieldPath,
   type FieldValues,
 } from "react-hook-form";
-import { Label } from "~components/core/label";
+import { Label } from "~components/core/Label";
 import { classnames } from "~lib/utlis";
 
 const Form = FormProvider;
@@ -80,7 +80,11 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={classnames("space-y-2", className)} {...rest} />
+      <div
+        ref={ref}
+        className={classnames("flex flex-col space-y-2", className)}
+        {...rest}
+      />
     </FormItemContext.Provider>
   );
 });
@@ -97,7 +101,7 @@ const FormLabel = React.forwardRef<
   return (
     <Label
       ref={ref}
-      className={classnames(className)}
+      className={classnames("order-1", className)}
       htmlFor={formItemId}
       {...rest}
     />
@@ -165,7 +169,11 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={classnames("text-xs text-red-700", className)}
+      className={classnames(
+        "order-3 text-sm text-color-error-400",
+        `${error ? "error peer" : ""}`,
+        className
+      )}
       {...rest}
     >
       {body}

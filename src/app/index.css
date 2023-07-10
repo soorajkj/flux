@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --cl-grey-900: 12 17 29;
+  --cl-grey-800: 16 24 40;
+  --cl-grey-700: 29 41 57;
+  --cl-grey-600: 52 64 84;
+  --cl-grey-500: 71 84 103;
+  --cl-grey-400: 102 112 133;
+  --cl-grey-300: 152 162 179;
+  --cl-grey-200: 208 213 221;
+  --cl-grey-100: 234 236 240;
+  --cl-grey-050: 242 244 247;
+  --cl-grey-025: 249 250 251;
+  --cl-grey-000: 252 252 253;
+  --cl-primary-900: 44 28 95;
+  --cl-primary-800: 66 48 125;
+  --cl-primary-700: 83 56 158;
+  --cl-primary-600: 105 65 198;
+  --cl-primary-500: 127 86 217;
+  --cl-primary-400: 158 119 237;
+  --cl-primary-300: 182 146 246;
+  --cl-primary-200: 214 187 251;
+  --cl-primary-100: 233 215 254;
+  --cl-primary-050: 244 235 255;
+  --cl-primary-025: 249 245 255;
+  --cl-primary-000: 252 250 255;
+  --cl-error-900: 85 22 12;
+  --cl-error-800: 122 39 26;
+  --cl-error-700: 145 32 24;
+  --cl-error-600: 180 35 24;
+  --cl-error-500: 217 45 32;
+  --cl-error-400: 240 68 56;
+  --cl-error-300: 249 112 102;
+  --cl-error-200: 253 162 155;
+  --cl-error-100: 254 205 202;
+  --cl-error-050: 254 228 226;
+  --cl-error-025: 254 243 242;
+  --cl-error-000: 255 251 250;
+}

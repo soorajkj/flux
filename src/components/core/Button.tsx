@@ -6,21 +6,17 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { classnames } from "~lib/utlis";
 
 const buttonStyles = cva(
-  "inline-flex cursor-pointer select-none items-center justify-center rounded-md border border-transparent px-2 py-2 text-sm font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex cursor-pointer select-none items-center justify-center rounded-md border border-color-transparent px-2 py-2 text-sm font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        primary:
-          "bg-purple-700 text-neutral-50 hover:bg-purple-900 focus-visible:bg-purple-900",
-        secondary:
-          "bg-neutral-800/50 hover:bg-neutral-800/80 hover:text-neutral-50 focus-visible:bg-neutral-800/80 focus-visible:text-neutral-50",
-        ghost:
-          "hover:bg-neutral-800/50 hover:text-neutral-50 focus-visible:bg-neutral-800/50 focus-visible:text-neutral-50",
-        outline:
-          "text-neutral-50 border-neutral-800/50 hover:bg-neutral-800/50 focus-visible:bg-neutral-800/50",
-        destruct:
-          "bg-red-600 text-neutral-50 hover:bg-red-900 focus-visible:bg-red-900",
-        link: "text-neutral-50 underline-offset-4 hover:underline focus-visible:underline",
+        unstyled: "",
+        link: "",
+        primary: "",
+        secondary: "",
+        ghost: "",
+        outline: "",
+        destruct: "",
       },
       block: {
         false: "w-auto",
@@ -45,7 +41,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       loading,
       asChild,
       block,
-      variant = "primary",
+      variant = "unstyled",
       className,
       ...rest
     } = props;

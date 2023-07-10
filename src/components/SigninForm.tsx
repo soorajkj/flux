@@ -55,15 +55,16 @@ export default function SigninForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
+              <FormMessage />
               <FormControl>
                 <Input
                   type="text"
                   placeholder="example@gmail.com"
                   autoComplete="off"
+                  className="order-2"
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -73,15 +74,16 @@ export default function SigninForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Password</FormLabel>
+              <FormMessage />
               <FormControl>
                 <Input
                   type="password"
                   placeholder="********"
                   autoComplete="off"
+                  className="order-2"
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -93,7 +95,7 @@ export default function SigninForm() {
           <Link
             href="/signup"
             aria-label="signup"
-            className="cursor-pointer select-none text-purple-600 underline-offset-2 transition hover:underline focus-visible:underline focus-visible:outline-none"
+            className="text-purple-600 cursor-pointer select-none underline-offset-2 transition hover:underline focus-visible:underline focus-visible:outline-none"
           >
             Sign up
           </Link>

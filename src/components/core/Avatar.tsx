@@ -6,7 +6,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { classnames } from "~lib/utlis";
 
 const avatarStyles = cva(
-  "relative flex h-8 w-8 shrink-0 overflow-hidden rounded-full border border-purple-800 font-semibold"
+  "relative flex h-10 w-10 overflow-hidden shrink-0 rounded-full font-semibold border border-color-grey-800/10 bg-color-grey-050"
 );
 
 interface AvatarProps
@@ -54,7 +54,7 @@ const AvatarImage = React.forwardRef<
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
 const avatarFallbackStyles = cva(
-  "bg-purple-800 text-neutral-50 text-xs font-semibold leading-none flex h-full w-full items-center justify-center rounded-full"
+  "text-sm font-semibold leading-none text-color-grey-500 flex h-full w-full items-center justify-center rounded-full"
 );
 
 interface AvatarFallbackProps

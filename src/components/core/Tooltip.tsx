@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import { cva, type VariantProps } from "class-variance-authority";
 import { classnames } from "~lib/utlis";
 
 const TooltipProvider = TooltipPrimitive.Provider;
@@ -11,13 +10,8 @@ const Tooltip = TooltipPrimitive.Root;
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
-const tooltipContentStyles = cva(
-  "z-50 overflow-hidden rounded bg-neutral-50 px-2 py-1 text-xs font-medium text-neutral-900"
-);
-
 interface TooltipContentProps
-  extends React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>,
-    VariantProps<typeof tooltipContentStyles> {}
+  extends React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> {}
 
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
@@ -29,7 +23,10 @@ const TooltipContent = React.forwardRef<
     <TooltipPrimitive.Content
       ref={ref}
       sideOffset={sideOffset}
-      className={classnames(tooltipContentStyles({ className }))}
+      className={classnames(
+        "z-50 overflow-hidden rounded bg-color-grey-800 px-2 py-1.5 text-xs font-normal text-color-grey-000 animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        className
+      )}
       {...rest}
     >
       {children}

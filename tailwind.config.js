@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
@@ -7,9 +8,49 @@ module.exports = {
     fontFamily: {
       "family-inter": "var(--font-family-inter)",
     },
+    colors: {
+      "color-transparent": "transparent",
+      "color-current": "current",
+      "color-grey-900": "rgb(var(--cl-grey-900) / <alpha-value>)",
+      "color-grey-800": "rgb(var(--cl-grey-800) / <alpha-value>)",
+      "color-grey-700": "rgb(var(--cl-grey-700) / <alpha-value>)",
+      "color-grey-600": "rgb(var(--cl-grey-600) / <alpha-value>)",
+      "color-grey-500": "rgb(var(--cl-grey-500) / <alpha-value>)",
+      "color-grey-400": "rgb(var(--cl-grey-400) / <alpha-value>)",
+      "color-grey-300": "rgb(var(--cl-grey-300) / <alpha-value>)",
+      "color-grey-200": "rgb(var(--cl-grey-200) / <alpha-value>)",
+      "color-grey-100": "rgb(var(--cl-grey-100) / <alpha-value>)",
+      "color-grey-050": "rgb(var(--cl-grey-050) / <alpha-value>)",
+      "color-grey-000": "rgb(var(--cl-grey-000) / <alpha-value>)",
+      "color-primary-900": "rgb(var(--cl-primary-900) / <alpha-value>)",
+      "color-primary-800": "rgb(var(--cl-primary-800) / <alpha-value>)",
+      "color-primary-700": "rgb(var(--cl-primary-700) / <alpha-value>)",
+      "color-primary-600": "rgb(var(--cl-primary-600) / <alpha-value>)",
+      "color-primary-500": "rgb(var(--cl-primary-500) / <alpha-value>)",
+      "color-primary-400": "rgb(var(--cl-primary-400) / <alpha-value>)",
+      "color-primary-300": "rgb(var(--cl-primary-300) / <alpha-value>)",
+      "color-primary-200": "rgb(var(--cl-primary-200) / <alpha-value>)",
+      "color-primary-100": "rgb(var(--cl-primary-100) / <alpha-value>)",
+      "color-primary-050": "rgb(var(--cl-primary-050) / <alpha-value>)",
+      "color-primary-000": "rgb(var(--cl-primary-000) / <alpha-value>)",
+      "color-error-900": "rgb(var(--cl-error-900) / <alpha-value>)",
+      "color-error-800": "rgb(var(--cl-error-800) / <alpha-value>)",
+      "color-error-700": "rgb(var(--cl-error-700) / <alpha-value>)",
+      "color-error-600": "rgb(var(--cl-error-600) / <alpha-value>)",
+      "color-error-500": "rgb(var(--cl-error-500) / <alpha-value>)",
+      "color-error-400": "rgb(var(--cl-error-400) / <alpha-value>)",
+      "color-error-300": "rgb(var(--cl-error-300) / <alpha-value>)",
+      "color-error-200": "rgb(var(--cl-error-200) / <alpha-value>)",
+      "color-error-100": "rgb(var(--cl-error-100) / <alpha-value>)",
+      "color-error-050": "rgb(var(--cl-error-050) / <alpha-value>)",
+      "color-error-000": "rgb(var(--cl-error-000) / <alpha-value>)",
+    },
   },
   future: {
     hoverOnlyWhenSupported: true,
   },
-  plugins: ["prettier-plugin-tailwindcss", "tailwindcss-animate"],
+  plugins: [
+    require("prettier-plugin-tailwindcss"),
+    require("tailwindcss-animate"),
+  ],
 };
