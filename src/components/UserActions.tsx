@@ -1,5 +1,8 @@
 "use client";
 
+import { useUser } from "@supabase/auth-helpers-react";
+import { Button } from "~components/core/Button";
+import { Icon } from "~components/core/Icon";
 import { Avatar, AvatarFallback, AvatarImage } from "~components/core/Avatar";
 import {
   Dropdown,
@@ -9,9 +12,6 @@ import {
   DropdownShortcut,
   DropdownTrigger,
 } from "~components/core/Dropdown";
-import { Button } from "~components/core/Button";
-import { Icon } from "~components/core/Icon";
-import { useUser } from "@supabase/auth-helpers-react";
 import { getAvatarName } from "~lib/utlis";
 
 export default function UserActions() {
@@ -29,7 +29,7 @@ export default function UserActions() {
       </DropdownTrigger>
       <DropdownContent align="end" className="w-56">
         <div className="flex flex-col px-4 py-2">
-          <h4 className="font-semibold text-color-grey-600">Olivia Rhye</h4>
+          <h4 className="font-semibold text-color-grey-600">My Profile</h4>
           <p>{user?.email}</p>
         </div>
         <DropdownSeparator />

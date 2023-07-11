@@ -6,13 +6,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { classnames } from "~lib/utlis";
 
 const buttonStyles = cva(
-  "inline-flex cursor-pointer select-none items-center justify-center rounded-md border border-color-transparent px-2 py-2 text-sm font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex cursor-pointer select-none items-center justify-center rounded-md border border-color-transparent px-2 py-2.5 text-sm font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         unstyled: "",
         link: "",
-        primary: "",
+        primary:
+          "border-color-primary-500 bg-color-primary-500 text-color-grey-000 hover:border-color-primary-600 hover:bg-color-primary-600 hover:text-color-grey-000 focus-visible:border-color-primary-500 focus-visible:bg-color-primary-500 focus-visible:ring-4 focus-visible:ring-color-primary-050",
         secondary: "",
         ghost: "",
         outline: "",

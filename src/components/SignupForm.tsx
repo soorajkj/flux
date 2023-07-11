@@ -61,7 +61,7 @@ export default function SignupForm() {
               <FormMessage className="order-3" />
               <FormControl>
                 <Input
-                  type="text"
+                  type="email"
                   placeholder="example@gmail.com"
                   autoComplete="off"
                   {...field}
@@ -96,7 +96,7 @@ export default function SignupForm() {
           <Link
             href="/signin"
             aria-label="signin"
-            className="text-purple-600 cursor-pointer select-none underline-offset-2 transition hover:underline focus-visible:underline focus-visible:outline-none"
+            className="cursor-pointer select-none text-color-primary-600 transition hover:text-color-primary-700 focus-visible:text-color-primary-700 focus-visible:outline-none"
           >
             Sign in
           </Link>
