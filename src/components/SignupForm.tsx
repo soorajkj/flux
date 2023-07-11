@@ -56,15 +56,14 @@ export default function SignupForm() {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="flex flex-col">
               <FormLabel>Email</FormLabel>
-              <FormMessage />
+              <FormMessage className="order-3" />
               <FormControl>
                 <Input
                   type="text"
                   placeholder="example@gmail.com"
                   autoComplete="off"
-                  className="order-2"
                   {...field}
                 />
               </FormControl>
@@ -75,14 +74,13 @@ export default function SignupForm() {
           control={form.control}
           name="password"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="flex flex-col">
               <FormLabel>Password</FormLabel>
-              <FormMessage />
+              <FormMessage className="order-3" />
               <FormControl>
                 <Input
                   type="password"
                   placeholder="********"
-                  className="order-2"
                   autoComplete="off"
                   {...field}
                 />
