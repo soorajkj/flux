@@ -1,31 +1,36 @@
+"use client";
+
 import { Avatar, AvatarFallback, AvatarImage } from "~components/core/Avatar";
 import {
   Dropdown,
   DropdownContent,
   DropdownItem,
-  DropdownLabel,
   DropdownSeparator,
   DropdownShortcut,
   DropdownTrigger,
 } from "~components/core/Dropdown";
 import { Button } from "~components/core/Button";
 import { Icon } from "~components/core/Icon";
+import { useUser } from "@supabase/auth-helpers-react";
+import { getAvatarName } from "~lib/utlis";
 
 export default function UserActions() {
+  const user = useUser();
+
   return (
     <Dropdown>
       <DropdownTrigger asChild>
         <Button className="rounded-full px-0 py-0" asChild>
           <Avatar>
             <AvatarImage src="" alt="Olivia Rhye" />
-            <AvatarFallback>OR</AvatarFallback>
+            <AvatarFallback>{getAvatarName(user)}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownTrigger>
       <DropdownContent align="end" className="w-56">
         <div className="flex flex-col px-4 py-2">
-          <DropdownLabel>Olivia Rhye</DropdownLabel>
-          <div>olivia@untitledui.com</div>
+          <h4 className="font-semibold text-color-grey-600">Olivia Rhye</h4>
+          <p>{user?.email}</p>
         </div>
         <DropdownSeparator />
         <DropdownItem>

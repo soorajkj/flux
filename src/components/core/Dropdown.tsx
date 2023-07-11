@@ -39,7 +39,7 @@ const DropdownLabel = React.forwardRef<
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={classnames(
-      "font-medium text-color-grey-600",
+      "font-semibold text-color-grey-600",
       inset && "pl-8",
       className
     )}
@@ -71,7 +71,7 @@ const DropdownItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={classnames(
-      "relative flex cursor-pointer select-none items-center rounded-sm px-4 py-2.5 outline-none transition-colors focus:bg-color-grey-050/50 focus:text-color-grey-400 disabled:cursor-default data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-pointer select-none items-center rounded-sm px-4 py-2.5 font-medium outline-none transition-colors focus:bg-color-grey-050/50 focus:text-color-grey-400 disabled:cursor-default data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       inset && "pl-8",
       className
     )}
@@ -180,7 +180,7 @@ const DropdownShortcut = ({
   return (
     <span
       className={classnames(
-        "ml-auto text-xs tracking-widest text-color-grey-400",
+        "ml-auto text-xs font-normal tracking-widest text-color-grey-400",
         className
       )}
       {...props}
