@@ -96,7 +96,7 @@ export default function SignupForm() {
           <Link
             href="/signin"
             aria-label="signin"
-            className="cursor-pointer select-none text-color-primary-600 transition hover:text-color-primary-700 focus-visible:text-color-primary-700 focus-visible:outline-none"
+            className="inline-block cursor-pointer select-none font-semibold text-color-primary-600 transition hover:underline focus-visible:underline focus-visible:outline-none"
           >
             Sign in
           </Link>

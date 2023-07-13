@@ -85,7 +85,7 @@ export default function SigninForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" variant="primary" block={true}>
+        <Button type="submit" variant="primary" block={true} className="!mt-10">
           Sign in
         </Button>
         <p className="space-x-1 text-center">
@@ -96,6 +96,15 @@ export default function SigninForm() {
             className="cursor-pointer select-none font-semibold text-color-primary-600 transition hover:underline focus-visible:underline focus-visible:outline-none"
           >
             Sign up
+          </Link>
+        </p>
+        <p className="text-center">
+          <Link
+            href="/"
+            aria-label="forgot password"
+            className="inline-block cursor-pointer select-none font-semibold text-color-primary-600 transition hover:underline focus-visible:underline focus-visible:outline-none"
+          >
+            Forgot password
           </Link>
         </p>
       </form>

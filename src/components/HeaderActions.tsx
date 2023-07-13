@@ -13,7 +13,7 @@ export default function HeaderActions() {
       <TooltipProvider delayDuration={200}>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="secondary">
+            <Button variant="ghost">
               <Icon icon="search" className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
@@ -25,7 +25,7 @@ export default function HeaderActions() {
       <TooltipProvider delayDuration={200}>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="secondary">
+            <Button variant="ghost">
               <Icon icon="maximize" className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
@@ -37,7 +37,7 @@ export default function HeaderActions() {
       <TooltipProvider delayDuration={200}>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="secondary">
+            <Button variant="ghost">
               <Icon icon="download" className="h-4 w-4" />
             </Button>
           </TooltipTrigger>

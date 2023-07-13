@@ -5,14 +5,17 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import { cva, type VariantProps } from "class-variance-authority";
 import { classnames } from "~lib/utlis";
 
-const separatorStyles = cva("shrink-0 bg-color-grey-100", {
-  variants: {
-    orientation: {
-      vertical: "h-full w-px",
-      horizontal: "h-px w-full",
+const separatorStyles = cva(
+  "shrink-0 bg-color-base-100 dark:bg-color-base-d-600",
+  {
+    variants: {
+      orientation: {
+        vertical: "h-full w-px",
+        horizontal: "h-px w-full",
+      },
     },
-  },
-});
+  }
+);
 
 interface SeparatorProps
   extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>,

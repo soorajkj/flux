@@ -14,13 +14,13 @@ const Avatar = React.forwardRef<
     <AvatarPrimitive.Root
       ref={ref}
       className={classnames(
-        "relative flex h-10 w-10 shrink-0 rounded-full border border-color-grey-800/10 bg-color-grey-050 font-semibold",
+        "relative flex h-10 w-10 shrink-0 rounded-full border border-color-base-800/10 bg-color-base-050 font-semibold",
         className
       )}
       {...rest}
     >
       {children}
-      <span className="absolute right-0 bottom-0 h-3 w-3 rounded-full border-2 border-color-grey-000 bg-color-primary-400" />
+      <span className="absolute right-0 bottom-0 h-3 w-3 rounded-full border-2 border-color-base-000 bg-color-primary-400" />
     </AvatarPrimitive.Root>
   );
 });
@@ -54,7 +54,7 @@ const AvatarFallback = React.forwardRef<
     <AvatarPrimitive.Fallback
       ref={ref}
       className={classnames(
-        "flex h-full w-full items-center justify-center rounded-full text-sm font-semibold leading-none text-color-grey-500",
+        "flex h-full w-full items-center justify-center rounded-full text-sm font-semibold leading-none text-color-base-500",
         className
       )}
       {...rest}
