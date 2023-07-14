@@ -27,7 +27,7 @@ const Checkbox = React.forwardRef<
       {...rest}
     >
       <CheckboxPrimitive.Indicator
-        className={classnames("leading-none text-neutral-50")}
+        className={classnames("text-neutral-50 leading-none")}
       >
         <Icon icon="check" className="h-4 w-4" />
       </CheckboxPrimitive.Indicator>
