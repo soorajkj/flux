@@ -10,14 +10,11 @@ const Tooltip = TooltipPrimitive.Root;
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
-interface TooltipContentProps
-  extends React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> {}
-
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
-  TooltipContentProps
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
 >((props, ref) => {
-  const { children, sideOffset = 4, className, ...rest } = props;
+  const { sideOffset = 4, className, ...rest } = props;
 
   return (
     <TooltipPrimitive.Content
@@ -28,12 +25,32 @@ const TooltipContent = React.forwardRef<
         className
       )}
       {...rest}
-    >
-      {children}
-    </TooltipPrimitive.Content>
+    />
   );
 });
 
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };
+const TooltipArrow = React.forwardRef<
+  React.ElementRef<typeof TooltipPrimitive.Arrow>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Arrow>
+>((props, ref) => {
+  const { className, ...rest } = props;
+  return (
+    <TooltipPrimitive.Arrow
+      ref={ref}
+      className={classnames("fill-color-base-800", className)}
+      {...rest}
+    />
+  );
+});
+
+TooltipArrow.displayName = TooltipPrimitive.Arrow.displayName;
+
+export {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+  TooltipArrow,
+};

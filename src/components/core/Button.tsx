@@ -10,7 +10,6 @@ const buttonStyles = cva(
   {
     variants: {
       variant: {
-        unstyled: "",
         primary:
           "border-color-primary-500 bg-color-primary-500 text-color-base-000 hover:border-color-primary-600 hover:bg-color-primary-600 hover:text-color-base-000 focus-visible:border-color-primary-500 focus-visible:bg-color-primary-500 focus-visible:ring-4 focus-visible:ring-color-primary-100",
         secondary:
@@ -21,6 +20,7 @@ const buttonStyles = cva(
           "border-color-base-200 bg-color-base-000 text-color-base-600 hover:border-color-base-200 hover:bg-color-base-025 hover:text-color-base-700 focus-visible:border-color-base-200 focus-visible:bg-color-base-000 focus-visible:ring-4 focus-visible:ring-color-base-050",
         destruct:
           "border-color-error-500 bg-color-error-500 text-color-base-000 hover:border-color-error-600 hover:bg-color-error-600 hover:text-color-base-000 focus-visible:border-color-error-500 focus-visible:bg-color-error-500 focus-visible:ring-4 focus-visible:ring-color-error-100",
+        unstyled: "",
       },
       block: {
         false: "w-auto",
