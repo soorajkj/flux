@@ -9,11 +9,11 @@ import {
 
 export default function HeaderActions() {
   return (
-    <div className="-mx-1 flex items-center">
+    <div className="flex items-center">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost" className="mx-1">
+            <Button variant="ghost" className="mx-0.5 py-2">
               <Icon icon="search" className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
@@ -25,7 +25,7 @@ export default function HeaderActions() {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost" className="mx-1">
+            <Button variant="ghost" className="mx-0.5 py-2">
               <Icon icon="maximize" className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
@@ -37,7 +37,7 @@ export default function HeaderActions() {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost" className="mx-1">
+            <Button variant="ghost" className="mx-0.5 py-2">
               <Icon icon="download" className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
