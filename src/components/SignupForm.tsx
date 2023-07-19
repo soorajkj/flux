@@ -56,17 +56,17 @@ export default function SignupForm() {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="flex flex-col">
               <FormLabel>Email</FormLabel>
+              <FormMessage className="order-3" />
               <FormControl>
                 <Input
-                  type="text"
+                  type="email"
                   placeholder="example@gmail.com"
                   autoComplete="off"
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -74,8 +74,9 @@ export default function SignupForm() {
           control={form.control}
           name="password"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="flex flex-col">
               <FormLabel>Password</FormLabel>
+              <FormMessage className="order-3" />
               <FormControl>
                 <Input
                   type="password"
@@ -84,7 +85,6 @@ export default function SignupForm() {
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -96,7 +96,7 @@ export default function SignupForm() {
           <Link
             href="/signin"
             aria-label="signin"
-            className="text-color-primary-600 cursor-pointer select-none font-semibold transition hover:underline focus-visible:underline focus-visible:outline-none"
+            className="inline-block cursor-pointer select-none font-semibold text-color-primary-600 transition hover:underline focus-visible:underline focus-visible:outline-none"
           >
             Sign in
           </Link>

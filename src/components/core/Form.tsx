@@ -9,7 +9,7 @@ import {
   type FieldPath,
   type FieldValues,
 } from "react-hook-form";
-import { Label } from "~components/core/label";
+import { Label } from "~components/core/Label";
 import { classnames } from "~lib/utlis";
 
 const Form = FormProvider;
@@ -80,7 +80,11 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={classnames("space-y-2", className)} {...rest} />
+      <div
+        ref={ref}
+        className={classnames(["space-y-2"], className)}
+        {...rest}
+      />
     </FormItemContext.Provider>
   );
 });
@@ -141,7 +145,7 @@ const FormDescription = React.forwardRef<
     <p
       ref={ref}
       id={formDescriptionId}
-      className={classnames("text-muted-foreground text-sm", className)}
+      className={classnames(["text-sm"], className)}
       {...rest}
     />
   );
@@ -165,7 +169,10 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={classnames("text-xs text-red-700", className)}
+      className={classnames(
+        ["error", "peer", "text-sm", "text-color-error-400"],
+        className
+      )}
       {...rest}
     >
       {body}
@@ -193,7 +200,7 @@ const UncontrolledFormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={classnames("text-xm text-red-700", className)}
+      className={classnames(["text-xm", "text-red-700"], className)}
       {...rest}
     >
       {body}

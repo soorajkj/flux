@@ -53,8 +53,9 @@ export default function SigninForm() {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="flex flex-col">
               <FormLabel>Email</FormLabel>
+              <FormMessage className="order-3" />
               <FormControl>
                 <Input
                   type="text"
@@ -63,7 +64,6 @@ export default function SigninForm() {
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -71,8 +71,9 @@ export default function SigninForm() {
           control={form.control}
           name="password"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="flex flex-col">
               <FormLabel>Password</FormLabel>
+              <FormMessage className="order-3" />
               <FormControl>
                 <Input
                   type="password"
@@ -81,7 +82,6 @@ export default function SigninForm() {
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -93,7 +93,7 @@ export default function SigninForm() {
           <Link
             href="/signup"
             aria-label="signup"
-            className="cursor-pointer select-none text-purple-600 underline-offset-2 transition hover:underline focus-visible:underline focus-visible:outline-none"
+            className="cursor-pointer select-none font-semibold text-color-primary-600 transition hover:underline focus-visible:underline focus-visible:outline-none"
           >
             Sign up
           </Link>
@@ -102,7 +102,7 @@ export default function SigninForm() {
           <Link
             href="/"
             aria-label="forgot password"
-            className="text-color-primary-600 inline-block cursor-pointer select-none font-semibold transition hover:underline focus-visible:underline focus-visible:outline-none"
+            className="inline-block cursor-pointer select-none font-semibold text-color-primary-600 transition hover:underline focus-visible:underline focus-visible:outline-none"
           >
             Forgot password
           </Link>

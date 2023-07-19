@@ -9,6 +9,13 @@ import Maximize from "public/maximize.svg";
 import Check from "public/check.svg";
 import Show from "public/show.svg";
 import Hide from "public/hide.svg";
+import ChevronRight from "public/chevron-right.svg";
+import User from "public/user.svg";
+import Settings from "public/settings.svg";
+import Logout from "public/logout.svg";
+import Zap from "public/zap.svg";
+import Layers from "public/layers.svg";
+import Support from "public/support.svg";
 
 const Icons = {
   search: Search,
@@ -17,6 +24,13 @@ const Icons = {
   check: Check,
   show: Show,
   hide: Hide,
+  chevronRight: ChevronRight,
+  user: User,
+  settings: Settings,
+  logout: Logout,
+  zap: Zap,
+  layers: Layers,
+  support: Support,
 } as const;
 
 interface IconProps
