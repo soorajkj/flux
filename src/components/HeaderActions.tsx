@@ -1,19 +1,19 @@
+import { Button } from "~components/core/Button";
+import { Icon } from "~components/core/Icon";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "~components/core/Tooltip";
-import { Button } from "~components/core/Button";
-import { Icon } from "~components/core/Icon";
 
 export default function HeaderActions() {
   return (
-    <div className="flex space-x-2">
-      <TooltipProvider delayDuration={200}>
+    <div className="flex items-center">
+      <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost">
+            <Button variant="ghost" className="mx-0.5 py-2">
               <Icon icon="search" className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
@@ -22,10 +22,10 @@ export default function HeaderActions() {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <TooltipProvider delayDuration={200}>
+      <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost">
+            <Button variant="ghost" className="mx-0.5 py-2">
               <Icon icon="maximize" className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
@@ -34,10 +34,10 @@ export default function HeaderActions() {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <TooltipProvider delayDuration={200}>
+      <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost">
+            <Button variant="ghost" className="mx-0.5 py-2">
               <Icon icon="download" className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
