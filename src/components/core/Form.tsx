@@ -1,22 +1,15 @@
 import * as React from "react";
 import type * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
-import {
-  Controller,
-  FormProvider,
-  useFormContext,
-  type ControllerProps,
-  type FieldPath,
-  type FieldValues,
-} from "react-hook-form";
-import { Label } from "~components/core/Label";
+import * as ReactHookForm from "react-hook-form";
+import { Label } from "~components/core/label";
 import { classnames } from "~lib/utlis";
 
-const Form = FormProvider;
+const Form = ReactHookForm.FormProvider;
 
 type FormFieldContextValue<
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  TFieldValues extends ReactHookForm.FieldValues = ReactHookForm.FieldValues,
+  TName extends ReactHookForm.FieldPath<TFieldValues> = ReactHookForm.FieldPath<TFieldValues>
 > = {
   name: TName;
 };
@@ -26,16 +19,16 @@ const FormFieldContext = React.createContext<FormFieldContextValue>(
 );
 
 const FormField = <
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  TFieldValues extends ReactHookForm.FieldValues = ReactHookForm.FieldValues,
+  TName extends ReactHookForm.FieldPath<TFieldValues> = ReactHookForm.FieldPath<TFieldValues>
 >(
-  props: ControllerProps<TFieldValues, TName>
+  props: ReactHookForm.ControllerProps<TFieldValues, TName>
 ) => {
   const { ...rest } = props;
 
   return (
     <FormFieldContext.Provider value={{ name: props.name }}>
-      <Controller {...rest} />
+      <ReactHookForm.Controller {...rest} />
     </FormFieldContext.Provider>
   );
 };
@@ -43,7 +36,7 @@ const FormField = <
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext);
   const itemContext = React.useContext(FormItemContext);
-  const { getFieldState, formState } = useFormContext();
+  const { getFieldState, formState } = ReactHookForm.useFormContext();
 
   const fieldState = getFieldState(fieldContext.name, formState);
 
@@ -84,7 +77,7 @@ const FormItem = React.forwardRef<
         ref={ref}
         className={classnames(["space-y-2"], className)}
         {...rest}
-      />
+      ></div>
     </FormItemContext.Provider>
   );
 });

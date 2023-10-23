@@ -3,30 +3,19 @@
 import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { classnames } from "~lib/utlis";
-
-interface LabelProps
-  extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {}
+import { cva, VariantProps } from "class-variance-authority";
 
 const Label = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
-  LabelProps
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
+    VariantProps<typeof LabelStyles>
 >((props, ref) => {
   const { className, ...rest } = props;
 
   return (
     <LabelPrimitive.Root
       ref={ref}
-      className={classnames(
-        [
-          "inline-block",
-          "font-medium",
-          "leading-none",
-          "text-color-base-600",
-          "peer-disabled:cursor-not-allowed",
-          "peer-disabled:opacity-70",
-        ],
-        className
-      )}
+      className={classnames(LabelStyles({ className }))}
       {...rest}
     />
   );
@@ -35,3 +24,13 @@ const Label = React.forwardRef<
 Label.displayName = LabelPrimitive.Root.displayName;
 
 export { Label };
+
+const LabelStyles = cva([
+  "db-label",
+  "inline-block",
+  "font-medium",
+  "leading-none",
+  "text-color-base-600",
+  "peer-disabled:cursor-not-allowed",
+  "peer-disabled:opacity-70",
+]);
