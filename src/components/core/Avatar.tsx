@@ -31,7 +31,7 @@ const Avatar = React.forwardRef<
       {...rest}
     >
       {children}
-      <span className="absolute right-0 bottom-0 h-3 w-3 rounded-full border-2 border-color-base-000 bg-color-success-400" />
+      <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-color-base-000 bg-color-success-400" />
     </AvatarPrimitive.Root>
   );
 });
