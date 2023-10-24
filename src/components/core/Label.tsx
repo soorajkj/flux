@@ -26,7 +26,7 @@ Label.displayName = LabelPrimitive.Root.displayName;
 export { Label };
 
 const LabelStyles = cva([
-  "db-label",
+  "daybook-label",
   "inline-block",
   "font-medium",
   "leading-none",
