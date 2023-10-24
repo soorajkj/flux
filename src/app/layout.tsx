@@ -1,26 +1,20 @@
 import * as React from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import ThemeProvider from "~components/ThemeProvider";
-import SupabaseProvider from "~components/SupabaseProvider";
 import { LayoutProps } from "~types/layout";
 import { inter } from "~lib/fonts";
 import { classnames } from "~lib/utlis";
-import "~app/index.css";
+import "./index.css";
 
-export interface ExtendedLayoutProps
-  extends LayoutProps,
-    VariantProps<typeof LayoutStyles> {
-  className?: string | string[];
-}
+type LayoutWithVariant = LayoutProps & VariantProps<typeof LayoutStyles>;
+interface ExtendedLayoutProps extends LayoutWithVariant {}
 
-export default function Layout(props: ExtendedLayoutProps) {
-  const { children, className } = props;
-
+export default function Layout(_props: ExtendedLayoutProps) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className={classnames(LayoutStyles({ className }))}>
+      <body className={classnames(LayoutStyles())}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <SupabaseProvider>{children}</SupabaseProvider>
+          {_props.children}
         </ThemeProvider>
       </body>
     </html>
