@@ -2,7 +2,7 @@ import * as React from "react";
 import { LayoutProps } from "~types/layout";
 import { inter } from "~lib/fonts";
 import ThemeProvider from "~components/providers/theme";
-import "~app/index.css";
+import "~styles/index.css";
 
 export default function Layout(_props: LayoutProps) {
   return (

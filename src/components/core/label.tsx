@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
-import { classnames } from "~lib/utlis";
 import { cva, VariantProps } from "class-variance-authority";
+import { classnames } from "~lib/utlis";
 
 const Label = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
