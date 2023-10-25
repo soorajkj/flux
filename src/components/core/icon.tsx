@@ -1,10 +1,6 @@
 import React, { forwardRef } from "react";
 import * as VisuallyHiddenPrimitive from "@radix-ui/react-visually-hidden";
-import Demo from "public/demo.svg";
-
-const icons = {
-  demo: Demo,
-};
+import { icons } from "~constants/icons";
 
 export interface IconProps extends React.SVGAttributes<SVGSVGElement> {
   icon: keyof typeof icons;

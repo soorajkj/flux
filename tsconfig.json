@@ -29,6 +29,8 @@
       "~hooks/*": ["./src/hooks/*"],
       "~types": ["./src/types"],
       "~types/*": ["./src/types/*"],
+      "~constants": ["./src/constants"],
+      "~constants/*": ["./src/constants/*"],
       "~utils": ["./src/utils"],
       "~utils/*": ["./src/utils/*"],
       "~components": ["./src/components"],
