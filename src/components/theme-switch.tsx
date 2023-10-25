@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { Icon } from "~components/core/icon";
+import { Toggle } from "~components/core/toggle";
 
 export default function ThemeSwitch() {
   const { themes, theme, setTheme } = useTheme();
@@ -19,12 +20,12 @@ export default function ThemeSwitch() {
   };
 
   return (
-    <button
+    <Toggle
+      aria-label="toggle application appearance"
       className="absolute bottom-16 right-8 inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 shadow dark:bg-stone-950"
       onClick={() => handleThemeChange()}
     >
       <Icon icon="palette" label="appearance icon"></Icon>
-      <span className="sr-only">Change application appearance</span>
-    </button>
+    </Toggle>
   );
 }
