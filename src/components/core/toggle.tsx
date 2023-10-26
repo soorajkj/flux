@@ -11,7 +11,7 @@ const Toggle = React.forwardRef<
   return (
     <TogglePrimitive.Root
       ref={ref}
-      className={classnames(["ghp-toggle", "select-none"], className)}
+      className={classnames(["gaybook-toggle", "select-none"], className)}
       {...rest}
     />
   );
