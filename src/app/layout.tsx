@@ -1,7 +1,7 @@
 import * as React from "react";
 import { LayoutProps } from "~types/layout";
 import { inter } from "~lib/fonts";
-import ThemeProvider from "~components/providers/theme";
+import ThemeProvider from "~components/providers/theme-provider";
 import ThemeSwitch from "~components/theme-switch";
 import "~styles/index.css";
 

@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { useTheme } from "next-themes";
 import { Icon } from "~components/core/icon";
 import { Toggle } from "~components/core/toggle";
@@ -23,7 +24,7 @@ export default function ThemeSwitch() {
     <Toggle
       aria-label="toggle application appearance"
       className="absolute bottom-16 right-8 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 bg-gray-50 text-slate-700 shadow dark:border-zinc-800 dark:bg-gray-900 dark:text-neutral-300"
-      onClick={() => handleThemeChange()}
+      onClick={handleThemeChange}
     >
       <Icon icon="palette" label="appearance icon"></Icon>
     </Toggle>
