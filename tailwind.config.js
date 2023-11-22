@@ -11,8 +11,5 @@ module.exports = {
     hoverOnlyWhenSupported: true,
     purgeLayersByDefault: true,
   },
-  plugins: [
-    require("prettier-plugin-tailwindcss"),
-    require("tailwindcss-animate"),
-  ],
+  plugins: [require("tailwindcss-animate")],
 };
