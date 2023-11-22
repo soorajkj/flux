@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import * as React from "react";
 import * as VisuallyHiddenPrimitive from "@radix-ui/react-visually-hidden";
 import { icons } from "~constants/icons";
 
@@ -7,7 +7,7 @@ export interface IconProps extends React.SVGAttributes<SVGSVGElement> {
   label?: string;
 }
 
-const Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+const Icon = React.forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const { icon, label, ...rest } = props;
 
   const IconEle = icons[icon];
