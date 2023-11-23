@@ -1,3 +1,9 @@
+import Editor from "~components/editor";
+
 export default function Page() {
-  return <div>Home Page</div>;
+  return (
+    <main className="px-4 py-4">
+      <Editor />
+    </main>
+  );
 }
