@@ -1,22 +1,24 @@
 "use client";
 
-import * as BlockNoteEditorCore from "@blocknote/core";
+import * as BNCore from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import "@blocknote/core/style.css";
+import { useTheme } from "next-themes";
 
-interface EditorProps {
-  editable?: boolean;
+interface EditorProps
+  extends Partial<BNCore.BlockNoteEditorOptions<BNCore.BlockSchema>> {
+  onChange?: () => void;
 }
 
 export default function Editor(props: EditorProps) {
-  const { editable = true } = props;
+  const { editable = true, initialContent, ...rest } = props;
+  const { theme } = useTheme() as { theme: "light" | "dark" };
 
-  const editor: BlockNoteEditorCore.BlockNoteEditor | null = useBlockNote({
+  const editor: BNCore.BlockNoteEditor | null = useBlockNote({
     editable: editable,
-    onEditorContentChange(editor) {
-      JSON.stringify(editor.topLevelBlocks, null, 2);
-    },
+    initialContent: initialContent as BNCore.PartialBlock[],
+    onEditorContentChange(_editor) {},
   });
 
-  return <BlockNoteView editor={editor} theme="dark" />;
+  return <BlockNoteView editor={editor} theme={theme} {...rest} />;
 }
