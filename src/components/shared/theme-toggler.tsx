@@ -2,10 +2,10 @@
 
 import * as React from "react";
 import { useTheme } from "next-themes";
-import { Icon } from "~components/core/icon";
-import { Toggle } from "~components/core/toggle";
+import { Icon } from "~components/shared/core/icon";
+import { Toggle } from "~components/shared/core/toggle";
 
-export default function ThemeSwitch() {
+export default function ThemeToggler() {
   const { themes, theme, setTheme } = useTheme();
   const themesObject: Record<string, string> = {};
 
@@ -23,7 +23,7 @@ export default function ThemeSwitch() {
   return (
     <Toggle
       aria-label="toggle application appearance"
-      className="absolute bottom-8 right-8 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 bg-gray-50 text-slate-700 shadow dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300"
+      className="fixed bottom-8 right-8 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 bg-gray-50 text-slate-700 shadow dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300"
       onClick={handleThemeChange}
     >
       <Icon icon="palette" label="appearance icon"></Icon>
