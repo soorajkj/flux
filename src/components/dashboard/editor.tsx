@@ -2,8 +2,8 @@
 
 import * as BNCore from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
-import "@blocknote/core/style.css";
 import { useTheme } from "next-themes";
+import "@blocknote/core/style.css";
 
 interface EditorProps
   extends Partial<BNCore.BlockNoteEditorOptions<BNCore.BlockSchema>> {
