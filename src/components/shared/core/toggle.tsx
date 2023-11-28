@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as TogglePrimitive from "@radix-ui/react-toggle";
-import { classnames } from "~lib/utils";
+import { cx } from "~lib/utils";
 
 const Toggle = React.forwardRef<
   React.ElementRef<typeof TogglePrimitive.Root>,
@@ -13,7 +13,7 @@ const Toggle = React.forwardRef<
   return (
     <TogglePrimitive.Root
       ref={ref}
-      className={classnames(["tweede-toggle", "select-none"], className)}
+      className={cx(["tweede-toggle", "select-none"], className)}
       {...rest}
     />
   );

@@ -2,7 +2,7 @@ import * as React from "react";
 import type * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import * as ReactHookForm from "react-hook-form";
-import { classnames } from "~lib/utils";
+import { cx } from "~lib/utils";
 import Label from "~components/shared/core/label";
 
 const FormRoot = ReactHookForm.FormProvider;
@@ -73,11 +73,7 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div
-        ref={ref}
-        className={classnames(["space-y-2"], className)}
-        {...rest}
-      ></div>
+      <div ref={ref} className={cx(["space-y-2"], className)} {...rest}></div>
     </FormItemContext.Provider>
   );
 });
@@ -92,12 +88,7 @@ const FormLabel = React.forwardRef<
   const { formItemId } = useFormField();
 
   return (
-    <Label
-      ref={ref}
-      className={classnames(className)}
-      htmlFor={formItemId}
-      {...rest}
-    />
+    <Label ref={ref} className={cx(className)} htmlFor={formItemId} {...rest} />
   );
 });
 
@@ -138,7 +129,7 @@ const FormDescription = React.forwardRef<
     <p
       ref={ref}
       id={formDescriptionId}
-      className={classnames(["text-sm"], className)}
+      className={cx(["text-sm"], className)}
       {...rest}
     />
   );
@@ -162,7 +153,7 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={classnames(
+      className={cx(
         ["error", "peer", "text-sm", "text-color-error-400"],
         className
       )}
@@ -193,7 +184,7 @@ const UncontrolledFormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={classnames(["text-xm", "text-red-700"], className)}
+      className={cx(["text-xm", "text-red-700"], className)}
       {...rest}
     >
       {body}

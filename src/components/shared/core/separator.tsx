@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import { cva, type VariantProps } from "class-variance-authority";
-import { classnames } from "~lib/utils";
+import { cx } from "~lib/utils";
 
 interface SeparatorOwnProps
   extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> {
@@ -26,7 +26,7 @@ const Separator = React.forwardRef<
       ref={ref}
       decorative={decorative}
       orientation={orientation}
-      className={classnames(SeparatorStyles({ orientation, className }))}
+      className={cx(SeparatorStyles({ orientation, className }))}
       {...rest}
     />
   );

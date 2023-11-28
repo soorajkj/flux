@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { cva, VariantProps } from "class-variance-authority";
-import { classnames } from "~lib/utils";
+import { cx } from "~lib/utils";
 
 const AvatarRoot = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
@@ -15,7 +15,7 @@ const AvatarRoot = React.forwardRef<
   return (
     <AvatarPrimitive.Root
       ref={ref}
-      className={classnames(AvatarRootStyles({ className }))}
+      className={cx(AvatarRootStyles({ className }))}
       {...rest}
     />
   );
@@ -31,7 +31,7 @@ const AvatarFallback = React.forwardRef<
   return (
     <AvatarPrimitive.Fallback
       ref={ref}
-      className={classnames(AvatarFallbackStyles({ className }))}
+      className={cx(AvatarFallbackStyles({ className }))}
       {...rest}
     />
   );
@@ -47,7 +47,7 @@ const AvatarImage = React.forwardRef<
   return (
     <AvatarPrimitive.Image
       ref={ref}
-      className={classnames(AvatarImageStyles({ className }))}
+      className={cx(AvatarImageStyles({ className }))}
       {...rest}
     />
   );
