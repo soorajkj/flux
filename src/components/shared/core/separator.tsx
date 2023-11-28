@@ -34,7 +34,7 @@ const Separator = React.forwardRef<
 
 Separator.displayName = SeparatorPrimitive.Root.displayName;
 
-export { Separator };
+export default Separator;
 
 const SeparatorStyles = cva(
   [

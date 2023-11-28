@@ -23,7 +23,7 @@ const Label = React.forwardRef<
 
 Label.displayName = LabelPrimitive.Root.displayName;
 
-export { Label };
+export default Label;
 
 const LabelStyles = cva([
   "daybook-label",

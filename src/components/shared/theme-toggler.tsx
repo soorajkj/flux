@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { useTheme } from "next-themes";
-import { Icon } from "~components/shared/core/icon";
-import { Toggle } from "~components/shared/core/toggle";
+import Icon from "~components/shared/core/icon";
+import Toggle from "~components/shared/core/toggle";
 
 export default function ThemeToggler() {
   const { themes, theme, setTheme } = useTheme();

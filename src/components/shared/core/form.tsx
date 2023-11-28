@@ -3,7 +3,7 @@ import type * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import * as ReactHookForm from "react-hook-form";
 import { classnames } from "~lib/utils";
-import { Label } from "~components/shared/core/label";
+import Label from "~components/shared/core/label";
 
 const Form = ReactHookForm.FormProvider;
 
@@ -203,7 +203,7 @@ const UncontrolledFormMessage = React.forwardRef<
 
 UncontrolledFormMessage.displayName = "UncontrolledFormMessage";
 
-export {
+const RHForm = {
   Form,
   FormField,
   useFormField,
@@ -214,3 +214,5 @@ export {
   FormMessage,
   UncontrolledFormMessage,
 };
+
+export default RHForm;

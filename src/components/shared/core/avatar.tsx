@@ -57,7 +57,9 @@ AvatarRoot.displayName = AvatarPrimitive.Root.displayName;
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
-export { AvatarRoot, AvatarFallback, AvatarImage };
+const Avatar = { AvatarRoot, AvatarFallback, AvatarImage };
+
+export default Avatar;
 
 const AvatarRootStyles = cva([
   "daybook-avatar",
