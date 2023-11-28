@@ -5,7 +5,7 @@ import * as ReactHookForm from "react-hook-form";
 import { classnames } from "~lib/utils";
 import Label from "~components/shared/core/label";
 
-const Form = ReactHookForm.FormProvider;
+const FormRoot = ReactHookForm.FormProvider;
 
 type FormFieldContextValue<
   TFieldValues extends ReactHookForm.FieldValues = ReactHookForm.FieldValues,
@@ -203,8 +203,8 @@ const UncontrolledFormMessage = React.forwardRef<
 
 UncontrolledFormMessage.displayName = "UncontrolledFormMessage";
 
-const RHForm = {
-  Form,
+const Form = {
+  FormRoot,
   FormField,
   useFormField,
   FormItem,
@@ -215,4 +215,4 @@ const RHForm = {
   UncontrolledFormMessage,
 };
 
-export default RHForm;
+export default Form;

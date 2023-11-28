@@ -62,7 +62,7 @@ const Avatar = { AvatarRoot, AvatarFallback, AvatarImage };
 export default Avatar;
 
 const AvatarRootStyles = cva([
-  "daybook-avatar",
+  "tweede-avatar",
   "relative",
   "flex",
   "h-10",
@@ -73,7 +73,7 @@ const AvatarRootStyles = cva([
 ]);
 
 const AvatarFallbackStyles = cva([
-  "daybook-avatar__fallback",
+  "tweede-avatar__fallback",
   "bg-neutral-200",
   "text-neutral-900",
   "flex",
@@ -87,7 +87,7 @@ const AvatarFallbackStyles = cva([
 ]);
 
 const AvatarImageStyles = cva([
-  "daybook-avatar__image",
+  "tweede-avatar__image",
   "pointer-events-none",
   "aspect-square",
   "h-full",

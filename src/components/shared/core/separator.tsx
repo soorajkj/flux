@@ -38,7 +38,7 @@ export default Separator;
 
 const SeparatorStyles = cva(
   [
-    "daybook-separator",
+    "tweede-separator",
     "relative",
     "shrink-0",
     "pointer-events-none",
