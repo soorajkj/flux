@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { useTheme } from "next-themes";
 import Icon from "~components/shared/core/icon";
 import Toggle from "~components/shared/core/toggle";
