@@ -1,8 +1,8 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import Icon from "~components/shared/core/icon";
-import Toggle from "~components/shared/core/toggle";
+import Icon from "~components/core/icon";
+import Toggle from "~components/core/toggle";
 
 export default function ThemeToggler() {
   const { themes, theme, setTheme } = useTheme();

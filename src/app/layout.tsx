@@ -1,8 +1,8 @@
 import * as React from "react";
 import { LayoutProps } from "~types/layout";
 import { inter } from "~lib/fonts";
-import ThemeProvider from "~components/providers/theme-provider";
-import ThemeToggler from "~components/shared/theme-toggler";
+import ThemeProvider from "~components/theme-provider";
+import ThemeToggler from "~components/theme-toggler";
 import "~styles/index.css";
 
 export default function Layout(_props: LayoutProps) {

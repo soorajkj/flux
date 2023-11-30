@@ -1,4 +1,4 @@
-import Separator from "~components/shared/core/separator";
+import Separator from "~components/core/separator";
 
 export default function Header() {
   return (
