@@ -1,16 +1,17 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import * as BNCore from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import { useTheme } from "next-themes";
 import "@blocknote/core/style.css";
 
-interface EditorProps
+interface BlockEditorProps
   extends Partial<BNCore.BlockNoteEditorOptions<BNCore.BlockSchema>> {
   onChange?: () => void;
 }
 
-export default function Editor(props: EditorProps) {
+export function BlockEditor(props: BlockEditorProps) {
   const { editable = true, initialContent, ...rest } = props;
   const { theme } = useTheme() as { theme: "light" | "dark" };
 
@@ -22,3 +23,8 @@ export default function Editor(props: EditorProps) {
 
   return <BlockNoteView editor={editor} theme={theme} {...rest} />;
 }
+
+export default dynamic(
+  () => import("~components/editor").then(({ BlockEditor }) => BlockEditor),
+  { ssr: false }
+);
