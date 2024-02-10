@@ -1,3 +1,9 @@
+import Editor from "~components/editor";
+
 export default function Page() {
-  return <main></main>;
+  return (
+    <main>
+      <Editor />
+    </main>
+  );
 }
