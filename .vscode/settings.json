@@ -5,13 +5,8 @@
   "editor.formatOnPaste": false,
   "editor.colorDecorators": false,
   "editor.wordWrap": "wordWrapColumn",
-  "[plaintext]": {
-    "editor.wordWrap": "off"
-  },
-  // typescript
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  // tailwind
   "css.validate": false,
   "scss.validate": false,
   "tailwindCSS.experimental.classRegex": [

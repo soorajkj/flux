@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { cva, VariantProps } from "class-variance-authority";
-import { classnames } from "~lib/utils";
+import { cx } from "~lib/utils";
 
 const AvatarRoot = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
@@ -15,7 +15,7 @@ const AvatarRoot = React.forwardRef<
   return (
     <AvatarPrimitive.Root
       ref={ref}
-      className={classnames(AvatarRootStyles({ className }))}
+      className={cx(AvatarRootStyles({ className }))}
       {...rest}
     />
   );
@@ -31,7 +31,7 @@ const AvatarFallback = React.forwardRef<
   return (
     <AvatarPrimitive.Fallback
       ref={ref}
-      className={classnames(AvatarFallbackStyles({ className }))}
+      className={cx(AvatarFallbackStyles({ className }))}
       {...rest}
     />
   );
@@ -47,7 +47,7 @@ const AvatarImage = React.forwardRef<
   return (
     <AvatarPrimitive.Image
       ref={ref}
-      className={classnames(AvatarImageStyles({ className }))}
+      className={cx(AvatarImageStyles({ className }))}
       {...rest}
     />
   );
@@ -57,10 +57,12 @@ AvatarRoot.displayName = AvatarPrimitive.Root.displayName;
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
-export { AvatarRoot, AvatarFallback, AvatarImage };
+const Avatar = { AvatarRoot, AvatarFallback, AvatarImage };
+
+export default Avatar;
 
 const AvatarRootStyles = cva([
-  "daybook-avatar",
+  "tweede-avatar",
   "relative",
   "flex",
   "h-10",
@@ -71,7 +73,7 @@ const AvatarRootStyles = cva([
 ]);
 
 const AvatarFallbackStyles = cva([
-  "daybook-avatar__fallback",
+  "tweede-avatar__fallback",
   "bg-neutral-200",
   "text-neutral-900",
   "flex",
@@ -85,7 +87,7 @@ const AvatarFallbackStyles = cva([
 ]);
 
 const AvatarImageStyles = cva([
-  "daybook-avatar__image",
+  "tweede-avatar__image",
   "pointer-events-none",
   "aspect-square",
   "h-full",

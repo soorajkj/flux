@@ -1,6 +1,9 @@
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { clsx } from "clsx";
+import { twMerge as merge } from "tailwind-merge";
 
-export const classnames = (...classNames: ClassValue[]) => {
-  return twMerge(clsx(classNames));
-};
+type ClassBase = null | undefined | string | number | boolean;
+type ClassName = ClassArray | ClassDict | ClassBase;
+type ClassArray = ClassName[];
+type ClassDict = Record<string, any>;
+
+export const cx = (...inputs: ClassName[]) => merge(clsx(inputs));

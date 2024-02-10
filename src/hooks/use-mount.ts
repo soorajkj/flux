@@ -1,15 +1,14 @@
 "use client";
 
-import * as React from "react";
+import { useEffect, useState } from "react";
 
 export default function useMount() {
-  const [mount, setMount] = React.useState(false);
+  const [mount, setMount] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMount(true);
+    return () => setMount(false);
   }, []);
-
-  if (!mount) return null;
 
   return mount;
 }

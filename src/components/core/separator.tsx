@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import { cva, type VariantProps } from "class-variance-authority";
-import { classnames } from "~lib/utils";
+import { cx } from "~lib/utils";
 
 interface SeparatorOwnProps
   extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> {
@@ -26,7 +26,7 @@ const Separator = React.forwardRef<
       ref={ref}
       decorative={decorative}
       orientation={orientation}
-      className={classnames(SeparatorStyles({ orientation, className }))}
+      className={cx(SeparatorStyles({ orientation, className }))}
       {...rest}
     />
   );
@@ -34,16 +34,16 @@ const Separator = React.forwardRef<
 
 Separator.displayName = SeparatorPrimitive.Root.displayName;
 
-export { Separator };
+export default Separator;
 
 const SeparatorStyles = cva(
   [
-    "daybook-separator",
+    "tweede-separator",
     "relative",
     "shrink-0",
     "pointer-events-none",
     "bg-gray-400",
-    "dark:bg-zinc-800",
+    "dark:bg-neutral-800",
   ],
   {
     variants: {
