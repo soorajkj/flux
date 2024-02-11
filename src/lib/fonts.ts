@@ -1,8 +1,16 @@
-import { Inter } from "next/font/google";
+import { Caprasimo, Shantell_Sans } from "next/font/google";
 
-export const inter = Inter({
+export const shantellSans = Shantell_Sans({
   subsets: ["latin"],
-  variable: "--font-family-inter",
+  variable: "--font-family-shantell-sans",
+  display: "swap",
+  preload: true,
+});
+
+export const caprasimo = Caprasimo({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-family-caprasimo",
   display: "swap",
   preload: true,
 });

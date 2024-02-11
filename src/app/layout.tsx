@@ -1,17 +1,28 @@
-import * as React from "react";
 import { LayoutProps } from "~types/layout";
-import { inter } from "~lib/fonts";
+import * as fonts from "~lib/fonts";
+import { cx } from "~lib/utils";
 import ThemeProvider from "~components/theme-provider";
-import ThemeToggler from "~components/theme-toggler";
 import "~styles/index.css";
 
-export default function Layout(_props: LayoutProps) {
+export default function Layout(props: LayoutProps) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className="h-full min-h-screen bg-white font-family-inter text-sm font-normal leading-normal text-slate-700 antialiased dark:bg-neutral-950 dark:text-neutral-300">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {_props.children}
-          <ThemeToggler />
+    <html
+      lang="en"
+      suppressHydrationWarning={true}
+      className={cx(`
+      ${fonts.shantellSans.variable}
+      ${fonts.caprasimo.variable}
+      scroll-smooth
+      `)}
+    >
+      <body className="h-full min-h-screen bg-zinc-50 font-family-shantell-sans text-sm font-normal leading-normal text-zinc-700 antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          disableTransitionOnChange={true}
+          enableSystem={true}
+        >
+          {props.children}
         </ThemeProvider>
       </body>
     </html>
