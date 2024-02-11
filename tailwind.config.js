@@ -5,7 +5,10 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {},
-    fontFamily: { "family-inter": "var(--font-family-inter)" },
+    fontFamily: {
+      "family-shantell-sans": "var(--font-family-shantell-sans)",
+      "family-caprasimo": "var(--font-family-caprasimo)",
+    },
   },
   future: {
     hoverOnlyWhenSupported: true,
