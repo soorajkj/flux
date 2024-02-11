@@ -1,8 +1,16 @@
+import { Metadata } from "next";
 import { LayoutProps } from "~types/layout";
 import * as fonts from "~lib/fonts";
 import { cx } from "~lib/utils";
 import ThemeProvider from "~components/theme-provider";
 import "~styles/index.css";
+
+export const metadata: Metadata = {
+  title: "Tesseract",
+  description: "Personalized and flexible writing / todo app",
+  icons: { icon: "favicon.ico" },
+  keywords: ["Next.js", "React", "Tailwind CSS", "Radix UI"],
+};
 
 export default function Layout(props: LayoutProps) {
   return (

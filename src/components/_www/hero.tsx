@@ -12,15 +12,14 @@ export default function Hero() {
             <Image
               src={people.src}
               alt="people rally image"
-              objectFit="contain"
-              fill={false}
               height={400}
               width={600}
-              priority={false}
+              priority={true}
+              style={{ width: "auto" }}
             ></Image>
           </div>
           <h1 className="my-8 font-family-caprasimo text-4xl text-zinc-950 md:text-5xl">
-            Where all your tasks can finally coexist.
+            Organize, prioritize, and get things done.
           </h1>
           <p className="text-base text-zinc-900">
             Tesseract is the personalized and flexible writing / todo app that
