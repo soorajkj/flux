@@ -5,6 +5,7 @@
   "rules": {
     "prettier/prettier": "error",
     "no-var": "error",
+    "no-console": "error",
     "no-unused-vars": [
       "error",
       {
@@ -12,7 +13,6 @@
         "varsIgnorePattern": "^_",
         "caughtErrorsIgnorePattern": "^_"
       }
-    ],
-    "no-console": "error"
+    ]
   }
 }

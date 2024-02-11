@@ -19,6 +19,7 @@ export function BlockEditor(props: BlockEditorProps) {
     editable: editable,
     initialContent: initialContent as BNCore.PartialBlock[],
     onEditorContentChange(_editor) {},
+    domAttributes: { editor: { class: "!bg-transparent" } },
   });
 
   return <BlockNoteView editor={editor} theme={theme} {...rest} />;

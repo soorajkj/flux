@@ -21,6 +21,7 @@
     // with `/*` for accessing the nested folder.
     // without `/*` for `folder/index.ts`
     "paths": {
+      "react": ["./node_modules/@types/react"],
       "~app": ["./src/app"],
       "~app/*": ["./src/app/*"],
       "~lib": ["src/lib"],
