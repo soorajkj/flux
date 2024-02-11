@@ -10,7 +10,7 @@ export default function Layout({ children }: LayoutProps) {
       <main className="flex-1">
         <section className="relative">
           <Container>
-            <div className="py-24">{children}</div>
+            <div className="py-12 md:py-24">{children}</div>
           </Container>
         </section>
       </main>

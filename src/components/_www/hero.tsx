@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import people from "public/images/people.webp";
 import Button from "~components/core/button";
 
@@ -27,7 +30,11 @@ export default function Hero() {
             seeing it, in one place.
           </p>
           <div className="mt-8 flex items-center gap-4">
-            <Button>Try Tesseract free</Button>
+            <Button asChild>
+              <Link href={"/signup"} scroll={true}>
+                Try Tesseract free
+              </Link>
+            </Button>
             <Button variant="link">Request a demo</Button>
           </div>
         </div>
