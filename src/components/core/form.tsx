@@ -153,10 +153,7 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cx(
-        ["error", "peer", "text-sm", "text-color-error-400"],
-        className
-      )}
+      className={cx(["error", "peer", "text-sm", "text-red-500"], className)}
       {...rest}
     >
       {body}

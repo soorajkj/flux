@@ -13,7 +13,7 @@ const Toggle = React.forwardRef<
   return (
     <TogglePrimitive.Root
       ref={ref}
-      className={cx(["tweede-toggle", "select-none"], className)}
+      className={cx(["tesseract-toggle", "select-none"], className)}
       {...rest}
     />
   );

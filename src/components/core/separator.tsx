@@ -38,7 +38,7 @@ export default Separator;
 
 const SeparatorStyles = cva(
   [
-    "tweede-separator",
+    "tesseract-separator",
     "relative",
     "shrink-0",
     "pointer-events-none",

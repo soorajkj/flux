@@ -62,7 +62,7 @@ const Avatar = { AvatarRoot, AvatarFallback, AvatarImage };
 export default Avatar;
 
 const AvatarRootStyles = cva([
-  "tweede-avatar",
+  "tesseract-avatar",
   "relative",
   "flex",
   "h-10",
@@ -73,7 +73,7 @@ const AvatarRootStyles = cva([
 ]);
 
 const AvatarFallbackStyles = cva([
-  "tweede-avatar__fallback",
+  "tesseract-avatar__fallback",
   "bg-neutral-200",
   "text-neutral-900",
   "flex",
@@ -87,7 +87,7 @@ const AvatarFallbackStyles = cva([
 ]);
 
 const AvatarImageStyles = cva([
-  "tweede-avatar__image",
+  "tesseract-avatar__image",
   "pointer-events-none",
   "aspect-square",
   "h-full",

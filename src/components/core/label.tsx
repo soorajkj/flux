@@ -26,7 +26,7 @@ Label.displayName = LabelPrimitive.Root.displayName;
 export default Label;
 
 const LabelStyles = cva([
-  "tweede-label",
+  "tesseract-label",
   "inline-block",
   "font-medium",
   "leading-none",

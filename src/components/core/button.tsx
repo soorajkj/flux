@@ -9,6 +9,7 @@ interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof ButtonStyles> {
   asChild?: boolean;
+  fullWidth?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -17,6 +18,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       asChild,
       variant = "primary",
+      fullWidth = false,
       className,
       ...rest
     } = props;
@@ -26,7 +28,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         ref={ref}
-        className={cx(ButtonStyles({ variant, className }))}
+        className={cx(
+          ButtonStyles({ variant, className }),
+          fullWidth && "w-full"
+        )}
         {...rest}
       >
         {children}
@@ -41,15 +46,16 @@ export default Button;
 
 export const ButtonStyles = cva(
   [
-    "tweede-button",
+    "tesseract-button",
     "cursor-pointer",
     "whitespace-nowrap",
     "inline-flex",
     "items-center",
     "justify-center",
     "rounded-md",
+    "w-auto",
     "px-4",
-    "py-2.5",
+    "py-3",
     "border",
     "border-transparent",
     "font-family-shantell-sans",
@@ -59,8 +65,8 @@ export const ButtonStyles = cva(
     "ring-offset-zinc-50",
     "transition-colors",
     "focus-visible:outline-none",
-    "focus-visible:ring-2",
-    "focus-visible:ring-zinc-950/80",
+    "focus-visible:ring-1",
+    "focus-visible:ring-zinc-900/50",
     "focus-visible:ring-offset-2",
     "disabled:pointer-events-none",
     "disabled:opacity-50",
@@ -84,7 +90,7 @@ export const ButtonStyles = cva(
         outline: [
           "bg-zinc-50",
           "text-zinc-900",
-          "border-zinc-900/5",
+          "border-zinc-900/10",
           "hover:bg-zinc-900/5",
         ],
         link: [
