@@ -5,7 +5,6 @@ export const shantellSans = Shantell_Sans({
   variable: "--font-family-shantell-sans",
   display: "swap",
   preload: true,
-  adjustFontFallback: false,
 });
 
 export const caprasimo = Caprasimo({
@@ -14,5 +13,4 @@ export const caprasimo = Caprasimo({
   variable: "--font-family-caprasimo",
   display: "swap",
   preload: true,
-  adjustFontFallback: false,
 });
