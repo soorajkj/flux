@@ -2,6 +2,7 @@
 
 import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { handleSigninFormSubmit } from "~app/(auth)/action";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { authSchema } from "~lib/validations";
@@ -9,25 +10,24 @@ import Button from "~components/core/button";
 import Form from "~components/core/form";
 import Input from "~components/core/input";
 
+export type SigninFormFields = z.infer<typeof authSchema>;
+
 export default function SigninForm() {
-  const form = useForm<z.infer<typeof authSchema>>({
+  const form = useForm<SigninFormFields>({
     resolver: zodResolver(authSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: "sooraj@gmail.com",
+      password: "123QWEasd!",
     },
   });
 
-  const handleFormSubmit = async (_data: z.infer<typeof authSchema>) => {};
+  const processForm = async (data: SigninFormFields) => {
+    await handleSigninFormSubmit(data);
+  };
 
   return (
     <Form.FormRoot {...form}>
-      <form
-        className="space-y-4"
-        onSubmit={(...args) =>
-          void form.handleSubmit(handleFormSubmit)(...args)
-        }
-      >
+      <form className="space-y-4" onSubmit={form.handleSubmit(processForm)}>
         <Form.FormField
           control={form.control}
           name="email"

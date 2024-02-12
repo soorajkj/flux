@@ -2,6 +2,7 @@
 
 import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { handleSignupFormSubmit } from "~app/(auth)/action";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { authSchema } from "~lib/validations";
@@ -9,25 +10,24 @@ import Button from "~components/core/button";
 import Form from "~components/core/form";
 import Input from "~components/core/input";
 
+export type SignupFormFields = z.infer<typeof authSchema>;
+
 export default function SignupForm() {
-  const form = useForm<z.infer<typeof authSchema>>({
+  const form = useForm<SignupFormFields>({
     resolver: zodResolver(authSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: "soorajkj2001@gmail.com",
+      password: "123QWEasd!",
     },
   });
 
-  const handleFormSubmit = async (_data: z.infer<typeof authSchema>) => {};
+  const processForm = async (data: SignupFormFields) => {
+    await handleSignupFormSubmit(data);
+  };
 
   return (
     <Form.FormRoot {...form}>
-      <form
-        className="space-y-4"
-        onSubmit={(...args) =>
-          void form.handleSubmit(handleFormSubmit)(...args)
-        }
-      >
+      <form className="space-y-4" onSubmit={form.handleSubmit(processForm)}>
         <Form.FormField
           control={form.control}
           name="email"
@@ -64,7 +64,7 @@ export default function SignupForm() {
             </Form.FormItem>
           )}
         />
-        <Button type="submit" fullWidth={true} className="!mt-8">
+        <Button fullWidth={true} className="!mt-8">
           Continue with email
         </Button>
       </form>
