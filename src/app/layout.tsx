@@ -3,7 +3,7 @@ import { LayoutProps } from "~types/layout";
 import * as fonts from "~lib/fonts";
 import { cx } from "~lib/utils";
 import ThemeProvider from "~components/theme-provider";
-import "~styles/index.css";
+import "../styles/index.css";
 
 export const metadata: Metadata = {
   title: "Tesseract",
