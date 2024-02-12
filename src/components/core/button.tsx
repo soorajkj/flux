@@ -54,6 +54,7 @@ export const ButtonStyles = cva(
     "justify-center",
     "rounded-md",
     "w-auto",
+    "h-11",
     "px-4",
     "py-3",
     "border",
