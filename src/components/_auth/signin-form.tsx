@@ -21,8 +21,8 @@ export default function SigninForm() {
     },
   });
 
-  const processForm = async (data: SigninFormFields) => {
-    await handleSigninFormSubmit(data);
+  const processForm = async (formData: SigninFormFields) => {
+    await handleSigninFormSubmit(formData);
   };
 
   return (

@@ -2,10 +2,12 @@
 
 import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { AuthResponsePassword } from "@supabase/supabase-js";
 import { handleSignupFormSubmit } from "~app/(auth)/action";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { authSchema } from "~lib/validations";
+import { useToast } from "~hooks/use-toast";
 import Button from "~components/core/button";
 import Form from "~components/core/form";
 import Input from "~components/core/input";
@@ -13,6 +15,7 @@ import Input from "~components/core/input";
 export type SignupFormFields = z.infer<typeof authSchema>;
 
 export default function SignupForm() {
+  const { toast } = useToast();
   const form = useForm<SignupFormFields>({
     resolver: zodResolver(authSchema),
     defaultValues: {
@@ -21,8 +24,23 @@ export default function SignupForm() {
     },
   });
 
-  const processForm = async (data: SignupFormFields) => {
-    await handleSignupFormSubmit(data);
+  const processForm = async (formData: SignupFormFields) => {
+    const res = await handleSignupFormSubmit(formData);
+    let { data, error }: AuthResponsePassword = JSON.parse(res);
+
+    if (error) {
+      toast({
+        title: error.name,
+        description: error.message,
+      });
+    }
+
+    if (data) {
+      toast({
+        title: "Please check your email",
+        description: "Please check your email and confirm",
+      });
+    }
   };
 
   return (

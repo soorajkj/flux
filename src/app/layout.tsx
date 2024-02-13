@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { LayoutProps } from "~types/layout";
 import * as fonts from "~lib/fonts";
 import { cx } from "~lib/utils";
+import Toaster from "~components/core/toaster";
 import ThemeProvider from "~components/theme-provider";
 import "../styles/index.css";
 
@@ -31,6 +32,7 @@ export default function Layout(props: LayoutProps) {
           enableSystem={true}
         >
           {props.children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
