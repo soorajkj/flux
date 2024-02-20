@@ -2,12 +2,10 @@
 
 import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AuthResponsePassword } from "@supabase/supabase-js";
 import { handleSignupFormSubmit } from "~app/(auth)/action";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { authSchema } from "~lib/validations";
-import { useToast } from "~hooks/use-toast";
 import Button from "~components/core/button";
 import Form from "~components/core/form";
 import Input from "~components/core/input";
@@ -15,32 +13,13 @@ import Input from "~components/core/input";
 export type SignupFormFields = z.infer<typeof authSchema>;
 
 export default function SignupForm() {
-  const { toast } = useToast();
   const form = useForm<SignupFormFields>({
     resolver: zodResolver(authSchema),
-    defaultValues: {
-      email: "soorajkj2001@gmail.com",
-      password: "123QWEasd!",
-    },
+    defaultValues: { email: "", password: "" },
   });
 
   const processForm = async (formData: SignupFormFields) => {
-    const res = await handleSignupFormSubmit(formData);
-    let { data, error }: AuthResponsePassword = JSON.parse(res);
-
-    if (error) {
-      toast({
-        title: error.name,
-        description: error.message,
-      });
-    }
-
-    if (data) {
-      toast({
-        title: "Please check your email",
-        description: "Please check your email and confirm",
-      });
-    }
+    await handleSignupFormSubmit(formData);
   };
 
   return (
@@ -58,6 +37,7 @@ export default function SignupForm() {
                   type="email"
                   placeholder="example@gmail.com"
                   autoComplete="off"
+                  disabled
                   {...field}
                 />
               </Form.FormControl>
@@ -74,17 +54,20 @@ export default function SignupForm() {
               <Form.FormControl>
                 <Input
                   type="password"
-                  placeholder="********"
+                  placeholder="●●●●●●●●"
                   autoComplete="off"
+                  disabled
                   {...field}
                 />
               </Form.FormControl>
             </Form.FormItem>
           )}
         />
-        <Button fullWidth={true} className="!mt-8">
-          Continue with email
-        </Button>
+        <div className="relative !mt-8">
+          <Button fullWidth={true} disabled={true}>
+            Continue with Email
+          </Button>
+        </div>
       </form>
     </Form.FormRoot>
   );

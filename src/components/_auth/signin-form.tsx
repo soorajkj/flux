@@ -15,10 +15,7 @@ export type SigninFormFields = z.infer<typeof authSchema>;
 export default function SigninForm() {
   const form = useForm<SigninFormFields>({
     resolver: zodResolver(authSchema),
-    defaultValues: {
-      email: "sooraj@gmail.com",
-      password: "123QWEasd!",
-    },
+    defaultValues: { email: "", password: "" },
   });
 
   const processForm = async (formData: SigninFormFields) => {
@@ -27,7 +24,7 @@ export default function SigninForm() {
 
   return (
     <Form.FormRoot {...form}>
-      <form className="space-y-4" onSubmit={form.handleSubmit(processForm)}>
+      <form onSubmit={form.handleSubmit(processForm)} className="space-y-4">
         <Form.FormField
           control={form.control}
           name="email"
@@ -40,6 +37,7 @@ export default function SigninForm() {
                   type="email"
                   placeholder="example@gmail.com"
                   autoComplete="off"
+                  disabled
                   {...field}
                 />
               </Form.FormControl>
@@ -56,17 +54,20 @@ export default function SigninForm() {
               <Form.FormControl>
                 <Input
                   type="password"
-                  placeholder="********"
+                  placeholder="●●●●●●●●"
                   autoComplete="off"
+                  disabled
                   {...field}
                 />
               </Form.FormControl>
             </Form.FormItem>
           )}
         />
-        <Button fullWidth={true} className="!mt-8">
-          Continue with email
-        </Button>
+        <div className="relative !mt-8">
+          <Button fullWidth={true} disabled={true}>
+            Continue with Email
+          </Button>
+        </div>
       </form>
     </Form.FormRoot>
   );

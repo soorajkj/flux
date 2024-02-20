@@ -24,7 +24,7 @@ export default function Hero() {
           <h1 className="my-8 font-family-caprasimo text-4xl text-zinc-950 md:text-5xl">
             Organize, prioritize, and get things done.
           </h1>
-          <p className="text-base text-zinc-900">
+          <p className="text-base text-zinc-900 dark:text-stone-400">
             Tesseract is the personalized and flexible writing / todo app that
             adapts to the way you think. Streamline your work by doing it, and
             seeing it, in one place.

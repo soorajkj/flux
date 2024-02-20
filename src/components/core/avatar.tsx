@@ -83,7 +83,7 @@ const AvatarFallbackStyles = cva([
   "justify-center",
   "rounded-full",
   "dark:bg-neutral-800",
-  "dark:text-neutral-200",
+  "dark:text-stone-200",
 ]);
 
 const AvatarImageStyles = cva([

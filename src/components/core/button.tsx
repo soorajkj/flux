@@ -10,6 +10,7 @@ interface ButtonProps
     VariantProps<typeof ButtonStyles> {
   asChild?: boolean;
   fullWidth?: boolean;
+  unstyled?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -29,8 +30,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         ref={ref}
         className={cx(
-          ButtonStyles({ variant, className }),
-          fullWidth && "w-full"
+          variant !== "unstyled" && ButtonStyles({ variant }),
+          fullWidth && "w-full",
+          className
         )}
         {...rest}
       >
@@ -54,7 +56,7 @@ export const ButtonStyles = cva(
     "justify-center",
     "rounded-md",
     "w-auto",
-    "h-11",
+    "h-10",
     "px-4",
     "py-3",
     "border",
@@ -70,11 +72,12 @@ export const ButtonStyles = cva(
     "focus-visible:ring-zinc-900/50",
     "focus-visible:ring-offset-2",
     "disabled:pointer-events-none",
-    "disabled:opacity-50",
+    "disabled:opacity-90",
   ],
   {
     variants: {
       variant: {
+        unstyled: [""],
         primary: [
           "bg-zinc-900",
           "text-zinc-50",

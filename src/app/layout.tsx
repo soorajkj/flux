@@ -5,6 +5,7 @@ import { cx } from "~lib/utils";
 import Toaster from "~components/core/toaster";
 import ThemeProvider from "~components/theme-provider";
 import "../styles/index.css";
+import ThemeToggler from "~components/theme-toggler";
 
 export const metadata: Metadata = {
   title: "Tesseract",
@@ -33,6 +34,7 @@ export default function Layout(props: LayoutProps) {
         >
           {props.children}
           <Toaster />
+          <ThemeToggler />
         </ThemeProvider>
       </body>
     </html>

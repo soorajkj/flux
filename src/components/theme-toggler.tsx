@@ -22,7 +22,7 @@ export default function ThemeToggler() {
   return (
     <Toggle
       aria-label="toggle application appearance"
-      className="fixed bottom-8 right-8 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 bg-gray-50 text-slate-700 shadow dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300"
+      className="fixed bottom-8 right-8 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 bg-gray-50 text-stone-700 shadow"
       onClick={handleThemeChange}
     >
       <Icon icon="palette" label="appearance icon"></Icon>

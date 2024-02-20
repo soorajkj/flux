@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva, type VariantProps } from "class-variance-authority";
@@ -65,7 +67,7 @@ const ToastTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Title
     ref={ref}
-    className={cx("text-sm font-semibold [&+div]:text-xs", className)}
+    className={cx("text-sm font-semibold [&+div]:text-sm", className)}
     {...props}
   />
 ));
@@ -76,7 +78,7 @@ const ToastDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
-    className={cx("text-sm opacity-90", className)}
+    className={cx("text-sm", className)}
     {...props}
   />
 ));
@@ -114,7 +116,8 @@ const ToastViewportStyles = cva([
   "sm:bottom-0",
   "sm:right-0",
   "sm:top-auto",
-  "sm:flex-col md:max-w-md",
+  "sm:flex-col",
+  "md:max-w-md",
 ]);
 
 const ToastRootStyles = cva(
@@ -132,7 +135,7 @@ const ToastRootStyles = cva(
     "border",
     "p-4",
     "pr-6",
-    "shadow-lg",
+    "shadow-sm",
     "transition-all",
     "data-[swipe=cancel]:translate-x-0",
     "data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)]",
@@ -149,14 +152,9 @@ const ToastRootStyles = cva(
   {
     variants: {
       variant: {
-        default: ["border", "bg-background", "text-foreground"],
-        destructive: [
-          "destructive",
-          "group",
-          "border-destructive",
-          "bg-destructive",
-          "text-destructive-foreground",
-        ],
+        default: ["bg-zinc-100", "text-zinc-800", "border-zinc-200"],
+        success: ["bg-teal-100", "text-teal-800", "border-teal-200"],
+        destructive: ["group", "bg-red-100", "text-red-800", "border-red-200"],
       },
     },
   }
