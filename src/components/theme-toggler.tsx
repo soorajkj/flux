@@ -1,6 +1,8 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { cx } from "~lib/utils";
+import { ButtonStyles } from "~components/core/button";
 import Icon from "~components/core/icon";
 import Toggle from "~components/core/toggle";
 
@@ -22,10 +24,18 @@ export default function ThemeToggler() {
   return (
     <Toggle
       aria-label="toggle application appearance"
-      className="fixed bottom-8 right-8 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 bg-gray-50 text-stone-700 shadow"
+      className={cx(
+        ButtonStyles({ variant: "outline" }),
+        "fixed bottom-8 right-8 h-10 w-10 rounded-full px-0 py-0"
+      )}
       onClick={handleThemeChange}
     >
-      <Icon icon="palette" label="appearance icon"></Icon>
+      <Icon
+        icon="palette"
+        label="appearance icon"
+        width={16}
+        height={16}
+      ></Icon>
     </Toggle>
   );
 }

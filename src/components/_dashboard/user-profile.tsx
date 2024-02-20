@@ -2,31 +2,21 @@
 
 import React from "react";
 import { handleSignout } from "~app/(auth)/action";
-import useUser from "~hooks/use-user";
-import Avatar from "~components/core/avatar";
-import Button from "~components/core/button";
+import { cx } from "~lib/utils";
+import Button, { ButtonStyles } from "~components/core/button";
+import Icon from "~components/core/icon";
 
 export default function UserProfile() {
-  const { loading, user } = useUser();
-
-  if (loading) return null;
-
   return (
-    <div className="fixed bottom-6 right-24">
-      <Button
-        variant="unstyled"
-        className="cursor-pointer"
-        onClick={() => handleSignout()}
-        asChild={false}
-      >
-        <Avatar.AvatarRoot>
-          <Avatar.AvatarFallback>{user.email}</Avatar.AvatarFallback>
-          <Avatar.AvatarImage
-            src={user.user_metadata.avatar_url || ""}
-            alt={user.user_metadata.preferred_username || ""}
-          ></Avatar.AvatarImage>
-        </Avatar.AvatarRoot>
-      </Button>
-    </div>
+    <Button
+      variant="outline"
+      className={cx(
+        ButtonStyles({ variant: "outline" }),
+        "fixed bottom-8 right-20 h-10 w-10 rounded-full px-0 py-0"
+      )}
+      onClick={handleSignout}
+    >
+      <Icon icon="logout" width={18} height={18}></Icon>
+    </Button>
   );
 }
