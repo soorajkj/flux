@@ -14,7 +14,7 @@ export default function UserProfile() {
         ButtonStyles({ variant: "outline" }),
         "fixed bottom-8 right-20 h-10 w-10 rounded-full px-0 py-0"
       )}
-      onClick={handleSignout}
+      onClick={() => handleSignout()}
     >
       <Icon icon="logout" width={18} height={18}></Icon>
     </Button>
