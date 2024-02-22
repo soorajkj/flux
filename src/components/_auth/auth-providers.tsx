@@ -21,7 +21,12 @@ export default function AuthProviders() {
 
   return (
     <div className="flex flex-col gap-4">
-      <Button variant="secondary" className="space-x-2" fullWidth={true}>
+      <Button
+        variant="secondary"
+        className="space-x-2"
+        fullWidth={true}
+        onClick={() => signinWithProviders("google")}
+      >
         <Icon icon="google" width={20} height={20} />
         <span>Continue with Google</span>
       </Button>
