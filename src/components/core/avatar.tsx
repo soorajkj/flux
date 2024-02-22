@@ -65,8 +65,8 @@ const AvatarRootStyles = cva([
   "tesseract-avatar",
   "relative",
   "flex",
-  "h-10",
-  "w-10",
+  "h-9",
+  "w-9",
   "shrink-0",
   "overflow-hidden",
   "rounded-full",
@@ -74,16 +74,14 @@ const AvatarRootStyles = cva([
 
 const AvatarFallbackStyles = cva([
   "tesseract-avatar__fallback",
-  "bg-neutral-200",
-  "text-neutral-900",
+  "bg-neutral-800",
+  "text-neutral-600",
   "flex",
   "h-full",
   "w-full",
   "items-center",
   "justify-center",
   "rounded-full",
-  "dark:bg-neutral-800",
-  "dark:text-stone-200",
 ]);
 
 const AvatarImageStyles = cva([

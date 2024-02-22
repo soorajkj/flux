@@ -22,7 +22,6 @@ export default function AuthProviders() {
   return (
     <div className="flex flex-col gap-4">
       <Button
-        variant="secondary"
         className="space-x-2"
         fullWidth={true}
         onClick={() => signinWithProviders("google")}
@@ -31,7 +30,6 @@ export default function AuthProviders() {
         <span>Continue with Google</span>
       </Button>
       <Button
-        variant="secondary"
         className="space-x-2"
         fullWidth={true}
         onClick={() => signinWithProviders("github")}

@@ -1,4 +1,12 @@
-import { Caprasimo, Shantell_Sans } from "next/font/google";
+import { Caprasimo, Outfit, Shantell_Sans } from "next/font/google";
+
+export const outfit = Outfit({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-family-outfit",
+  display: "swap",
+  preload: true,
+});
 
 export const shantellSans = Shantell_Sans({
   subsets: ["latin"],

@@ -18,7 +18,6 @@ export default function Logo(props: LogoProps) {
     <Fragment>
       <Link href={href} className={cx(LogoStyles({ className }))} {...rest}>
         <TesseractSVG />
-        <span>Tesseract</span>
       </Link>
     </Fragment>
   );
@@ -28,11 +27,11 @@ const LogoStyles = cva([
   "inline-flex",
   "cursor-pointer",
   "items-center",
-  "space-x-2",
-  "font-family-shantell-sans",
-  "text-lg",
-  "font-extrabold",
+  "space-x-1",
+  "font-family-outfit",
+  "text-base",
+  "font-semibold",
   "leading-none",
-  "text-zinc-900",
+  "text-neutral-400",
   "focus:outline-none",
 ]);

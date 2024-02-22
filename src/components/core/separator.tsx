@@ -42,7 +42,7 @@ const SeparatorStyles = cva(
     "relative",
     "shrink-0",
     "pointer-events-none",
-    "bg-zinc-900/10",
+    "bg-neutral-800",
   ],
   {
     variants: {

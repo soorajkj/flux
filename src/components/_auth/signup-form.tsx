@@ -37,7 +37,7 @@ export default function SignupForm() {
                   type="email"
                   placeholder="example@gmail.com"
                   autoComplete="off"
-                  disabled
+                  // disabled
                   {...field}
                 />
               </Form.FormControl>
@@ -56,7 +56,7 @@ export default function SignupForm() {
                   type="password"
                   placeholder="●●●●●●●●"
                   autoComplete="off"
-                  disabled
+                  // disabled
                   {...field}
                 />
               </Form.FormControl>
@@ -64,7 +64,7 @@ export default function SignupForm() {
           )}
         />
         <div className="relative !mt-8">
-          <Button fullWidth={true} disabled={true}>
+          <Button variant="primary" fullWidth>
             Continue with Email
           </Button>
         </div>

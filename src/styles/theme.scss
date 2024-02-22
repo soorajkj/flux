@@ -1,0 +1,121 @@
+@mixin black-theme {
+  --primary-color: theme("colors.neutral.900");
+  --primary-light-color: theme("colors.neutral.900");
+  --primary-dark-color: theme("colors.neutral.900");
+  --primary-contrast-color: theme("colors.stone.950");
+  --secondary-color: theme("colors.neutral.400");
+  --secondary-light-color: theme("colors.neutral.500");
+  --secondary-dark-color: theme("colors.neutral.50");
+  --divider-color: theme("colors.neutral.900");
+  --divider-light-color: theme("colors.neutral.900");
+  --divider-dark-color: theme("colors.zinc.800");
+  --banner-info-color: theme("colors.stone.900");
+  --banner-warning-color: theme("colors.yellow.900");
+  --banner-error-color: theme("colors.red.900");
+  --tooltip-color: theme("colors.neutral.100");
+  --popover-color: theme("colors.stone.950");
+  --method-get-color: theme("colors.emerald.500");
+  --method-post-color: theme("colors.yellow.500");
+  --method-put-color: theme("colors.sky.500");
+  --method-patch-color: theme("colors.violet.500");
+  --method-delete-color: theme("colors.rose.500");
+  --method-head-color: theme("colors.teal.500");
+  --method-options-color: theme("colors.indigo.500");
+  --method-default-color: theme("colors.zinc.500");
+  --status-info-color: theme("colors.blue.500");
+  --status-success-color: theme("colors.green.500");
+  --status-redirect-color: theme("colors.amber.500");
+  --status-critical-error-color: theme("colors.red.500");
+  --status-server-error-color: theme("colors.rose.500");
+  --status-missing-data-color: theme("colors.slate.500");
+}
+
+@mixin green-theme {
+  --accent-color: theme("colors.emerald.500");
+  --accent-light-color: theme("colors.emerald.400");
+  --accent-dark-color: theme("colors.emerald.600");
+  --accent-contrast-color: theme("colors.white");
+  --gradient-from-color: theme("colors.emerald.400");
+  --gradient-via-color: theme("colors.emerald.500");
+  --gradient-to-color: theme("colors.emerald.600");
+}
+
+@mixin teal-theme {
+  --accent-color: theme("colors.teal.500");
+  --accent-light-color: theme("colors.teal.400");
+  --accent-dark-color: theme("colors.teal.600");
+  --accent-contrast-color: theme("colors.white");
+  --gradient-from-color: theme("colors.teal.400");
+  --gradient-via-color: theme("colors.teal.500");
+  --gradient-to-color: theme("colors.teal.600");
+}
+
+@mixin blue-theme {
+  --accent-color: theme("colors.blue.500");
+  --accent-light-color: theme("colors.blue.400");
+  --accent-dark-color: theme("colors.blue.600");
+  --accent-contrast-color: theme("colors.white");
+  --gradient-from-color: theme("colors.blue.400");
+  --gradient-via-color: theme("colors.blue.500");
+  --gradient-to-color: theme("colors.blue.600");
+}
+
+@mixin indigo-theme {
+  --accent-color: theme("colors.indigo.500");
+  --accent-light-color: theme("colors.indigo.400");
+  --accent-dark-color: theme("colors.indigo.600");
+  --accent-contrast-color: theme("colors.white");
+  --gradient-from-color: theme("colors.indigo.400");
+  --gradient-via-color: theme("colors.indigo.500");
+  --gradient-to-color: theme("colors.indigo.600");
+}
+
+@mixin purple-theme {
+  --accent-color: theme("colors.purple.500");
+  --accent-light-color: theme("colors.purple.400");
+  --accent-dark-color: theme("colors.purple.600");
+  --accent-contrast-color: theme("colors.white");
+  --gradient-from-color: theme("colors.purple.400");
+  --gradient-via-color: theme("colors.purple.500");
+  --gradient-to-color: theme("colors.purple.600");
+}
+
+@mixin yellow-theme {
+  --accent-color: theme("colors.amber.500");
+  --accent-light-color: theme("colors.amber.400");
+  --accent-dark-color: theme("colors.amber.600");
+  --accent-contrast-color: theme("colors.white");
+  --gradient-from-color: theme("colors.amber.400");
+  --gradient-via-color: theme("colors.amber.500");
+  --gradient-to-color: theme("colors.amber.600");
+}
+
+@mixin orange-theme {
+  --accent-color: theme("colors.orange.500");
+  --accent-light-color: theme("colors.orange.400");
+  --accent-dark-color: theme("colors.orange.600");
+  --accent-contrast-color: theme("colors.white");
+  --gradient-from-color: theme("colors.orange.400");
+  --gradient-via-color: theme("colors.orange.500");
+  --gradient-to-color: theme("colors.orange.600");
+}
+
+@mixin red-theme {
+  --accent-color: theme("colors.red.500");
+  --accent-light-color: theme("colors.red.400");
+  --accent-dark-color: theme("colors.red.600");
+  --accent-contrast-color: theme("colors.white");
+  --gradient-from-color: theme("colors.red.400");
+  --gradient-via-color: theme("colors.red.500");
+  --gradient-to-color: theme("colors.red.600");
+}
+
+@mixin pink-theme {
+  --accent-color: theme("colors.pink.500");
+  --accent-light-color: theme("colors.pink.400");
+  --accent-dark-color: theme("colors.pink.600");
+  --accent-contrast-color: theme("colors.white");
+  --gradient-from-color: theme("colors.pink.400");
+  --gradient-via-color: theme("colors.pink.500");
+  --gradient-to-color: theme("colors.pink.600");
+}

@@ -4,8 +4,7 @@ import * as fonts from "~lib/fonts";
 import { cx } from "~lib/utils";
 import Toaster from "~components/core/toaster";
 import ThemeProvider from "~components/theme-provider";
-import "../styles/index.css";
-import ThemeToggler from "~components/theme-toggler";
+import "~styles/index.css";
 
 export const metadata: Metadata = {
   title: "Tesseract",
@@ -22,10 +21,11 @@ export default function Layout(props: LayoutProps) {
       className={cx(`
       ${fonts.shantellSans.variable}
       ${fonts.caprasimo.variable}
+      ${fonts.outfit.variable}
       scroll-smooth
       `)}
     >
-      <body className="h-full min-h-screen bg-zinc-50 font-family-shantell-sans text-sm font-normal leading-normal text-zinc-700 antialiased">
+      <body className="h-full min-h-screen bg-neutral-900 font-family-shantell-sans text-sm font-normal leading-normal text-neutral-500 antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -34,7 +34,6 @@ export default function Layout(props: LayoutProps) {
         >
           {props.children}
           <Toaster />
-          <ThemeToggler />
         </ThemeProvider>
       </body>
     </html>

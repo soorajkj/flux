@@ -30,7 +30,7 @@ const LabelStyles = cva([
   "inline-block",
   "font-medium",
   "leading-none",
-  "text-color-base-600",
+  "text-neutral-600",
   "peer-disabled:cursor-not-allowed",
   "peer-disabled:opacity-70",
 ]);
