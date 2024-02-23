@@ -4,20 +4,22 @@ import { CSSProperties, Fragment } from "react";
 import Link, { type LinkProps } from "next/link";
 import { cva, VariantProps } from "class-variance-authority";
 import TesseractSVG from "public/icons/logo.svg";
+import TesseractSVGIcon from "public/icons/supabase.svg";
 import { cx } from "~lib/utils";
 
 interface LogoProps extends LinkProps, VariantProps<typeof LogoStyles> {
   className?: string | any;
   style?: CSSProperties;
+  iconOnly?: boolean;
 }
 
 export default function Logo(props: LogoProps) {
-  const { href, className, ...rest } = props;
+  const { href, iconOnly = false, className, ...rest } = props;
 
   return (
     <Fragment>
       <Link href={href} className={cx(LogoStyles({ className }))} {...rest}>
-        <TesseractSVG />
+        {iconOnly ? <TesseractSVGIcon /> : <TesseractSVG />}
       </Link>
     </Fragment>
   );

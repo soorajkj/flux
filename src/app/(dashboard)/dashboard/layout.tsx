@@ -10,10 +10,10 @@ export default function Layout({ children }: LayoutProps) {
     <div className="flex h-screen w-full flex-col overflow-hidden">
       <Header />
       <Separator />
-      <main className="mx-auto flex w-full flex-1 overflow-hidden px-6">
+      <main className="mx-auto flex w-full flex-1 overflow-hidden">
         <Routesbar />
         <Separator orientation="vertical" className="h-auto" />
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 px-6 py-6">{children}</div>
       </main>
       <Separator />
       <Footer />
