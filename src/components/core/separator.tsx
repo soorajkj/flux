@@ -15,6 +15,7 @@ const Separator = React.forwardRef<
   SeparatorOwnProps & VariantProps<typeof SeparatorStyles>
 >((props, ref) => {
   const {
+    children,
     className,
     orientation = "horizontal",
     decorative = true,
@@ -28,7 +29,11 @@ const Separator = React.forwardRef<
       orientation={orientation}
       className={cx(SeparatorStyles({ orientation, className }))}
       {...rest}
-    />
+    >
+      <span className={SeparatorBorderStyles({ orientation, className })} />
+      {children && <span className="px-4">{children}</span>}
+      <span className={SeparatorBorderStyles({ orientation, className })} />
+    </SeparatorPrimitive.Root>
   );
 });
 
@@ -40,16 +45,26 @@ const SeparatorStyles = cva(
   [
     "tesseract-separator",
     "relative",
+    "flex",
+    "items-center",
     "shrink-0",
     "pointer-events-none",
-    "bg-neutral-800",
   ],
   {
     variants: {
       orientation: {
-        horizontal: "w-full h-px",
-        vertical: "h-full w-px",
+        horizontal: [""],
+        vertical: ["h-full", "w-px", "bg-neutral-200"],
       },
     },
   }
 );
+
+const SeparatorBorderStyles = cva([""], {
+  variants: {
+    orientation: {
+      horizontal: ["h-px", "w-full", "bg-neutral-200"],
+      vertical: [""],
+    },
+  },
+});

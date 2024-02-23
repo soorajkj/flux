@@ -37,7 +37,7 @@ export default function SignupForm() {
                   type="email"
                   placeholder="example@gmail.com"
                   autoComplete="off"
-                  // disabled
+                  disabled
                   {...field}
                 />
               </Form.FormControl>
@@ -56,7 +56,7 @@ export default function SignupForm() {
                   type="password"
                   placeholder="●●●●●●●●"
                   autoComplete="off"
-                  // disabled
+                  disabled
                   {...field}
                 />
               </Form.FormControl>

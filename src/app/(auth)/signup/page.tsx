@@ -13,9 +13,12 @@ export default async function Page() {
 
   return (
     <div className="mx-auto w-full max-w-sm space-y-6">
-      <AuthProviders />
-      <Separator />
+      <h2 className="!mb-14 text-center font-family-inter text-2xl font-semibold text-neutral-900">
+        Sign Up
+      </h2>
       <SignupForm />
+      <Separator>or</Separator>
+      <AuthProviders />
     </div>
   );
 }

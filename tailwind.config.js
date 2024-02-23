@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      "family-outfit": "var(--font-family-outfit)",
+      "family-inter": "var(--font-family-inter)",
       "family-shantell-sans": "var(--font-family-shantell-sans)",
       "family-caprasimo": "var(--font-family-caprasimo)",
     },

@@ -21,11 +21,11 @@ export default function Layout(props: LayoutProps) {
       className={cx(`
       ${fonts.shantellSans.variable}
       ${fonts.caprasimo.variable}
-      ${fonts.outfit.variable}
+      ${fonts.inter.variable}
       scroll-smooth
       `)}
     >
-      <body className="h-full min-h-screen bg-neutral-900 font-family-shantell-sans text-sm font-normal leading-normal text-neutral-500 antialiased">
+      <body className="h-full min-h-screen bg-neutral-50 font-family-inter text-sm font-normal leading-normal text-neutral-700 antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

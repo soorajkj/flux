@@ -1,9 +1,9 @@
-import { Caprasimo, Outfit, Shantell_Sans } from "next/font/google";
+import { Caprasimo, Montserrat, Shantell_Sans } from "next/font/google";
 
-export const outfit = Outfit({
-  weight: ["400"],
+export const inter = Montserrat({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-family-outfit",
+  variable: "--font-family-inter",
   display: "swap",
   preload: true,
 });
