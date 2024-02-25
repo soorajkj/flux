@@ -26,7 +26,7 @@ export default Input;
 const InputStyles = cva([
   "tesseract-input",
   "flex",
-  "h-11",
+  "h-10",
   "w-auto",
   "rounded-md",
   "border",

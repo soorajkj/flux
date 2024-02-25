@@ -2,6 +2,7 @@ import React from "react";
 import { redirect } from "next/navigation";
 import { createClient } from "~lib/supabase/server";
 import Separator from "~components/core/separator";
+import Typography from "~components/core/typography";
 import AuthProviders from "~components/_auth/auth-providers";
 import SignupForm from "~components/_auth/signup-form";
 
@@ -13,9 +14,12 @@ export default async function Page() {
 
   return (
     <div className="mx-auto w-full max-w-sm space-y-6">
-      <h2 className="!mb-14 text-center font-family-inter text-2xl font-semibold text-neutral-900">
-        Sign Up
-      </h2>
+      <Typography.Title variant="5/semibold" className="text-center">
+        Sign up
+      </Typography.Title>
+      <Typography.Text className="mb-12 text-center font-family-shantell-sans">
+        Welcome back! Please enter your details.
+      </Typography.Text>
       <SignupForm />
       <Separator>or</Separator>
       <AuthProviders />

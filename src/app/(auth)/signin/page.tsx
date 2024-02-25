@@ -14,14 +14,10 @@ export default async function Page() {
 
   return (
     <div className="mx-auto w-full max-w-sm">
-      {/* <h2 className="mb-1 text-center font-family-inter text-2xl font-semibold text-neutral-900">
-        Log in to your account
-      </h2> */}
-      <Typography.Title variant="5/bold" className="text-center">
+      <Typography.Title variant="5/semibold" className="text-center">
         Log in to your account
       </Typography.Title>
-
-      <Typography.Text className="mb-12 text-center" mark>
+      <Typography.Text className="mb-12 text-center font-family-shantell-sans">
         Welcome back! Please enter your details.
       </Typography.Text>
       <SigninForm />

@@ -1,4 +1,4 @@
-import { createElement, forwardRef } from "react";
+import { forwardRef } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { cx } from "~lib/utils";
 
@@ -32,49 +32,12 @@ const Title = forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
 
 interface TextProps
   extends React.ButtonHTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof TextStyles> {
-  code?: boolean;
-  mark?: boolean;
-  underline?: boolean;
-  delete?: boolean;
-  strong?: boolean;
-  keyboard?: boolean;
-  italic?: boolean;
-}
+    VariantProps<typeof TextStyles> {}
 
 const Text = forwardRef<HTMLParagraphElement, TextProps>((props, ref) => {
-  const {
-    children,
-    mark,
-    code,
-    underline,
-    delete: del,
-    strong,
-    keyboard,
-    italic,
-    ...rest
-  } = props;
+  const { className, ...rest } = props;
 
-  const decorators = [
-    { tag: "code", active: code },
-    { tag: "mark", active: mark },
-    { tag: "u", active: underline },
-    { tag: "del", active: del },
-    { tag: "strong", active: strong },
-    { tag: "kbd", active: keyboard },
-    { tag: "i", active: italic },
-  ];
-
-  const decoratedContent = decorators.reduce((content, { tag, active }) => {
-    if (active) return createElement(tag, {}, content);
-    return content;
-  }, children);
-
-  return (
-    <p ref={ref} {...rest}>
-      {decoratedContent}
-    </p>
-  );
+  return <p ref={ref} className={cx(TextStyles({ className }))} {...rest} />;
 });
 
 const Link = () => {
@@ -88,23 +51,26 @@ const Typography = { Title, Text, Link };
 
 export default Typography;
 
-const TitleStyles = cva(["tessract-title font-family-outfit"], {
-  variants: {
-    level: {
-      1: "text-7xl",
-      2: "text-6xl",
-      3: "text-5xl",
-      4: "text-4xl",
-      5: "text-3xl",
-      6: "text-2xl",
+const TitleStyles = cva(
+  ["tessract-title", "mb-2", "font-family-outfit", "text-neutral-900"],
+  {
+    variants: {
+      level: {
+        1: "text-7xl",
+        2: "text-6xl",
+        3: "text-5xl",
+        4: "text-4xl",
+        5: "text-3xl",
+        6: "text-2xl",
+      },
+      weight: {
+        normal: "font-normal",
+        medium: "font-medium",
+        semibold: "font-semibold",
+        bold: "font-bold",
+      },
     },
-    weight: {
-      normal: "font-normal",
-      medium: "font-medium",
-      semibold: "font-semibold",
-      bold: "font-bold",
-    },
-  },
-});
+  }
+);
 
 const TextStyles = cva([""]);

@@ -20,6 +20,6 @@ const ContainerStyles = cva([
   "container",
   "mx-auto",
   "w-full",
-  "max-w-screen-lg",
+  "max-w-7xl",
   "px-4",
 ]);
