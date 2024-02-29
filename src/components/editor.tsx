@@ -20,9 +20,7 @@ export function BlockEditor(props: BlockEditorProps) {
     initialContent: initialContent as BNCore.PartialBlock[],
     onEditorContentChange(_editor) {},
     domAttributes: {
-      editor: {
-        class: "!bg-transparent !font-family-shantell-sans !text-neutral-300",
-      },
+      editor: { class: "!font-family-shantell-sans" },
     },
   });
 

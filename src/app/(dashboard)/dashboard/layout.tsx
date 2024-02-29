@@ -7,7 +7,7 @@ import Routesbar from "~components/_dashboard/routesbar";
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="flex h-screen w-full flex-col overflow-hidden">
+    <div className="flex h-screen w-full flex-col overflow-hidden dark:bg-neutral-900 dark:text-neutral-500">
       <Header />
       <Separator />
       <main className="mx-auto flex w-full flex-1 overflow-hidden">

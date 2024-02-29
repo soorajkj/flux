@@ -4,7 +4,6 @@ import React from "react";
 import { handleSignout } from "~app/(auth)/action";
 import Avatar from "~components/core/avatar";
 import Button from "~components/core/button";
-import Separator from "~components/core/separator";
 import Logo from "~components/logo";
 
 export default function Header() {
@@ -13,9 +12,8 @@ export default function Header() {
       <div className="w-full px-4">
         <div className="flex min-h-16 justify-between">
           <div className="inline-flex w-12 items-center">
-            <Logo href={"/"} iconOnly />
+            <Logo href={"/"}></Logo>
           </div>
-          <Separator orientation="vertical" className="h-auto" />
           <div className="flex flex-1 items-center justify-end">
             <Button
               unstyled

@@ -31,7 +31,7 @@ const Separator = React.forwardRef<
       {...rest}
     >
       <span className={SeparatorBorderStyles({ orientation, className })} />
-      {children && <span className="px-4">{children}</span>}
+      {children && <span className="px-2">{children}</span>}
       <span className={SeparatorBorderStyles({ orientation, className })} />
     </SeparatorPrimitive.Root>
   );
@@ -54,7 +54,7 @@ const SeparatorStyles = cva(
     variants: {
       orientation: {
         horizontal: [""],
-        vertical: ["h-full", "w-px", "bg-neutral-200"],
+        vertical: ["h-full", "w-px", "bg-neutral-200", "dark:bg-neutral-800"],
       },
     },
   }
@@ -63,7 +63,7 @@ const SeparatorStyles = cva(
 const SeparatorBorderStyles = cva([""], {
   variants: {
     orientation: {
-      horizontal: ["h-px", "w-full", "bg-neutral-200"],
+      horizontal: ["h-px", "w-full", "bg-neutral-200", "dark:bg-neutral-800"],
       vertical: [""],
     },
   },

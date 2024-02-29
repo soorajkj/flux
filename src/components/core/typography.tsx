@@ -52,7 +52,12 @@ const Typography = { Title, Text, Link };
 export default Typography;
 
 const TitleStyles = cva(
-  ["tessract-title", "mb-2", "font-family-outfit", "text-neutral-900"],
+  [
+    "tessract-title",
+    "font-family-outfit",
+    "text-neutral-900",
+    "dark:text-neutral-300",
+  ],
   {
     variants: {
       level: {

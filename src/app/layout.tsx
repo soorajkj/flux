@@ -4,6 +4,7 @@ import * as fonts from "~lib/fonts";
 import { cx } from "~lib/utils";
 import Toaster from "~components/core/toaster";
 import ThemeProvider from "~components/theme-provider";
+import ThemeToggler from "~components/theme-toggler";
 import "~styles/index.css";
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export default function Layout(props: LayoutProps) {
       scroll-smooth
       `)}
     >
-      <body className="h-full min-h-screen bg-neutral-50 font-family-inter text-sm font-normal leading-normal text-neutral-700 antialiased">
+      <body className="h-full min-h-screen bg-neutral-50 font-family-inter text-sm font-normal leading-normal text-neutral-700 antialiased dark:bg-neutral-900 dark:text-neutral-400">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -34,6 +35,7 @@ export default function Layout(props: LayoutProps) {
         >
           {props.children}
           <Toaster />
+          <ThemeToggler />
         </ThemeProvider>
       </body>
     </html>

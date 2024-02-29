@@ -30,7 +30,7 @@ const InputStyles = cva([
   "w-auto",
   "rounded-md",
   "border",
-  "bg-neutral-100",
+  "bg-neutral-50",
   "text-neutral-900",
   "border-neutral-300",
   "px-4",
@@ -50,4 +50,8 @@ const InputStyles = cva([
   "disabled:opacity-90",
   "peer-[.error]:border-red-400",
   "peer-[.error]:ring-red-100",
+  "dark:bg-neutral-900",
+  "dark:text-neutral-400",
+  "dark:border-neutral-800",
+  "dark:placeholder:text-neutral-700",
 ]);

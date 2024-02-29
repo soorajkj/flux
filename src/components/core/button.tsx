@@ -16,7 +16,6 @@ interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
     const {
-      children,
       asChild,
       variant = "default",
       unstyled = false,
@@ -36,9 +35,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
         {...rest}
-      >
-        {children}
-      </Comp>
+      />
     );
   }
 );
@@ -80,22 +77,34 @@ export const ButtonStyles = cva(
     variants: {
       variant: {
         default: [
+          "tesseract-button--default",
           "bg-neutral-200/40",
           "text-neutral-900",
           "border-neutral-200/40",
           "hover:bg-neutral-300/40",
           "hover:text-neutral-900",
           "hover:border-neutral-300/40",
+          "dark:bg-neutral-800",
+          "dark:text-neutral-300",
+          "dark:border-neutral-700",
         ],
         primary: [
-          "bg-neutral-900",
-          "text-neutral-50",
-          "border-neutral-900",
-          "hover:bg-neutral-800",
-          "hover:text-neutral-50",
-          "hover:border-neutral-800",
+          "tesseract-button--primary",
+          "bg-blue-600",
+          "text-white",
+          "border-blue-600",
+          "hover:bg-blue-800",
+          "hover:text-white",
+          "hover:border-blue-800",
+          "dark:bg-blue-700",
+          "dark:text-white",
+          "dark:border-blue-700",
+          "dark:hover:bg-blue-600",
+          "dark:hover:text-white",
+          "dark:hover:border-blue-600",
         ],
         subtile: [
+          "tesseract-button--subtile",
           "bg-emerald-600/5",
           "text-emerald-500",
           "border-emerald-500/20",
@@ -103,21 +112,27 @@ export const ButtonStyles = cva(
           "hover:border-emerald-500/40",
         ],
         outline: [
+          "tesseract-button--outline",
           "bg-transparent",
-          "text-neutral-700",
+          "text-neutral-600",
           "border-neutral-200",
           "hover:bg-neutral-200",
           "hover:text-neutral-800",
+          "dark:text-neutral-300",
+          "dark:border-neutral-800",
+          "dark:hover:bg-neutral-800",
         ],
         link: [
+          "tesseract-button--link",
           "hover:underline",
           "hover:underline-offset-4",
           "bg-transparent",
-          "text-blue-600",
+          "text-violet-600",
           "border-transparent",
-          "hover:text-blue-600",
+          "hover:text-violet-700",
         ],
         ghots: [
+          "tesseract-button--link",
           "bg-transparent",
           "text-neutral-900",
           "border-transparent",
@@ -126,6 +141,7 @@ export const ButtonStyles = cva(
           "hover:border-neutral-200",
         ],
         destruct: [
+          "tesseract-button--destruct",
           "bg-red-800",
           "text-neutral-200",
           "border-red-800",
