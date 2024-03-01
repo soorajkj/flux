@@ -18,6 +18,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const {
       asChild,
       variant = "default",
+      size = "md",
       unstyled = false,
       fullWidth = false,
       className,
@@ -30,7 +31,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         ref={ref}
         className={cx(
-          !unstyled && ButtonStyles({ variant }),
+          !unstyled && ButtonStyles({ variant, size }),
           fullWidth && "w-full",
           className
         )}
@@ -55,7 +56,6 @@ export const ButtonStyles = cva(
     "justify-center",
     "rounded-md",
     "w-auto",
-    "h-10",
     "px-4",
     "py-1",
     "border",
@@ -149,6 +149,11 @@ export const ButtonStyles = cva(
           "hover:text-neutral-50",
           "hover:border-red-700",
         ],
+      },
+      size: {
+        sm: ["h-9"],
+        md: ["h-10"],
+        lg: ["h-11"],
       },
     },
   }

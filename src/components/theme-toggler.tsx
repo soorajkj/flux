@@ -25,8 +25,8 @@ export default function ThemeToggler() {
     <Toggle
       aria-label="toggle application appearance"
       className={cx(
-        ButtonStyles({ variant: "outline" }),
-        "fixed bottom-8 right-8 h-10 w-10 rounded-full px-0 py-0"
+        ButtonStyles({ variant: "default" }),
+        "fixed bottom-12 right-8 h-10 w-10 rounded-full px-0 py-0"
       )}
       onClick={handleThemeChange}
     >

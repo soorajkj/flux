@@ -3,5 +3,5 @@
 import React from "react";
 
 export default function Routesbar() {
-  return <aside className="overflow-y-auto"></aside>;
+  return <aside className="w-72 overflow-y-auto"></aside>;
 }

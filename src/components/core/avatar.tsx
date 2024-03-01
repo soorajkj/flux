@@ -61,16 +61,23 @@ const Avatar = { AvatarRoot, AvatarFallback, AvatarImage };
 
 export default Avatar;
 
-const AvatarRootStyles = cva([
-  "tesseract-avatar",
-  "relative",
-  "flex",
-  "h-10",
-  "w-10",
-  "shrink-0",
-  "overflow-hidden",
-  "rounded-full",
-]);
+const AvatarRootStyles = cva(
+  [
+    "tesseract-avatar",
+    "relative",
+    "flex",
+    "h-9",
+    "w-9",
+    "shrink-0",
+    "overflow-hidden",
+    "rounded-full",
+  ],
+  {
+    variants: {
+      size: {},
+    },
+  }
+);
 
 const AvatarFallbackStyles = cva([
   "tesseract-avatar__fallback",
