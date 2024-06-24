@@ -5,7 +5,7 @@
   "editor.formatOnPaste": false,
   "editor.colorDecorators": false,
   "editor.wordWrap": "wordWrapColumn",
-  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "css.validate": false,
   "scss.validate": false,

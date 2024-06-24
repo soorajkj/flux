@@ -1,15 +1,23 @@
-import { ReactNode } from "react";
+import * as React from "react";
+import { Metadata } from "next";
+import SessionProvider from "@/components/session-provider";
 import ThemeProvider from "@/components/theme-provider";
 import ThemeToggler from "@/components/theme-toggler";
 import "@/app/app.scss";
 
-export default function Layout(props: { children: ReactNode }) {
+export const metadata: Metadata = {};
+
+interface LayoutProps extends Readonly<{ children: React.ReactNode }> {}
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body className="bg-white font-family-inter text-base font-normal leading-normal text-neutral-500 antialiased dark:bg-neutral-900 dark:text-neutral-400">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {props.children}
-          <ThemeToggler />
+          <SessionProvider>
+            {children}
+            <ThemeToggler />
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>

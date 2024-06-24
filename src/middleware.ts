@@ -14,7 +14,7 @@ export default auth(async function middleware(req: any) {
 
   if (["/auth"].includes(nextUrl.pathname)) {
     if (_auth) {
-      return Response.redirect(new URL("/app", nextUrl));
+      return Response.redirect(new URL("/dashboard", nextUrl));
     }
     return null;
   }
