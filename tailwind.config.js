@@ -7,8 +7,6 @@ module.exports = {
     extend: {},
     fontFamily: {
       "family-inter": "var(--font-family-inter)",
-      "family-shantell-sans": "var(--font-family-shantell-sans)",
-      "family-caprasimo": "var(--font-family-caprasimo)",
     },
   },
   future: {

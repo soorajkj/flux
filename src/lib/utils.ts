@@ -6,4 +6,4 @@ type ClassName = ClassArray | ClassDict | ClassBase;
 type ClassArray = ClassName[];
 type ClassDict = Record<string, any>;
 
-export const cx = (...inputs: ClassName[]) => merge(clsx(inputs));
+export const cn = (...inputs: ClassName[]) => merge(clsx(inputs));

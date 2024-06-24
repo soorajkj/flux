@@ -16,29 +16,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "plugins": [{ "name": "next" }],
-    // absolute import
     "baseUrl": ".",
-    // with `/*` for accessing the nested folder.
-    // without `/*` for `folder/index.ts`
     "paths": {
       "react": ["./node_modules/@types/react"],
-      "~app": ["./src/app"],
-      "~app/*": ["./src/app/*"],
-      "~lib": ["src/lib"],
-      "~lib/*": ["src/lib/*"],
-      "~hooks": ["./src/hooks"],
-      "~hooks/*": ["./src/hooks/*"],
-      "~types": ["./src/types"],
-      "~types/*": ["./src/types/*"],
-      "~constants": ["./src/constants"],
-      "~constants/*": ["./src/constants/*"],
-      "~utils": ["./src/utils"],
-      "~utils/*": ["./src/utils/*"],
-      "~components": ["./src/components"],
-      "~components/*": ["./src/components/*"],
-      "~pages": ["./src/pages"],
-      "~pages/*": ["./src/pages/*"],
-      "~styles/*": ["./src/styles/*"]
+      "@/components/core/*": ["src/components/core/*"],
+      "@/components/auth/*": ["src/components/_auth/*"],
+      "@/components/root/*": ["src/components/_root/*"],
+      "@/components/dashboard/*": ["src/components/_dashboard/*"],
+      "@/*": ["src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

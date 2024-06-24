@@ -2,159 +2,105 @@
 
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cx } from "~lib/utils";
+import { cva, VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+import Icon from "@/components/core/icon";
 
-interface ButtonProps
+export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof ButtonStyles> {
   asChild?: boolean;
-  fullWidth?: boolean;
-  unstyled?: boolean;
+  pure?: boolean;
+  loading?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
     const {
+      children,
       asChild,
-      variant = "default",
-      size = "md",
-      unstyled = false,
-      fullWidth = false,
+      type = "button",
+      disabled = false,
+      loading = false,
+      pure = false,
+      variant,
+      full,
       className,
       ...rest
     } = props;
-
     const Comp = asChild ? Slot : "button";
 
     return (
       <Comp
         ref={ref}
-        className={cx(
-          !unstyled && ButtonStyles({ variant, size }),
-          fullWidth && "w-full",
-          className
-        )}
+        type={type}
+        disabled={disabled || loading}
+        tabIndex={disabled || loading ? -1 : 0}
+        className={cn(!pure && ButtonStyles({ variant, full }), className)}
         {...rest}
-      />
+      >
+        {loading && (
+          <Icon
+            icon="loader"
+            style={{ animationDuration: "1000ms" }}
+            className="animate-spin"
+          />
+        )}
+        <span>{children}</span>
+      </Comp>
     );
+  }
+);
+
+const ButtonStyles = cva(
+  [
+    "cursor-pointer",
+    "inline-flex",
+    "items-center",
+    "justify-center",
+    "overflow-hidden",
+    "select-none",
+    "whitespace-nowrap",
+    "rounded-md",
+    "border",
+    "border-transparent",
+    "space-x-2",
+    "px-4",
+    "py-2.5",
+    "h-10",
+    "text-sm",
+    "font-medium",
+    "leading-none",
+    "transition-colors",
+    "ring-offset-neutral-50",
+    "focus-visible:outline-none",
+    "focus-visible:ring-1",
+    "focus-visible:ring-neutral-300",
+    "focus-visible:ring-offset-2",
+    "disabled:cursor-none",
+    "disabled:pointer-events-none",
+    "disabled:opacity-80",
+    "dark:ring-offset-neutral-900",
+    "dark:focus-visible:ring-neutral-700",
+  ],
+  {
+    variants: {
+      variant: {
+        default: [],
+        primary: [],
+        link: [],
+        destruct: [],
+        outline: [],
+        ghost: [],
+      },
+      full: {
+        false: "w-auto",
+        true: "w-full",
+      },
+    },
   }
 );
 
 Button.displayName = "Button";
 
 export default Button;
-
-export const ButtonStyles = cva(
-  [
-    "tesseract-button",
-    "cursor-pointer",
-    "relative",
-    "whitespace-nowrap",
-    "inline-flex",
-    "items-center",
-    "justify-center",
-    "rounded-md",
-    "w-auto",
-    "px-4",
-    "py-1",
-    "border",
-    "border-transparent",
-    "font-family-inter",
-    "text-sm",
-    "font-medium",
-    "leading-none",
-    "ring-offset-zinc-50",
-    "transition-colors",
-    "focus-visible:outline-none",
-    "focus-visible:ring-1",
-    "focus-visible:ring-zinc-900/50",
-    "focus-visible:ring-offset-2",
-    "disabled:pointer-events-none",
-    "disabled:opacity-90",
-  ],
-  {
-    variants: {
-      variant: {
-        default: [
-          "tesseract-button--default",
-          "bg-neutral-200/40",
-          "text-neutral-900",
-          "border-neutral-200/40",
-          "hover:bg-neutral-300/40",
-          "hover:text-neutral-900",
-          "hover:border-neutral-300/40",
-          "dark:bg-neutral-800",
-          "dark:text-neutral-300",
-          "dark:border-neutral-700",
-        ],
-        primary: [
-          "tesseract-button--primary",
-          "bg-blue-600",
-          "text-white",
-          "border-blue-600",
-          "hover:bg-blue-800",
-          "hover:text-white",
-          "hover:border-blue-800",
-          "dark:bg-blue-700",
-          "dark:text-white",
-          "dark:border-blue-700",
-          "dark:hover:bg-blue-600",
-          "dark:hover:text-white",
-          "dark:hover:border-blue-600",
-        ],
-        subtile: [
-          "tesseract-button--subtile",
-          "bg-emerald-600/5",
-          "text-emerald-500",
-          "border-emerald-500/20",
-          "hover:bg-emerald-600/20",
-          "hover:border-emerald-500/40",
-        ],
-        outline: [
-          "tesseract-button--outline",
-          "bg-transparent",
-          "text-neutral-600",
-          "border-neutral-200",
-          "hover:bg-neutral-200",
-          "hover:text-neutral-800",
-          "dark:text-neutral-300",
-          "dark:border-neutral-800",
-          "dark:hover:bg-neutral-800",
-        ],
-        link: [
-          "tesseract-button--link",
-          "hover:underline",
-          "hover:underline-offset-4",
-          "bg-transparent",
-          "text-violet-600",
-          "border-transparent",
-          "hover:text-violet-700",
-        ],
-        ghots: [
-          "tesseract-button--link",
-          "bg-transparent",
-          "text-neutral-900",
-          "border-transparent",
-          "hover:bg-neutral-200",
-          "hover:text-neutral-900",
-          "hover:border-neutral-200",
-        ],
-        destruct: [
-          "tesseract-button--destruct",
-          "bg-red-800",
-          "text-neutral-200",
-          "border-red-800",
-          "hover:bg-red-700",
-          "hover:text-neutral-50",
-          "hover:border-red-700",
-        ],
-      },
-      size: {
-        sm: ["h-9"],
-        md: ["h-10"],
-        lg: ["h-11"],
-      },
-    },
-  }
-);

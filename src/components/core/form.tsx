@@ -2,8 +2,8 @@ import * as React from "react";
 import type * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import * as ReactHookForm from "react-hook-form";
-import { cx } from "~lib/utils";
-import Label from "~components/core/label";
+import { cn } from "@/lib/utils";
+import Label from "@/components/core/label";
 
 const FormRoot = ReactHookForm.FormProvider;
 
@@ -73,7 +73,7 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cx(["space-y-2"], className)} {...rest}></div>
+      <div ref={ref} className={cn(["space-y-2"], className)} {...rest}></div>
     </FormItemContext.Provider>
   );
 });
@@ -88,7 +88,7 @@ const FormLabel = React.forwardRef<
   const { formItemId } = useFormField();
 
   return (
-    <Label ref={ref} className={cx(className)} htmlFor={formItemId} {...rest} />
+    <Label ref={ref} className={cn(className)} htmlFor={formItemId} {...rest} />
   );
 });
 
@@ -129,7 +129,7 @@ const FormDescription = React.forwardRef<
     <p
       ref={ref}
       id={formDescriptionId}
-      className={cx(["text-sm"], className)}
+      className={cn(["text-sm"], className)}
       {...rest}
     />
   );
@@ -153,7 +153,7 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cx(["error", "peer", "text-sm", "text-red-500"], className)}
+      className={cn(["error", "peer", "text-sm", "text-red-500"], className)}
       {...rest}
     >
       {body}
@@ -181,7 +181,7 @@ const UncontrolledFormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cx(["text-xm", "text-red-700"], className)}
+      className={cn(["text-xm", "text-red-700"], className)}
       {...rest}
     >
       {body}

@@ -1,12 +1,31 @@
-import { type NextRequest } from "next/server";
-import { updateSession } from "~lib/supabase/middleware";
+import { NextResponse } from "next/server";
+import authConfig from "@/auth.config";
+import NextAuth from "next-auth";
 
-export async function middleware(request: NextRequest) {
-  return await updateSession(request);
-}
+const { auth } = NextAuth(authConfig);
+
+export default auth(async function middleware(req: any) {
+  const { nextUrl } = req;
+  const _auth = !!req.auth;
+
+  if (nextUrl.pathname.startsWith("/api/auth")) {
+    return null;
+  }
+
+  if (["/auth"].includes(nextUrl.pathname)) {
+    if (_auth) {
+      return Response.redirect(new URL("/app", nextUrl));
+    }
+    return null;
+  }
+
+  if (!_auth && !["/"].includes(nextUrl.pathname)) {
+    return NextResponse.redirect(new URL("/auth", nextUrl));
+  }
+
+  return NextResponse.next();
+});
 
 export const config = {
-  matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
-  ],
+  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };

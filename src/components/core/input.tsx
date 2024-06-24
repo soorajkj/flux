@@ -1,9 +1,9 @@
-import React, { InputHTMLAttributes } from "react";
+import * as React from "react";
 import { cva, VariantProps } from "class-variance-authority";
-import { cx } from "~lib/utils";
+import { cn } from "@/lib/utils";
 
 export interface InputProps
-  extends InputHTMLAttributes<HTMLInputElement>,
+  extends React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof InputStyles> {}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
@@ -13,45 +13,39 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     <input
       ref={ref}
       type={type}
-      className={cx(InputStyles({ className }))}
+      className={cn(InputStyles({ className }))}
       {...rest}
-    />
+    ></input>
   );
 });
+
+const InputStyles = cva([
+  "inline-flex",
+  "h-10",
+  "w-full",
+  "select-none",
+  "appearance-none",
+  "items-center",
+  "gap-2",
+  "rounded-lg",
+  "border",
+  "border-zinc-300",
+  "bg-transparent",
+  "px-3",
+  "py-2",
+  "text-base",
+  "text-zinc-900",
+  "placeholder-zinc-400",
+  "shadow-sm",
+  "outline-none",
+  "focus-visible:border-blue-300",
+  "focus-visible:ring-4",
+  "focus-visible:ring-blue-100",
+  "disabled:cursor-not-allowed",
+  "peer-[.error]:border-red-300",
+  "peer-[.error]:ring-red-600/20",
+]);
 
 Input.displayName = "Input";
 
 export default Input;
-
-const InputStyles = cva([
-  "tesseract-input",
-  "flex",
-  "h-10",
-  "w-auto",
-  "rounded-md",
-  "border",
-  "bg-neutral-50",
-  "text-neutral-900",
-  "border-neutral-300",
-  "px-4",
-  "py-2.5",
-  "text-base",
-  "leading-none",
-  "transition-colors",
-  "file:border-0",
-  "file:bg-transparent",
-  "file:text-sm",
-  "file:font-medium",
-  "placeholder:text-neutral-400",
-  "focus-visible:outline-none",
-  "focus-visible:ring-1",
-  "focus-visible:ring-zinc-900/50",
-  "disabled:cursor-not-allowed",
-  "disabled:opacity-90",
-  "peer-[.error]:border-red-400",
-  "peer-[.error]:ring-red-100",
-  "dark:bg-neutral-900",
-  "dark:text-neutral-400",
-  "dark:border-neutral-800",
-  "dark:placeholder:text-neutral-700",
-]);

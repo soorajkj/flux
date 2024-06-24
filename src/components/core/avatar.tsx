@@ -3,19 +3,22 @@
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { cva, VariantProps } from "class-variance-authority";
-import { cx } from "~lib/utils";
+import { cn } from "@/lib/utils";
+
+interface AvatarRootProps
+  extends React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
+    VariantProps<typeof AvatarRootStyles> {}
 
 const AvatarRoot = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
-    VariantProps<typeof AvatarRootStyles>
+  AvatarRootProps
 >((props, ref) => {
   const { className, ...rest } = props;
 
   return (
     <AvatarPrimitive.Root
       ref={ref}
-      className={cx(AvatarRootStyles({ className }))}
+      className={cn(AvatarRootStyles({ className }))}
       {...rest}
     />
   );
@@ -31,7 +34,7 @@ const AvatarFallback = React.forwardRef<
   return (
     <AvatarPrimitive.Fallback
       ref={ref}
-      className={cx(AvatarFallbackStyles({ className }))}
+      className={cn(AvatarFallbackStyles({ className }))}
       {...rest}
     />
   );
@@ -42,28 +45,20 @@ const AvatarImage = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> &
     VariantProps<typeof AvatarImageStyles>
 >((props, ref) => {
-  const { className, ...rest } = props;
+  const { className, src, ...rest } = props;
 
   return (
     <AvatarPrimitive.Image
       ref={ref}
-      className={cx(AvatarImageStyles({ className }))}
+      src={src}
+      className={cn(AvatarImageStyles({ className }))}
       {...rest}
     />
   );
 });
 
-AvatarRoot.displayName = AvatarPrimitive.Root.displayName;
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
-AvatarImage.displayName = AvatarPrimitive.Image.displayName;
-
-const Avatar = { AvatarRoot, AvatarFallback, AvatarImage };
-
-export default Avatar;
-
 const AvatarRootStyles = cva(
   [
-    "tesseract-avatar",
     "relative",
     "flex",
     "h-9",
@@ -73,33 +68,38 @@ const AvatarRootStyles = cva(
     "rounded-full",
   ],
   {
-    variants: {
-      size: {},
-    },
+    variants: {},
   }
 );
 
 const AvatarFallbackStyles = cva([
-  "tesseract-avatar__fallback",
-  "border",
-  "bg-neutral-200",
-  "text-neutral-600",
-  "border-neutral-300",
   "flex",
   "h-full",
   "w-full",
   "items-center",
   "justify-center",
+  "border",
+  "border-misty-300",
+  "bg-misty-200",
+  "text-misty-600",
   "rounded-full",
-  "dark:bg-neutral-800",
-  "dark:text-neutral-500",
-  "dark:border-neutral-800",
+  "dark:border-misty-800",
+  "dark:bg-misty-800",
+  "dark:text-misty-500",
 ]);
 
 const AvatarImageStyles = cva([
-  "tesseract-avatar__image",
-  "pointer-events-none",
+  "static",
+  "block",
   "aspect-square",
   "h-full",
   "w-full",
 ]);
+
+AvatarRoot.displayName = AvatarPrimitive.Root.displayName;
+AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
+AvatarImage.displayName = AvatarPrimitive.Image.displayName;
+
+const Avatar = { AvatarRoot, AvatarFallback, AvatarImage };
+
+export default Avatar;

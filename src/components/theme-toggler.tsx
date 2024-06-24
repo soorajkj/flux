@@ -1,14 +1,23 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
-import { cx } from "~lib/utils";
-import { ButtonStyles } from "~components/core/button";
-import Icon from "~components/core/icon";
-import Toggle from "~components/core/toggle";
+import useMount from "@/hooks/use-mount";
+import Icon from "@/components/core/icon";
+import Toggle from "@/components/core/toggle";
 
 export default function ThemeToggler() {
   const { themes, theme, setTheme } = useTheme();
-  const themesObject: Record<string, string> = {};
+  const [nextTheme, setNextTheme] = useState(null);
+  const mount = useMount();
+
+  const themesObject = useMemo(() => {
+    const obj: Record<string, string> = {};
+    for (const theme of themes) obj[theme] = theme;
+    const keys = Object.keys(obj);
+    delete obj[keys[keys.length - 1]];
+    return obj;
+  }, [themes]);
 
   for (const theme of themes) themesObject[theme] = theme;
   let keys = Object.keys(themesObject);
@@ -21,21 +30,21 @@ export default function ThemeToggler() {
     setTheme(keys[next]);
   };
 
+  useEffect(() => {
+    const Keys = Object.keys(themesObject);
+    const current = Keys.indexOf(theme);
+    const next = (current + 1) % Keys.length;
+    setNextTheme(Keys[next]);
+  }, [theme, themesObject]);
+
+  if (!mount) return null;
+
   return (
     <Toggle
-      aria-label="toggle application appearance"
-      className={cx(
-        ButtonStyles({ variant: "default" }),
-        "fixed bottom-12 right-8 h-10 w-10 rounded-full px-0 py-0"
-      )}
       onClick={handleThemeChange}
+      className="fixed bottom-12 right-8 select-none rounded-full border border-transparent bg-neutral-200 px-3 py-3 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-50"
     >
-      <Icon
-        icon="palette"
-        label="appearance icon"
-        width={16}
-        height={16}
-      ></Icon>
+      <Icon icon="palette" label={`change appreance to ${nextTheme}`} />
     </Toggle>
   );
 }

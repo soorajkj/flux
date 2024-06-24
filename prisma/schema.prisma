@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  todos         Todo[]
+  subTodos      SubTodo[]
+  labels        Label[]
+  projects      Project[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.String
+  access_token      String? @db.String
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.String
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([provider, providerAccountId])
+}
+
+model Todo {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String    @db.ObjectId
+  projectId   String    @db.ObjectId
+  labelId     String    @db.ObjectId
+  taskName    String
+  description String?
+  dueDate     Float
+  priority    Float?
+  isCompleted Boolean
+  embedding   Float[]
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project     Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  label       Label     @relation(fields: [labelId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  SubTodo     SubTodo[]
+
+  @@index([embedding], name: "by_embedding")
+}
+
+model SubTodo {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @db.ObjectId
+  projectId   String   @db.ObjectId
+  labelId     String   @db.ObjectId
+  parentId    String   @db.ObjectId
+  taskName    String
+  description String?
+  dueDate     Float
+  priority    Float?
+  isCompleted Boolean
+  embedding   Float[]
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  label       Label    @relation(fields: [labelId], references: [id], onDelete: Cascade)
+  parent      Todo     @relation(fields: [parentId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([embedding], name: "by_embedding")
+}
+
+model Label {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String?   @db.ObjectId
+  name      String
+  type      String    @db.String
+  user      User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  todos     Todo[]
+  subTodos  SubTodo[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Project {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String?   @db.ObjectId
+  name      String
+  type      String    @db.String
+  user      User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  todos     Todo[]
+  subTodos  SubTodo[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}

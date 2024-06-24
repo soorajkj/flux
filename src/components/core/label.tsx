@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { cva, VariantProps } from "class-variance-authority";
-import { cx } from "~lib/utils";
+import { cn } from "@/lib/utils";
 
 const Label = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
@@ -15,22 +15,21 @@ const Label = React.forwardRef<
   return (
     <LabelPrimitive.Root
       ref={ref}
-      className={cx(LabelStyles({ className }))}
+      className={cn(LabelStyles({ className }))}
       {...rest}
     />
   );
 });
-
-Label.displayName = LabelPrimitive.Root.displayName;
-
-export default Label;
 
 const LabelStyles = cva([
   "tesseract-label",
   "inline-block",
   "font-medium",
   "leading-none",
-  "text-neutral-600",
   "peer-disabled:cursor-not-allowed",
   "peer-disabled:opacity-70",
 ]);
+
+Label.displayName = LabelPrimitive.Root.displayName;
+
+export default Label;
