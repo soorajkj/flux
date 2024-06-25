@@ -16,7 +16,7 @@ export default function Header() {
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </Sheet.SheetTrigger>
-        <Sheet.SheetContent side="left" className="flex flex-col">
+        <Sheet.SheetContent side="left" className="w-10/12 max-w-sm">
           <VisuallyHidden>
             <Sheet.SheetTitle>Menu</Sheet.SheetTitle>
             <Sheet.SheetDescription />

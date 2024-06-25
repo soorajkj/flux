@@ -22,8 +22,8 @@ const Label = React.forwardRef<
 });
 
 const LabelStyles = cva([
-  "tesseract-label",
   "inline-block",
+  "text-sm",
   "font-medium",
   "leading-none",
   "peer-disabled:cursor-not-allowed",

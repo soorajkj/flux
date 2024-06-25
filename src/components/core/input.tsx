@@ -38,12 +38,13 @@ const InputStyles = cva([
   "placeholder-zinc-400",
   "shadow-sm",
   "outline-none",
-  "focus-visible:border-blue-300",
-  "focus-visible:ring-4",
-  "focus-visible:ring-blue-100",
   "disabled:cursor-not-allowed",
   "peer-[.error]:border-red-300",
   "peer-[.error]:ring-red-600/20",
+  "dark:bg-transparent",
+  "dark:border-zinc-800",
+  "dark:text-zinc-200",
+  "dark:placeholder-zinc-700",
 ]);
 
 Input.displayName = "Input";

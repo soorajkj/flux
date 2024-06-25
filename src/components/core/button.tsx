@@ -4,7 +4,6 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-import Icon from "@/components/core/icon";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -23,7 +22,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled = false,
       loading = false,
       pure = false,
-      variant,
+      variant = "default",
       full,
       className,
       ...rest
@@ -39,14 +38,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(!pure && ButtonStyles({ variant, full }), className)}
         {...rest}
       >
-        {loading && (
-          <Icon
-            icon="loader"
-            style={{ animationDuration: "1000ms" }}
-            className="animate-spin"
-          />
-        )}
-        <span>{children}</span>
+        {children}
       </Comp>
     );
   }
@@ -69,24 +61,17 @@ const ButtonStyles = cva(
     "py-2.5",
     "h-10",
     "text-sm",
-    "font-medium",
+    "font-normal",
     "leading-none",
     "transition-colors",
-    "ring-offset-neutral-50",
-    "focus-visible:outline-none",
-    "focus-visible:ring-1",
-    "focus-visible:ring-neutral-300",
-    "focus-visible:ring-offset-2",
     "disabled:cursor-none",
     "disabled:pointer-events-none",
     "disabled:opacity-80",
-    "dark:ring-offset-neutral-900",
-    "dark:focus-visible:ring-neutral-700",
   ],
   {
     variants: {
       variant: {
-        default: [],
+        default: ["bg-blue-500 text-white"],
         primary: [],
         link: [],
         destruct: [],

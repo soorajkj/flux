@@ -13,5 +13,5 @@ module.exports = {
     hoverOnlyWhenSupported: true,
     purgeLayersByDefault: true,
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/line-clamp")],
 };

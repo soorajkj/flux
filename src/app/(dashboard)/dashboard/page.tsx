@@ -1,5 +1,10 @@
-import React from "react";
+import * as React from "react";
+import Tasks from "@/components/dashboard/tasks";
 
 export default function Page() {
-  return <div>Page</div>;
+  return (
+    <React.Fragment>
+      <Tasks />
+    </React.Fragment>
+  );
 }

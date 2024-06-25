@@ -10,13 +10,11 @@ export default function ThemeProvider(props: ThemeProviderProps) {
 
   return (
     <React.Fragment>
-      <style global jsx>
-        {`
-          :root {
-            --font-family-inter: ${inter.style.fontFamily};
-          }
-        `}
-      </style>
+      <style jsx global>{`
+        :root {
+          --font-family-inter: ${inter.style.fontFamily};
+        }
+      `}</style>
       <NextThemeProvider disableTransitionOnChange {...rest}>
         {children}
       </NextThemeProvider>

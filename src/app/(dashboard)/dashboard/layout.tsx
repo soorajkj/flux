@@ -1,17 +1,17 @@
-import React from "react";
+import * as React from "react";
 import Header from "@/components/dashboard/header";
 import Sidebar from "@/components/dashboard/sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <React.Fragment>
-      <div className="flex min-h-screen w-full">
-        <Sidebar />
-        <div className="flex flex-1 flex-col">
-          <Header />
-          <main className="flex flex-1 flex-col">{children}</main>
-        </div>
+    <div className="flex h-screen w-full overflow-hidden">
+      <Sidebar />
+      <div className="flex h-full w-full flex-1 flex-col overflow-y-auto">
+        <Header />
+        <main className="flex flex-1 flex-col overflow-y-auto px-8 py-4">
+          {children}
+        </main>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
