@@ -11,5 +11,8 @@
   "scss.validate": false,
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ]
+  ],
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
 }

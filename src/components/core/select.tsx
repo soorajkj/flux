@@ -17,7 +17,7 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-11 w-full items-center justify-between whitespace-nowrap rounded-lg border border-white px-3 py-2 text-base placeholder-transparent shadow-sm disabled:cursor-not-allowed disabled:opacity-50 dark:border-zinc-800 [&>span]:line-clamp-1",
+      "flex h-8 w-full items-center justify-between whitespace-nowrap rounded-lg border border-white px-3 py-2 text-sm placeholder-transparent disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700 dark:text-neutral-300 [&>span]:line-clamp-1",
       className
     )}
     {...props}
@@ -90,7 +90,7 @@ const SelectLabel = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
     ref={ref}
-    className={cn("px-2 py-1.5 text-base font-semibold", className)}
+    className={cn("px-2 py-1.5 text-sm font-semibold", className)}
     {...props}
   />
 ));
@@ -102,7 +102,7 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-base outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:bg-neutral-700/15",
       className
     )}
     {...props}
@@ -154,7 +154,7 @@ export default Select;
 const SelectContentStyles = cva(
   [
     "bg-transparent",
-    "text-zinc-600",
+    "text-neutral-600",
     "data-[state=open]:animate-in",
     "data-[state=closed]:animate-out",
     "data-[state=closed]:fade-out-0",
@@ -172,10 +172,9 @@ const SelectContentStyles = cva(
     "overflow-hidden",
     "rounded-md",
     "border",
-    "border-zinc-800",
-    "shadow-md",
-    "dark:bg-zinc-800",
-    "dark:text-zinc-400",
+    "border-neutral-800",
+    "dark:bg-neutral-800",
+    "dark:text-neutral-400",
   ],
   {
     variants: {

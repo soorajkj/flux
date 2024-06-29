@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Sidebar />
       <div className="flex h-full w-full flex-1 flex-col overflow-y-auto">
         <Header />
-        <main className="flex flex-1 flex-col overflow-y-auto px-8 py-4">
+        <main className="mx-auto flex w-full max-w-screen-2xl flex-1 flex-col overflow-y-auto px-8 py-4">
           {children}
         </main>
       </div>
