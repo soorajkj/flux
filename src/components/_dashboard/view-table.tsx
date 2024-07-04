@@ -13,11 +13,12 @@ import {
   useReactTable,
   VisibilityState,
 } from "@tanstack/react-table";
-import { ChevronDown } from "lucide-react";
+import { Settings2 } from "lucide-react";
 import Button from "@/components/core/button";
 import Dropdown from "@/components/core/dropdown";
 import Input from "@/components/core/input";
 import Table from "@/components/core/table";
+import AddTodo from "@/components/dashboard/add-todo";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -56,7 +57,7 @@ export default function ViewTable<TData, TValue>({
 
   return (
     <React.Fragment>
-      <div className="flex items-center justify-end gap-4 py-4">
+      <div className="mb-4 flex items-center justify-end gap-2">
         <Input
           placeholder="Search something..."
           value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
@@ -67,8 +68,9 @@ export default function ViewTable<TData, TValue>({
         />
         <Dropdown.DropdownRoot>
           <Dropdown.DropdownTrigger asChild>
-            <Button variant="outline">
-              Columns <ChevronDown className="ml-2 h-4 w-4" />
+            <Button variant="outline" className="space-x-2">
+              <Settings2 className="h-4 w-4" />
+              <span>View</span>
             </Button>
           </Dropdown.DropdownTrigger>
           <Dropdown.DropdownContent align="end">
@@ -91,9 +93,10 @@ export default function ViewTable<TData, TValue>({
               })}
           </Dropdown.DropdownContent>
         </Dropdown.DropdownRoot>
+        <AddTodo />
       </div>
       <Table.TableRoot>
-        <Table.TableHeader>
+        <Table.TableHeader className="sticky -top-1 z-10">
           {table.getHeaderGroups().map((headerGroup) => (
             <Table.TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {

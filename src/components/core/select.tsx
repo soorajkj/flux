@@ -17,7 +17,7 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-8 w-full items-center justify-between whitespace-nowrap rounded-lg border border-white px-3 py-2 text-sm placeholder-transparent disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700 dark:text-neutral-300 [&>span]:line-clamp-1",
+      "flex h-8 w-full min-w-fit items-center justify-between space-x-2 whitespace-nowrap rounded border border-white px-3 py-2 text-sm placeholder-transparent disabled:cursor-not-allowed disabled:opacity-50 dark:border-zinc-900 dark:text-zinc-300",
       className
     )}
     {...props}
@@ -102,7 +102,7 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:bg-neutral-700/15",
+      "relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:hover:bg-zinc-800",
       className
     )}
     {...props}
@@ -153,8 +153,6 @@ export default Select;
 
 const SelectContentStyles = cva(
   [
-    "bg-transparent",
-    "text-neutral-600",
     "data-[state=open]:animate-in",
     "data-[state=closed]:animate-out",
     "data-[state=closed]:fade-out-0",
@@ -172,9 +170,9 @@ const SelectContentStyles = cva(
     "overflow-hidden",
     "rounded-md",
     "border",
-    "border-neutral-800",
-    "dark:bg-neutral-800",
-    "dark:text-neutral-400",
+    "dark:bg-zinc-900",
+    "dark:text-zinc-400",
+    "dark:border-zinc-900",
   ],
   {
     variants: {

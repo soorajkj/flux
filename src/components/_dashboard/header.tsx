@@ -8,7 +8,7 @@ import Sheet from "@/components/core/sheet";
 
 export default function Header() {
   return (
-    <header className="flex h-14 items-center justify-between gap-4 border-b px-4 dark:border-neutral-800 lg:h-16 lg:px-6">
+    <header className="flex h-14 items-center justify-between gap-4 border-b px-4 dark:border-zinc-800 lg:h-16 lg:px-6">
       <Sheet.SheetRoot>
         <Sheet.SheetTrigger asChild>
           <Button variant="outline" className="shrink-0 md:hidden">

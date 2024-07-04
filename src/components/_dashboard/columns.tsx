@@ -4,8 +4,22 @@ import * as React from "react";
 import { PRIORITIES, STATUSES, TodoSchema } from "@/schemas/todo";
 import { ColumnDef } from "@tanstack/react-table";
 import { format } from "date-fns";
-import { Calendar, CircleDot, Heading1, Loader, Tag, Text } from "lucide-react";
+import {
+  Calendar,
+  CircleDot,
+  Heading1,
+  Loader,
+  MoreHorizontal,
+  MoveUpRight,
+  Star,
+  Tag,
+  Text,
+  Trash2,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
+import Button from "@/components/core/button";
+import Checkbox from "@/components/core/checkbox";
+import Dropdown from "@/components/core/dropdown";
 
 const statuses: Record<(typeof STATUSES)[number], string> = {
   "Not started": "bg-purple-500",
@@ -21,6 +35,31 @@ const priorities: Record<(typeof PRIORITIES)[number], string> = {
 
 export const columns: ColumnDef<typeof TodoSchema>[] = [
   {
+    id: "select",
+    header: ({ table }) => {
+      const isAllSelected = table.getIsAllPageRowsSelected();
+      const isSomeSelected =
+        table.getIsSomePageRowsSelected() && !isAllSelected;
+
+      return (
+        <Checkbox
+          checked={(isSomeSelected && "indeterminate") || isAllSelected}
+          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+          aria-label="Select all"
+        />
+      );
+    },
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
     accessorKey: "title",
     header: ({ column }) => {
       return (
@@ -35,6 +74,11 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
         </div>
       );
     },
+    cell: ({ row }) => {
+      return (
+        <p className="w-full max-w-60 truncate">{row.getValue("title")}</p>
+      );
+    },
   },
   {
     accessorKey: "description",
@@ -44,6 +88,13 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
           <Text className="h-4 w-4" />
           <span className="leading-none">Description</span>
         </div>
+      );
+    },
+    cell: ({ row }) => {
+      return (
+        <p className="w-full max-w-96 truncate">
+          {row.getValue("description")}
+        </p>
       );
     },
   },
@@ -63,7 +114,7 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
       return (
         <p
           className={cn(
-            "inline-flex items-center space-x-2 rounded-full bg-opacity-40 px-2 py-0.5 leading-none text-neutral-300",
+            "inline-flex items-center space-x-2 whitespace-nowrap rounded-full bg-opacity-30 px-2 py-0.5 leading-none text-zinc-300",
             statuses[status]
           )}
         >
@@ -86,7 +137,7 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
       );
     },
     cell: ({ row }) => {
-      return format(new Date(row.getValue("dueDate")), "MMM d, yyyy");
+      return <p>{format(new Date(row.getValue("dueDate")), "MMM d, yyyy")}</p>;
     },
   },
   {
@@ -104,7 +155,7 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
       return (
         <p
           className={cn(
-            "inline-flex rounded bg-opacity-40 px-2 py-0.5 leading-none text-neutral-300",
+            "inline-flex rounded bg-opacity-30 px-2 py-0.5 leading-none text-zinc-300",
             priorities[priority]
           )}
         >
@@ -126,10 +177,10 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
     cell: () => {
       return (
         <div className="flex flex-wrap gap-2">
-          {["Peronal", "Work", "Coding"].map((_, i) => (
+          {["Personal", "Work", "Coding"].map((_, i) => (
             <p
               key={i}
-              className="rounded bg-sky-500 bg-opacity-40 px-2 py-0.5 leading-none text-neutral-300"
+              className="rounded bg-sky-500 bg-opacity-30 px-2 py-0.5 leading-none text-zinc-300"
             >
               {_}
             </p>
@@ -137,5 +188,35 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
         </div>
       );
     },
+  },
+  {
+    id: "actions",
+    cell: () => {
+      return (
+        <Dropdown.DropdownRoot>
+          <Dropdown.DropdownTrigger asChild>
+            <Button variant="ghost" className="h-7 w-7 space-x-0 p-0">
+              <span className="sr-only">Open menu</span>
+              <MoreHorizontal className="h-4 w-4" />
+            </Button>
+          </Dropdown.DropdownTrigger>
+          <Dropdown.DropdownContent align="end">
+            <Dropdown.DropdownItem className="space-x-2">
+              <MoveUpRight className="h-4 w-4" />
+              <span>Open / Edit</span>
+            </Dropdown.DropdownItem>
+            <Dropdown.DropdownItem className="space-x-2">
+              <Star className="h-4 w-4" />
+              <span>Add to Favorites</span>
+            </Dropdown.DropdownItem>
+            <Dropdown.DropdownItem className="space-x-2">
+              <Trash2 className="h-4 w-4" />
+              <span>Delete</span>
+            </Dropdown.DropdownItem>
+          </Dropdown.DropdownContent>
+        </Dropdown.DropdownRoot>
+      );
+    },
+    enableHiding: false,
   },
 ];

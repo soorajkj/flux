@@ -9,7 +9,6 @@ import {
   Table,
 } from "lucide-react";
 import Tabs from "@/components/core/tabs";
-import AddTodo from "@/components/dashboard/add-todo";
 import { columns } from "@/components/dashboard/columns";
 import ViewBoard from "@/components/dashboard/view-board";
 import ViewCalendar from "@/components/dashboard/view-calendar";
@@ -20,6 +19,7 @@ import ViewTimeline from "@/components/dashboard/view-timeline";
 interface View {
   view: string;
   icon: React.ReactElement;
+  disable: boolean;
   component: React.ReactNode;
 }
 
@@ -32,29 +32,35 @@ export default function ChangeViewer({ todos }: ChangeViewerProps) {
     {
       view: "table",
       icon: <Table />,
+      disable: false,
       component: <ViewTable columns={columns} data={todos} />,
     },
-    { view: "list", icon: <List />, component: <ViewList /> },
-    { view: "board", icon: <Columns3 />, component: <ViewBoard /> },
+    { view: "list", icon: <List />, disable: true, component: <ViewList /> },
+    {
+      view: "board",
+      icon: <Columns3 />,
+      disable: true,
+      component: <ViewBoard />,
+    },
     {
       view: "timeline",
       icon: <StretchHorizontal />,
+      disable: true,
       component: <ViewTimeline />,
     },
-    { view: "calendar", icon: <CalendarDays />, component: <ViewCalendar /> },
+    {
+      view: "calendar",
+      icon: <CalendarDays />,
+      disable: true,
+      component: <ViewCalendar />,
+    },
   ];
   return (
     <React.Fragment>
-      <div className="my-8 flex items-center justify-between">
-        <h2 className="text-3xl font-semibold text-neutral-50">Tweede</h2>
-        <div className="flex items-center gap-2">
-          <AddTodo />
-        </div>
-      </div>
-      <Tabs.TabsRoot defaultValue={views[0].view}>
+      <Tabs.TabsRoot defaultValue={views[0].view} className="my-4">
         <Tabs.TabsList>
           {views.map((view, i) => (
-            <Tabs.TabsTrigger key={i} value={view.view}>
+            <Tabs.TabsTrigger key={i} value={view.view} disabled={view.disable}>
               <div className="flex select-none items-center gap-2">
                 {React.cloneElement(view.icon, { className: "w-4 h-4" })}
                 <span className="capitalize">{view.view}</span>

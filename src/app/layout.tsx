@@ -12,7 +12,7 @@ interface LayoutProps extends Readonly<{ children: React.ReactNode }> {}
 export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className="bg-neutral-50 font-family-inter text-sm font-normal leading-normal text-neutral-500 antialiased dark:bg-neutral-900 dark:text-neutral-500">
+      <body className="bg-zinc-50 font-family-inter text-sm font-normal leading-normal text-zinc-500 antialiased dark:bg-zinc-950 dark:text-zinc-500">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SessionProvider>
             {children}

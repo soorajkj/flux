@@ -25,8 +25,8 @@ const TooltipContent = React.forwardRef<
 ));
 
 const TooltipContentStyles = cva([
-  "bg-neutral-50",
-  "text-neutral-800",
+  "bg-zinc-50",
+  "text-zinc-800",
   "z-50",
   "overflow-hidden",
   "rounded-md",

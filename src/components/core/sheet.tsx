@@ -20,7 +20,7 @@ const SheetOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Overlay
     className={cn(
-      "fixed inset-0 z-50 bg-neutral-400/20 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 dark:bg-black/40",
+      "fixed inset-0 z-50 bg-zinc-400/20 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 dark:bg-black/40",
       className
     )}
     {...props}
@@ -44,7 +44,7 @@ const SheetContent = React.forwardRef<
       {...props}
     >
       {children}
-      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-neutral-900">
+      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-zinc-900">
         <X width={16} height={16} />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
@@ -114,7 +114,7 @@ const SheetContentStyles = cva(
     "gap-4",
     "p-6",
     "bg-white",
-    "border-neutral-200",
+    "border-zinc-200",
     "shadow-lg",
     "transition",
     "ease-in-out",
@@ -122,8 +122,8 @@ const SheetContentStyles = cva(
     "data-[state=closed]:animate-out",
     "data-[state=closed]:duration-300",
     "data-[state=open]:duration-500",
-    "dark:border-neutral-800",
-    "dark:bg-neutral-800",
+    "dark:border-zinc-800",
+    "dark:bg-zinc-800",
   ],
   {
     variants: {

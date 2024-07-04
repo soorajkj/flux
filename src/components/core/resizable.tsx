@@ -36,7 +36,7 @@ const ResizableHandle = ({
     {...props}
   >
     {withHandle && (
-      <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-neutral-200 dark:border-neutral-900 dark:bg-neutral-800">
+      <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-zinc-200 dark:border-zinc-900 dark:bg-zinc-800">
         <Icon icon="resizable" label="resize panel" />
       </div>
     )}
@@ -44,7 +44,7 @@ const ResizableHandle = ({
 );
 
 const ResizableHandleStyles = cva([
-  "bg-neutral-200",
+  "bg-zinc-200",
   "focus-visible:ring-ring",
   "relative",
   "flex",
@@ -67,7 +67,7 @@ const ResizableHandleStyles = cva([
   "data-[panel-group-direction=vertical]:after:-translate-y-1/2",
   "data-[panel-group-direction=vertical]:after:translate-x-0",
   "[&[data-panel-group-direction=vertical]>div]:rotate-90",
-  "dark:bg-neutral-800",
+  "dark:bg-zinc-800",
 ]);
 
 const Resizable = { ResizablePanelGroup, ResizablePanel, ResizableHandle };
