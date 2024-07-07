@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { PRIORITIES, STATUSES, TodoSchema } from "@/schemas/todo";
+import dynamic from "next/dynamic";
+import { Priorities, Statuses, TodoSchema } from "@/schemas/todo";
 import { addTodo } from "@/services/todo.action";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
@@ -20,6 +21,12 @@ interface AddTodoFormProps {
 }
 
 export default function AddTodoForm(props: AddTodoFormProps) {
+  const Editor = React.useMemo(
+    () =>
+      dynamic(() => import("@/components/dashboard/editor"), { ssr: false }),
+    []
+  );
+
   const [isPending, startTransition] = React.useTransition();
   const { onFormSubmit } = props;
   const form = useForm<z.infer<typeof TodoSchema>>({
@@ -30,6 +37,7 @@ export default function AddTodoForm(props: AddTodoFormProps) {
       due: new Date(),
       priority: "Low",
       status: "Not started",
+      document: [],
     },
   });
 
@@ -89,7 +97,7 @@ export default function AddTodoForm(props: AddTodoFormProps) {
                   </Select.SelectTrigger>
                 </Form.FormControl>
                 <Select.SelectContent>
-                  {STATUSES.map((status, i) => (
+                  {Statuses.map((status, i) => (
                     <Select.SelectItem key={i} value={status}>
                       {status}
                     </Select.SelectItem>
@@ -116,7 +124,7 @@ export default function AddTodoForm(props: AddTodoFormProps) {
                   </Select.SelectTrigger>
                 </Form.FormControl>
                 <Select.SelectContent>
-                  {PRIORITIES.map((priority, i) => (
+                  {Priorities.map((priority, i) => (
                     <Select.SelectItem key={i} value={priority}>
                       {priority}
                     </Select.SelectItem>
@@ -151,6 +159,19 @@ export default function AddTodoForm(props: AddTodoFormProps) {
                   />
                 </Popover.PopoverContent>
               </Popover.PopoverRoot>
+            </Form.FormItem>
+          )}
+        />
+        <Form.FormField
+          control={form.control}
+          name="document"
+          render={({ field }) => (
+            <Form.FormItem className="flex flex-col">
+              <Form.FormLabel>Additional Note</Form.FormLabel>
+              <Form.FormMessage className="order-3" />
+              <Form.FormControl>
+                <Editor onChange={(content) => field.onChange(content)} />
+              </Form.FormControl>
             </Form.FormItem>
           )}
         />

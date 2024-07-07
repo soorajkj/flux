@@ -9,7 +9,8 @@ import { prisma } from "@/lib/prisma";
 export const addTodo = async (values: z.infer<typeof TodoSchema>) => {
   const validatedFields = TodoSchema.safeParse(values);
   if (!validatedFields.success) return;
-  const { title, description, due, status, priority } = validatedFields.data;
+  const { title, description, due, status, priority, document } =
+    validatedFields.data;
   const { user } = await auth();
   await prisma.todo.create({
     data: {
@@ -19,6 +20,7 @@ export const addTodo = async (values: z.infer<typeof TodoSchema>) => {
       priority,
       status,
       dueDate: due,
+      document,
     },
   });
 

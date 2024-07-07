@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tailwind-editor {
+  .bn-editor {
+    @apply bg-transparent pr-0 font-family-inter text-sm dark:text-neutral-400;
+  }
+}

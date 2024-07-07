@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Metadata } from "next";
-import SessionProvider from "@/components/session-provider";
 import ThemeProvider from "@/components/theme-provider";
 import ThemeToggler from "@/components/theme-toggler";
 import "@/app/app.scss";
@@ -14,10 +13,8 @@ export default function Layout({ children }: LayoutProps) {
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body className="bg-zinc-50 font-family-inter text-sm font-normal leading-normal text-zinc-500 antialiased dark:bg-zinc-950 dark:text-zinc-500">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <SessionProvider>
-            {children}
-            <ThemeToggler />
-          </SessionProvider>
+          {children}
+          <ThemeToggler />
         </ThemeProvider>
       </body>
     </html>

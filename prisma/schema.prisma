@@ -50,6 +50,7 @@ model Todo {
   dueDate     DateTime?
   status      String
   priority    String
+  document    Json?     @db.Json
   user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String    @db.ObjectId
   createdAt   DateTime  @default(now())

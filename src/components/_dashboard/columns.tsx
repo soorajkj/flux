@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { PRIORITIES, STATUSES, TodoSchema } from "@/schemas/todo";
+import { Priorities, Statuses, TodoSchema } from "@/schemas/todo";
 import { ColumnDef } from "@tanstack/react-table";
 import { format } from "date-fns";
 import {
@@ -21,13 +21,13 @@ import Button from "@/components/core/button";
 import Checkbox from "@/components/core/checkbox";
 import Dropdown from "@/components/core/dropdown";
 
-const statuses: Record<(typeof STATUSES)[number], string> = {
+const StatusesRec: Record<(typeof Statuses)[number], string> = {
   "Not started": "bg-purple-500",
   "In progress": "bg-blue-500",
   Done: "bg-green-500",
 };
 
-const priorities: Record<(typeof PRIORITIES)[number], string> = {
+const PrioritiesRec: Record<(typeof Priorities)[number], string> = {
   Low: "bg-sky-500",
   Medium: "bg-green-500",
   High: "bg-red-500",
@@ -109,17 +109,20 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
       );
     },
     cell: ({ row }) => {
-      const status = row.getValue("status") as (typeof STATUSES)[number];
+      const status = row.getValue("status") as (typeof Statuses)[number];
 
       return (
         <p
           className={cn(
             "inline-flex items-center space-x-2 whitespace-nowrap rounded-full bg-opacity-30 px-2 py-0.5 leading-none text-zinc-300",
-            statuses[status]
+            StatusesRec[status]
           )}
         >
           <span
-            className={cn("inline-block size-2 rounded-full", statuses[status])}
+            className={cn(
+              "inline-block size-2 rounded-full",
+              StatusesRec[status]
+            )}
           ></span>
           <span>{status}</span>
         </p>
@@ -151,12 +154,12 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
       );
     },
     cell: ({ row }) => {
-      const priority = row.getValue("priority") as (typeof PRIORITIES)[number];
+      const priority = row.getValue("priority") as (typeof Priorities)[number];
       return (
         <p
           className={cn(
             "inline-flex rounded bg-opacity-30 px-2 py-0.5 leading-none text-zinc-300",
-            priorities[priority]
+            PrioritiesRec[priority]
           )}
         >
           {priority}
