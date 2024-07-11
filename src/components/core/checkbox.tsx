@@ -12,14 +12,20 @@ const Checkbox = React.forwardRef<
   <CheckboxPrimitive.Root
     ref={ref}
     className={cn(
-      "group peer relative h-4 w-4 shrink-0 overflow-hidden rounded border border-zinc-200 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-transparent data-[state=checked]:bg-zinc-50 data-[state=indeterminate]:bg-zinc-50 data-[state=checked]:text-zinc-50 data-[state=indeterminate]:text-zinc-50 dark:border-zinc-700 dark:data-[state=checked]:border-zinc-50 dark:data-[state=indeterminate]:border-zinc-50 dark:data-[state=checked]:bg-zinc-50 dark:data-[state=indeterminate]:bg-zinc-50 dark:data-[state=checked]:text-zinc-950 dark:data-[state=indeterminate]:text-zinc-950",
+      "group peer relative h-4 w-4 shrink-0 overflow-hidden rounded border border-neutral-400 bg-white disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-neutral-900 data-[state=indeterminate]:border-neutral-900 data-[state=checked]:bg-neutral-900 data-[state=indeterminate]:bg-neutral-900 data-[state=checked]:text-white data-[state=indeterminate]:text-white",
       className
     )}
     {...props}
   >
     <CheckboxPrimitive.Indicator className="absolute left-[50%] top-[50%] flex translate-x-[-50%] translate-y-[-50%] items-center justify-center text-current">
-      <Check className="hidden h-4 w-4 group-data-[state=checked]:block" />
-      <Minus className="hidden h-4 w-4 group-data-[state=indeterminate]:block" />
+      <Check
+        className="hidden h-3 w-3 group-data-[state=checked]:block"
+        strokeWidth={3}
+      />
+      <Minus
+        className="hidden h-3 w-3 group-data-[state=indeterminate]:block"
+        strokeWidth={3}
+      />
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
 ));

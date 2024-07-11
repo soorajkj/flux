@@ -22,9 +22,9 @@ import Checkbox from "@/components/core/checkbox";
 import Dropdown from "@/components/core/dropdown";
 
 const StatusesRec: Record<(typeof Statuses)[number], string> = {
-  "Not started": "bg-purple-500",
-  "In progress": "bg-blue-500",
-  Done: "bg-green-500",
+  "Not started": "bg-purple-500 text-purple-800",
+  "In progress": "bg-blue-500 text-blue-800",
+  Done: "bg-green-500 text-green-800",
 };
 
 const PrioritiesRec: Record<(typeof Priorities)[number], string> = {
@@ -114,7 +114,7 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
       return (
         <p
           className={cn(
-            "inline-flex items-center space-x-2 whitespace-nowrap rounded-full bg-opacity-30 px-2 py-0.5 leading-none text-zinc-300",
+            "inline-flex items-center space-x-2 whitespace-nowrap rounded-full bg-opacity-30 px-2 py-0.5 leading-none",
             StatusesRec[status]
           )}
         >
@@ -135,7 +135,7 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
       return (
         <div className="flex items-center gap-2">
           <Calendar className="h-4 w-4" />
-          <span className="leading-none">Due</span>
+          <span className="leading-none">Due Date</span>
         </div>
       );
     },
@@ -168,7 +168,7 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
     },
   },
   {
-    accessorKey: "tags",
+    accessorKey: "todoTags",
     header: () => {
       return (
         <div className="flex items-center gap-2">
@@ -177,15 +177,19 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
         </div>
       );
     },
-    cell: () => {
+    cell: ({ row }) => {
+      const tags = row.getValue("todoTags") as {
+        id: string;
+        tag: { name: string };
+      }[];
       return (
         <div className="flex flex-wrap gap-2">
-          {["Personal", "Work", "Coding"].map((_, i) => (
+          {tags?.map((_, i: number) => (
             <p
               key={i}
-              className="rounded bg-sky-500 bg-opacity-30 px-2 py-0.5 leading-none text-zinc-300"
+              className="rounded bg-blue-600 bg-opacity-80 px-2 py-1 leading-none text-white"
             >
-              {_}
+              {_.tag.name}
             </p>
           ))}
         </div>

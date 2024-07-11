@@ -42,7 +42,7 @@ export default function ThemeToggler() {
   return (
     <Toggle
       onClick={handleThemeChange}
-      className="fixed bottom-12 right-8 select-none rounded-full border border-transparent bg-zinc-200 px-3 py-3 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-50"
+      className="fixed bottom-12 right-8 select-none rounded-full border border-transparent bg-zinc-200 px-3 py-3 text-zinc-600 focus:outline-none dark:bg-zinc-800 dark:text-zinc-50"
     >
       <Icon icon="palette" label={`change appreance to ${nextTheme}`} />
     </Toggle>

@@ -35,7 +35,12 @@ export default function ChangeViewer({ todos }: ChangeViewerProps) {
       disable: false,
       component: <ViewTable columns={columns} data={todos} />,
     },
-    { view: "list", icon: <List />, disable: true, component: <ViewList /> },
+    {
+      view: "list",
+      icon: <List />,
+      disable: true,
+      component: <ViewList />,
+    },
     {
       view: "board",
       icon: <Columns3 />,
@@ -60,9 +65,9 @@ export default function ChangeViewer({ todos }: ChangeViewerProps) {
       <Tabs.TabsRoot defaultValue={views[0].view} className="my-4">
         <Tabs.TabsList>
           {views.map((view, i) => (
-            <Tabs.TabsTrigger key={i} value={view.view} disabled={view.disable}>
+            <Tabs.TabsTrigger key={i} value={view.view} disabled={false}>
               <div className="flex select-none items-center gap-2">
-                {React.cloneElement(view.icon, { className: "w-4 h-4" })}
+                {/* {React.cloneElement(view.icon, { className: "w-4 h-4" })} */}
                 <span className="capitalize">{view.view}</span>
               </div>
             </Tabs.TabsTrigger>

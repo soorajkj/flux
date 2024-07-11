@@ -7,7 +7,10 @@ const TableRoot = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <table
     ref={ref}
-    className={cn("w-full caption-bottom text-sm", className)}
+    className={cn(
+      "w-full caption-bottom overflow-hidden rounded-md text-sm",
+      className
+    )}
     {...props}
   />
 ));
@@ -18,7 +21,10 @@ const TableHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <thead
     ref={ref}
-    className={cn("bg-zinc-950 [&_tr]:border-b", className)}
+    className={cn(
+      "bg-neutral-200/50 [&_tr]:border-b [&_tr]:border-neutral-200",
+      className
+    )}
     {...props}
   />
 ));
@@ -29,7 +35,10 @@ const TableBody = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <tbody
     ref={ref}
-    className={cn("[&_tr:last-child]:border-b", className)}
+    className={cn(
+      "[&_td:first-child]:rounded-l-md [&_td:last-child]:rounded-r-md [&_tr:last-child]:border-b [&_tr:last-child]:border-neutral-200",
+      className
+    )}
     {...props}
   />
 ));
@@ -40,7 +49,7 @@ const TableFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <tfoot
     ref={ref}
-    className={cn("border-t font-medium [&>tr]:last:border-b-0", className)}
+    className={cn("font-medium [&>tr]:last:border-b-0", className)}
     {...props}
   />
 ));
@@ -52,7 +61,7 @@ const TableRow = React.forwardRef<
   <tr
     ref={ref}
     className={cn(
-      "w-full border-b transition-colors data-[state=selected]:bg-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-900",
+      "w-full transition-colors hover:bg-neutral-200/50 data-[state=selected]:bg-neutral-200/50",
       className
     )}
     {...props}
@@ -66,7 +75,7 @@ const TableHead = React.forwardRef<
   <th
     ref={ref}
     className={cn(
-      "h-10 border-t px-2 text-left align-middle font-medium dark:border-zinc-900 dark:bg-zinc-950 dark:hover:bg-zinc-950 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+      "h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
       className
     )}
     {...props}

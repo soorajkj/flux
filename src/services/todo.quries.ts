@@ -6,6 +6,7 @@ export const fetchTodos = async () => {
   const todos = await prisma.todo.findMany({
     where: { userId: user.id },
     orderBy: [{ createdAt: "desc" }],
+    include: { todoTags: { include: { tag: true } } },
   });
   return todos;
 };

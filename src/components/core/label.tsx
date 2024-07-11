@@ -26,9 +26,9 @@ const LabelStyles = cva([
   "text-sm",
   "font-medium",
   "leading-none",
+  "text-neutral-500",
   "peer-disabled:cursor-not-allowed",
   "peer-disabled:opacity-70",
-  "dark:text-zinc-400",
 ]);
 
 Label.displayName = LabelPrimitive.Root.displayName;

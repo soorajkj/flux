@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-  seed     = "prisma/seed.ts"
+  seed     = "ts-node prisma/seed.ts"
 }
 
 datasource db {
@@ -16,6 +16,7 @@ model User {
   image         String?
   accounts      Account[]
   todos         Todo[]
+  tags          Tag[]     @relation("UserTags")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -53,6 +54,36 @@ model Todo {
   document    Json?     @db.Json
   user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String    @db.ObjectId
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  todoTags    TodoTag[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Tag {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  name     String    @unique
+  type     TagType
+  userId   String?   @db.ObjectId
+  user     User?     @relation("UserTags", fields: [userId], references: [id], onDelete: Cascade)
+  todoTags TodoTag[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TodoTag {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  todoId String @db.ObjectId
+  tagId  String @db.ObjectId
+  todo   Todo   @relation(fields: [todoId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum TagType {
+  SYSTEM
+  USER
 }

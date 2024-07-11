@@ -34,10 +34,11 @@ export default function AddTodoForm(props: AddTodoFormProps) {
     defaultValues: {
       title: "",
       description: "",
-      due: new Date(),
+      dueDate: new Date(),
       priority: "Low",
       status: "Not started",
       document: [],
+      tags: [],
     },
   });
 
@@ -62,7 +63,7 @@ export default function AddTodoForm(props: AddTodoFormProps) {
               <Form.FormLabel>Title</Form.FormLabel>
               <Form.FormMessage className="order-3" />
               <Form.FormControl>
-                <Input {...field} />
+                <Input placeholder="My task..." {...field} />
               </Form.FormControl>
             </Form.FormItem>
           )}
@@ -75,7 +76,7 @@ export default function AddTodoForm(props: AddTodoFormProps) {
               <Form.FormLabel>Description</Form.FormLabel>
               <Form.FormMessage className="order-3" />
               <Form.FormControl>
-                <Input {...field} />
+                <Input placeholder="My task description..." {...field} />
               </Form.FormControl>
             </Form.FormItem>
           )}
@@ -136,7 +137,7 @@ export default function AddTodoForm(props: AddTodoFormProps) {
         />
         <Form.FormField
           control={form.control}
-          name="due"
+          name="dueDate"
           render={({ field }) => (
             <Form.FormItem className="flex flex-col">
               <Form.FormLabel>Due Date</Form.FormLabel>
@@ -144,7 +145,7 @@ export default function AddTodoForm(props: AddTodoFormProps) {
               <Popover.PopoverRoot>
                 <Popover.PopoverTrigger asChild>
                   <Form.FormControl>
-                    <Button variant="outline" full>
+                    <Button variant="outline" className="font-normal" full>
                       <span>{field.value && format(field.value, "PPP")}</span>
                       <CalendarIcon className="ml-2 h-4 w-4 opacity-50" />
                     </Button>

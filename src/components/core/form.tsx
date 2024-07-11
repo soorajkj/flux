@@ -153,7 +153,7 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn(["error", "peer", "text-sm", "text-red-500"], className)}
+      className={cn(["error", "peer", "text-sm", "text-red-600"], className)}
       {...rest}
     >
       {body}
@@ -181,7 +181,7 @@ const UncontrolledFormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn(["text-xm", "text-red-700"], className)}
+      className={cn(["text-xm", "text-red-600"], className)}
       {...rest}
     >
       {body}
