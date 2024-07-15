@@ -36,7 +36,7 @@ const ResizableHandle = ({
     {...props}
   >
     {withHandle && (
-      <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-zinc-200 dark:border-zinc-900 dark:bg-zinc-800">
+      <div className="bg-zinc-200 dark:border-zinc-900 dark:bg-zinc-800 z-10 flex h-4 w-3 items-center justify-center rounded-sm border">
         <Icon icon="resizable" label="resize panel" />
       </div>
     )}

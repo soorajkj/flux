@@ -158,7 +158,7 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
       return (
         <p
           className={cn(
-            "inline-flex rounded bg-opacity-30 px-2 py-0.5 leading-none text-zinc-300",
+            "text-zinc-300 inline-flex rounded bg-opacity-30 px-2 py-0.5 leading-none",
             PrioritiesRec[priority]
           )}
         >
@@ -187,7 +187,7 @@ export const columns: ColumnDef<typeof TodoSchema>[] = [
           {tags?.map((_, i: number) => (
             <p
               key={i}
-              className="rounded bg-blue-600 bg-opacity-80 px-2 py-1 leading-none text-white"
+              className="bg-blue-600 rounded bg-opacity-80 px-2 py-1 leading-none text-white"
             >
               {_.tag.name}
             </p>
