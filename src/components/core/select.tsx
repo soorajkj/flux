@@ -17,7 +17,7 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-9 w-full min-w-fit items-center justify-between space-x-2 whitespace-nowrap rounded border border-neutral-200 px-3 py-2 text-sm text-neutral-900 placeholder-transparent disabled:cursor-not-allowed disabled:opacity-50",
+      "flex h-9 w-full min-w-fit items-center justify-between space-x-2 whitespace-nowrap rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-500 ring-offset-brand-100 focus:border-brand-300 focus:outline-none focus:ring-0 focus:ring-transparent focus:ring-offset-4 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
       className
     )}
     {...props}
@@ -102,14 +102,14 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-pointer select-none items-center rounded-md py-1.5 pl-2 pr-8 text-sm outline-none hover:bg-neutral-100 data-[disabled]:pointer-events-none data-[state=checked]:bg-neutral-100 data-[state=checked]:text-neutral-900 data-[disabled]:opacity-50",
+      "relative flex w-full cursor-pointer select-none items-center rounded-md py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-gray-100 focus:text-gray-700 data-[disabled]:pointer-events-none data-[state=checked]:bg-gray-100 data-[state=checked]:text-gray-900 data-[disabled]:opacity-50",
       className
     )}
     {...props}
   >
-    <span className="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span className="absolute right-2 flex h-4 w-4 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
+        <Check className="h-4 w-4 text-brand-500" />
       </SelectPrimitive.ItemIndicator>
     </span>
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
@@ -149,8 +149,6 @@ const Select = {
   SelectScrollDownButton,
 };
 
-export default Select;
-
 const SelectContentStyles = cva(
   [
     "data-[state=open]:animate-in",
@@ -171,7 +169,7 @@ const SelectContentStyles = cva(
     "rounded-md",
     "bg-white",
     "border",
-    "border-neutral-200",
+    "border-gray-300",
   ],
   {
     variants: {
@@ -198,3 +196,5 @@ const SelectViewportStyles = cva([""], {
     },
   },
 });
+
+export default Select;

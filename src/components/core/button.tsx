@@ -22,6 +22,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled = false,
       loading = false,
       pure = false,
+      size = "md",
       variant = "primary",
       full,
       className,
@@ -35,7 +36,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         type={type}
         disabled={disabled || loading}
         tabIndex={disabled || loading ? -1 : 0}
-        className={cn(!pure && ButtonStyles({ variant, full }), className)}
+        className={cn(
+          !pure && ButtonStyles({ variant, size, full }),
+          className
+        )}
         {...rest}
       >
         {children}
@@ -46,12 +50,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
 const ButtonStyles = cva(
   [
-    "cursor-pointer",
     "inline-flex",
+    "h-9",
+    "min-w-fit",
+    "cursor-pointer",
+    "select-none",
     "items-center",
     "justify-center",
     "overflow-hidden",
-    "select-none",
     "whitespace-nowrap",
     "rounded-md",
     "border",
@@ -59,40 +65,73 @@ const ButtonStyles = cva(
     "border-transparent",
     "px-3",
     "py-0.5",
-    "h-9",
-    "min-w-fit",
     "text-sm",
     "font-medium",
     "leading-none",
     "transition-colors",
-    "disabled:cursor-none",
-    "disabled:pointer-events-none",
-    "disabled:opacity-80",
+    "focus-visible:outline-none",
+    "focus-visible:ring-0",
+    "focus-visible:ring-transparent",
+    "focus-visible:ring-offset-4",
+    "disabled:cursor-not-allowed",
   ],
   {
     variants: {
       variant: {
         primary: [
-          "bg-neutral-900",
+          "bg-brand-600",
           "text-white",
-          "border-neutral-900",
-          "hover:bg-neutral-800",
-          "hover:border-neutral-800",
+          "hover:bg-brand-700",
+          "ring-offset-brand-100",
+          "focus-visible:border-brand-300",
+          "disabled:bg-brand-200",
         ],
-        link: [],
-        destruct: [],
+        link: [
+          "bg-white",
+          "text-brand-700",
+          "hover:text-brand-800",
+          "ring-offset-brand-100",
+          "focus-visible:border-brand-300",
+        ],
+        destruct: [
+          "bg-error-600",
+          "text-white",
+          "border-error-600",
+          "hover:bg-error-700",
+          "ring-offset-error-100",
+          "focus-visible:border-error-300",
+        ],
         outline: [
           "bg-white",
-          "text-neutral-700",
-          "border-neutral-200",
-          "hover:bg-neutral-100",
-          "hover:text-neutral-900",
+          "text-gray-700",
+          "border-gray-300",
+          "hover:bg-gray-100",
+          "hover:text-gray-800",
+          "ring-offset-gray-100",
+          "focus-visible:border-gray-300",
+          "disabled:bg-brand-200",
+          "disabled:text-gray-300",
+          "disabled:border-gray-200",
         ],
-        ghost: [],
+        ghost: [
+          "bg-white",
+          "text-gray-700",
+          "hover:bg-gray-100",
+          "hover:text-gray-800",
+          "ring-offset-gray-100",
+          "focus-visible:border-gray-300",
+          "disabled:bg-brand-200",
+          "disabled:text-gray-300",
+        ],
       },
       full: {
         false: "w-auto",
         true: "w-full",
+      },
+      size: {
+        sm: [],
+        md: [],
+        lg: [],
       },
     },
   }

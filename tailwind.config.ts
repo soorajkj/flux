@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
-import colors from "windicss/colors";
+import { preset } from "untitledui-tw-preset";
 
 const config: Config = {
   content: [
@@ -10,16 +10,7 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
-    extend: {
-      colors: {
-        inherit: colors.inherit,
-        current: colors.current,
-        transparent: colors.transparent,
-        white: colors.white,
-        black: colors.black,
-        neutral: colors.neutral,
-      },
-    },
+    extend: {},
     fontFamily: {
       "family-sans": ["var(--font-geist-sans)"],
       "family-mono": ["var(--font-geist-mono)"],
@@ -27,6 +18,7 @@ const config: Config = {
       "family-shantell": ["var(--font-shantell)"],
     },
   },
+  presets: [preset],
   plugins: [animate],
 };
 

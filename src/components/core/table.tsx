@@ -22,7 +22,7 @@ const TableHeader = React.forwardRef<
   <thead
     ref={ref}
     className={cn(
-      "bg-neutral-200/50 [&_tr]:border-b [&_tr]:border-neutral-200",
+      "bg-neutral-200/50 [&_tr]:border-neutral-200 [&_tr]:border-b",
       className
     )}
     {...props}
@@ -36,7 +36,7 @@ const TableBody = React.forwardRef<
   <tbody
     ref={ref}
     className={cn(
-      "[&_td:first-child]:rounded-l-md [&_td:last-child]:rounded-r-md [&_tr:last-child]:border-b [&_tr:last-child]:border-neutral-200",
+      "[&_tr:last-child]:border-neutral-200 [&_td:first-child]:rounded-l-md [&_td:last-child]:rounded-r-md [&_tr:last-child]:border-b",
       className
     )}
     {...props}
@@ -61,7 +61,7 @@ const TableRow = React.forwardRef<
   <tr
     ref={ref}
     className={cn(
-      "w-full transition-colors hover:bg-neutral-200/50 data-[state=selected]:bg-neutral-200/50",
+      "hover:bg-neutral-200/50 data-[state=selected]:bg-neutral-200/50 w-full transition-colors",
       className
     )}
     {...props}

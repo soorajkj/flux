@@ -26,7 +26,7 @@ const LabelStyles = cva([
   "text-sm",
   "font-medium",
   "leading-none",
-  "text-neutral-500",
+  "text-gray-700",
   "peer-disabled:cursor-not-allowed",
   "peer-disabled:opacity-70",
 ]);
